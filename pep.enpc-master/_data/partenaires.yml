@@ -1,0 +1,14 @@
+# Partenaires de PEP — source du bloc déroulant de la landing.
+# La page /partenaires/ porte le détail de chaque collaboration ; ici, le logo
+# et le lien seulement.
+- name: Sopra Steria
+  logo: logo-soprasteria.png
+  url: https://www.soprasteria.com
+
+- name: Bain &amp; Company
+  logo: logo-bain.png
+  url: https://www.bain.com
+
+- name: Caisse d'Épargne Île-de-France
+  logo: logo-ceidf.png
+  url: https://www.caisse-epargne.fr/ile-de-france/

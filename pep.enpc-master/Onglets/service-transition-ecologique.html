@@ -1,0 +1,12 @@
+---
+layout: default
+title: PEP - Transition écologique et durable
+description: "Stratégie urbaine et territoriale, mobilité, énergie, assainissement : nos études pour les collectivités, aménageurs et opérateurs de transport."
+permalink: /services/transition-ecologique/
+service: transition-ecologique
+---
+
+{% assign s = site.data.services | where: "slug", page.service | first %}
+{% include services/header.html service=s %}
+{% include services/content.html service=s %}
+{% include home/contact.html %}

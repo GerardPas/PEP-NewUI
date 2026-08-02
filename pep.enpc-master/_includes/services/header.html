@@ -1,0 +1,26 @@
+{% assign s = include.service %}
+
+<header class="pep-svc-hero">
+    <img class="pep-svc-hero-img" src="{{ site.baseurl }}/img/competences/{{ s.img }}"
+         alt="" aria-hidden="true">
+    <span class="pep-svc-hero-scrim" aria-hidden="true"></span>
+
+    <div class="container pep-svc-hero-inner">
+        <nav class="pep-svc-crumbs" aria-label="Fil d'ariane">
+            <a href="{{ site.baseurl }}/competences/">Nos services</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">{{ s.title }}</span>
+        </nav>
+
+        <h1 class="pep-svc-hero-title">{{ s.title }}</h1>
+        <p class="pep-svc-hero-lead">{{ s.lead }}</p>
+
+        <div class="pep-svc-hero-actions">
+            <a href="{{ site.baseurl }}/contact/" class="pep-btn pep-btn-solid">Demander un devis</a>
+            {% for p in s.plaquettes limit: 1 %}
+            <a href="{{ site.baseurl }}/assets/{{ p.file }}" class="pep-btn pep-btn-ghost"
+               target="_blank" rel="noopener">{{ p.label }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</header>

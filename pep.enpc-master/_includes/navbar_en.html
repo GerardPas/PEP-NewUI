@@ -1,0 +1,50 @@
+{% assign u = page.url %}
+<nav class="navbar navbar-default navbar-fixed-top pep-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="{{ site.baseurl }}/en/" class="pep-nav-brand" aria-label="Ponts Études Projets — home">
+                <img src="{{ site.baseurl }}/img/logo-header.png" width="212" height="50" alt="Ponts Études Projets"/>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#pep-nav-collapse" aria-expanded="false" aria-controls="pep-nav-collapse">
+                <span class="sr-only">Open menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="pep-nav-collapse">
+            <ul class="nav navbar-nav navbar-right pep-nav-list">
+
+                <li{% if u contains '/en/skills' %} class="pep-current"{% endif %}>
+                    <a href="{{ site.baseurl }}/en/skills/" class="pep-nav-link">Our services</a>
+                </li>
+
+                <li{% if u contains '/en/mission' %} class="pep-current"{% endif %}>
+                    <a href="{{ site.baseurl }}/en/mission/" class="pep-nav-link">How it works</a>
+                </li>
+
+                <li{% if u contains '/en/team' %} class="pep-current"{% endif %}>
+                    <a href="{{ site.baseurl }}/en/team/" class="pep-nav-link">The team</a>
+                </li>
+
+                <li{% if u contains '/en/contact' %} class="pep-current"{% endif %}>
+                    <a href="{{ site.baseurl }}/en/contact/" class="pep-nav-link">Contact</a>
+                </li>
+
+                <li class="pep-lang">
+                    <a href="{{ site.baseurl }}/" lang="fr">FR</a>
+                    <span class="pep-lang-sep" aria-hidden="true">/</span>
+                    <span class="pep-lang-on" aria-current="true">EN</span>
+                </li>
+
+                <li class="pep-nav-cta-wrap">
+                    <a href="{{ site.baseurl }}/en/contact/" class="pep-nav-cta">Request a quote</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% include nav-js.html %}

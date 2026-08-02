@@ -1,0 +1,33 @@
+<div class="container">
+    <div id="contact-form" class="container">
+        <div id="intro" class="intro-form-container">
+            Vous désirez nous contacter pour un devis ? <br> Il vous suffit de remplir ce formulaire et notre équipe vous prend en charge !
+            <br><br>
+        </div>
+        <form id="contact_form_data">
+            <label for="entry.1951718622">Entreprise*</label>
+            <input type="text" id="entreprise" name="entry.1951718622" placeholder="Votre Entreprise...">
+            <label for="entry.396007678">Nom et Prénom*</label>
+            <input type="text" id="name" name="entry.396007678" placeholder="Votre nom et prénom...">
+            <label for="entry.1332571731">Email*</label>
+            <input type="text" id="email" name="entry.1332571731" placeholder="Votre email...">
+            <label for="entry.216023587">Portable (Facultatif)</label>
+            <input type="text" id="phone-number" name="entry.216023587" placeholder="Votre numéro...">
+            <label for="entry.383904697">Votre besoin*</label>
+            <textarea id="subject" name="entry.383904697" placeholder="Votre message à l'équipe..." style="height:200px"></textarea>
+            <label for="entry.1699257137">Comment avez-vous entendu parler de nous ?*</label>
+            <select id="source-connaissance" name="entry.1699257137" placeholder="Votre message à l'équipe...">
+                <option value="">--Votre réponse--</option>
+                <option value="Je suis un Alumni des Ponts">Je suis un Alumni de l'École</option>
+                <option value="Je suis un Alumni PEP">Je suis un Alumni PEP</option>
+                <option value="La renommée de l'école">La renommée de l'École</option>
+                <option value="Nous avons déjà travaillé ensemble">Nous avons déjà travaillé ensemble</option>
+                <option value="Recommandation personnelle ou professionnelle">Recommandation personnelle ou professionnelle</option>
+                <option value="Autres">Autres</option>
+            </select>
+            <input type="button" class="page-scroll btn btn-xl not-active-button" style="font-size: 1em; margin: 0px; padding: 10px; text-align: center;" value="Demander un devis" onclick="handleSubmitForm(this.form)"></input>
+            <div id="form-error"><p>Erreur - certains champs sont vides</p></div>
+            <div id="form-success"><p>Merci - Votre demande sera prise en compte au plus vite</p></div>
+        </form>
+    </div>
+</div>

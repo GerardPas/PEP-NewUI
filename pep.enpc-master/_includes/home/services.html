@@ -1,0 +1,32 @@
+<section class="pep-services" id="nos-services">
+    <div class="container">
+        <div class="pep-section-head">
+            <h2 class="pep-h2">Nos services</h2>
+        </div>
+
+        <div class="pep-services-grid">
+            {% for service in site.data.services %}
+            <a class="pep-service" id="service-{{ service.slug }}" href="{{ site.baseurl }}{{ service.href }}">
+                <img class="pep-service-img" src="{{ site.baseurl }}/img/competences/{{ service.img }}"
+                     alt="" aria-hidden="true" loading="lazy">
+                <span class="pep-service-scrim" aria-hidden="true"></span>
+
+                <span class="pep-service-body">
+                    <span class="pep-service-title">{{ service.title }}</span>
+
+                    <span class="pep-service-reveal">
+                        <span class="pep-service-reveal-in">
+                            <span class="pep-service-items">
+                                {% for p in service.prestations %}
+                                <span class="pep-service-item">{{ p }}</span>
+                                {% endfor %}
+                            </span>
+                            <span class="pep-service-more">Plus de détails</span>
+                        </span>
+                    </span>
+                </span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

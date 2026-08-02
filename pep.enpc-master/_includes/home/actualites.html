@@ -1,0 +1,34 @@
+<section class="pep-news" id="actualites">
+    <div class="container">
+        <div class="pep-section-head">
+            <h2 class="pep-h2">Dernières actualités</h2>
+        </div>
+
+        <div class="pep-news-grid">
+            {% for post in site.posts limit: 3 %}
+            <article class="pep-news-item">
+                <a href="{{ site.baseurl }}{{ post.url }}" class="pep-news-link">
+                    <span class="pep-news-media">
+                        {% if post.thumbnail %}
+                        <img src="{{ site.baseurl }}/img/posts/thumbnails/{{ post.thumbnail }}"
+                             alt="" aria-hidden="true" loading="lazy">
+                        {% endif %}
+                    </span>
+                    <time class="pep-news-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                        {% assign d = post.date | date: "%-d" %}{% case d %}{% when '1' %}1er{% else %}{{ d }}{% endcase %}
+                        {% assign m = post.date | date: "%-m" %}{% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %}
+                        {{ post.date | date: '%Y' }}
+                    </time>
+                    <h3 class="pep-news-title">{{ post.title }}</h3>
+                    <p class="pep-news-desc">{{ post.description }}</p>
+                    <span class="pep-news-more" aria-hidden="true">Lire l'article</span>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+
+        <p class="pep-news-foot">
+            <a href="{{ site.baseurl }}/actualites/" class="pep-link-arrow">Toutes nos actualités</a>
+        </p>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+---
+layout: default
+title: PEP - Transformation digitale
+description: "IA, data science, computer vision, développement logiciel et supply chain : nos études pour digitaliser et optimiser vos processus."
+permalink: /services/transformation-digitale/
+service: transformation-digitale
+---
+
+{% assign s = site.data.services | where: "slug", page.service | first %}
+{% include services/header.html service=s %}
+{% include services/content.html service=s %}
+{% include home/contact.html %}

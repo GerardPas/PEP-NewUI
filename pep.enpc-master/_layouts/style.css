@@ -1,0 +1,10 @@
+{% include css/bootstrap.min.css %}
+{% include css/agency.css %}
+{% include css/infinite-slider.css %}
+{% include css/style_cookies.css %}
+{% include css/style_partenaires.css %}
+{% include css/navbar.css %}
+{% include css/home.css %}
+{% include css/services.css %}
+{% include css/consent.css %}
+{{ content }}

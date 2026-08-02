@@ -1,0 +1,12 @@
+---
+layout: default
+title: PEP - Génie Mécanique et Construction
+description: "Faisabilité, dimensionnement et calcul de structures, études thermiques et de coûts-matières : nos études en génie civil et mécanique."
+permalink: /services/genie-mecanique-construction/
+service: genie-mecanique-construction
+---
+
+{% assign s = site.data.services | where: "slug", page.service | first %}
+{% include services/header.html service=s %}
+{% include services/content.html service=s %}
+{% include home/contact.html %}

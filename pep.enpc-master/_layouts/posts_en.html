@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+    <body id="page-top" class="index">
+    {% include navbar.html %}
+    {% include blog/post-header.html %}
+    <div class="container" style="max-width: 1000px; margin: 0 auto; margin-bottom: 20px;">
+        {{ content }}
+    </div>
+    {% include footer.html %}
+    {% include js.html %}
+    {% include cookies/text.html %}
+    {% include cookies/extra-js.html %}
+    </body>
+</html>

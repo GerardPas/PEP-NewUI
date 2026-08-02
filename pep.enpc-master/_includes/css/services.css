@@ -1,0 +1,751 @@
+/* ==========================================================================
+   Pages de services — /competences/ (hub) et /services/<slug>/
+   Chargé après agency.css et home.css. Réutilise les primitives de home.css
+   (.pep-h2, .pep-btn, .pep-link-arrow, .pep-section-head). Composition et
+   mise en page seulement : chaque couleur et police vient de
+   _data/template.yml ou des surfaces déjà présentes dans agency.css
+   (#fff, #f7f7f7, #222).
+
+   agency.css impose `h1..h6 { text-transform: uppercase }` et
+   `p { text-align: justify }` sur les sélecteurs d'élément — les règles de
+   classe ci-dessous les neutralisent explicitement là où il faut.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hub : /competences/
+   -------------------------------------------------------------------------- */
+
+.pep-svc-hub-header {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    padding-top: 84px;
+}
+
+h1.pep-svc-hub-title {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: .02em;
+    color: #fff;
+    text-shadow: 0 2px 22px rgba(0, 0, 0, .5);
+}
+
+.pep-svc-hub {
+    padding: 68px 0;
+    background-color: #fff;
+}
+
+.pep-svc-hub .pep-section-head {
+    margin-bottom: 46px;
+}
+
+.pep-svc-hub-say {
+    margin: 0 auto;
+    max-width: 62ch;
+    text-align: center;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 15.5px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-hub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 34px;
+}
+
+.pep-hub-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: border-color .25s ease, box-shadow .25s ease, transform .35s cubic-bezier(.16, 1, .3, 1);
+}
+
+.pep-hub-card:hover {
+    border-color: #{{ site.data.template.color.primary }};
+    box-shadow: 0 18px 40px -26px rgba(0, 0, 0, .5);
+    transform: translateY(-3px);
+}
+
+.pep-hub-media {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding-top: 46%;
+    background-color: #{{ site.data.template.color.primary }};
+}
+
+.pep-hub-media img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 1s cubic-bezier(.16, 1, .3, 1);
+}
+
+.pep-hub-card:hover .pep-hub-media img {
+    transform: scale(1.05);
+}
+
+.pep-hub-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 26px 26px 28px;
+}
+
+h2.pep-hub-title {
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: .035em;
+}
+
+h2.pep-hub-title a,
+h2.pep-hub-title a:visited {
+    color: #{{ site.data.template.color.primary }};
+}
+
+h2.pep-hub-title a:hover,
+h2.pep-hub-title a:focus {
+    color: #{{ site.data.template.color.primary }};
+    text-decoration: underline;
+}
+
+.pep-hub-lead {
+    margin: 0 0 18px;
+    text-align: left;
+    font-family: {{ site.data.template.font.secondary }};
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.6;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-hub-items {
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+}
+
+.pep-hub-items li {
+    padding: 7px 0;
+    border-top: 1px solid #ececec;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-hub-body .pep-link-arrow {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.pep-svc-hub-foot {
+    margin: 46px 0 0;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .pep-svc-hub { padding: 92px 0; }
+    .pep-hub-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    h1.pep-svc-hub-title { font-size: 40px; }
+}
+
+/* --------------------------------------------------------------------------
+   En-tête d'une page de service
+   -------------------------------------------------------------------------- */
+
+.pep-svc-hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 420px;
+    padding: 132px 0 52px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.pep-svc-hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Une photo ne garantit pas seule un rapport de contraste : le dégradé
+   plaque le bas de l'image, là où vit le texte, et assombrit le haut pour
+   asseoir la barre de navigation.
+   Les paliers sont calés sur le pire cas mesuré — le ciel blanc du viaduc de
+   Millau sous le fil d'ariane, qui demande au moins .69 d'opacité pour tenir
+   4,5:1 avec l'accent cyan. */
+.pep-svc-hero-scrim {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image:
+        linear-gradient(180deg,
+            rgba(10, 12, 20, .82) 0%,
+            rgba(10, 12, 20, .64) 22%,
+            rgba(10, 12, 20, .82) 44%,
+            rgba(10, 12, 20, .92) 100%);
+}
+
+/* Sur téléphone le bloc de texte est bien plus haut que la bande sombre
+   ci-dessus ne couvre : le voile devient plat et lourd. */
+@media (max-width: 767px) {
+    .pep-svc-hero-scrim {
+        background-image:
+            linear-gradient(180deg,
+                rgba(10, 12, 20, .76) 0%,
+                rgba(10, 12, 20, .82) 40%,
+                rgba(10, 12, 20, .92) 100%);
+    }
+}
+
+/* agency.css centre tout `header`. Le bloc de titre s'aligne sur la colonne de
+   contenu en dessous, il faut donc reprendre l'alignement explicitement. */
+.pep-svc-hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.pep-svc-crumbs {
+    margin-bottom: 18px;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .17em;
+    color: rgba(255, 255, 255, .82);
+}
+
+.pep-svc-crumbs a,
+.pep-svc-crumbs a:visited {
+    color: #{{ site.data.template.color.secondary }};
+}
+
+.pep-svc-crumbs a:hover,
+.pep-svc-crumbs a:focus {
+    color: #{{ site.data.template.color.secondary }};
+    text-decoration: underline;
+}
+
+.pep-svc-crumbs span {
+    margin: 0 8px;
+}
+
+.pep-svc-crumbs span[aria-current] {
+    margin-left: 0;
+}
+
+h1.pep-svc-hero-title {
+    margin: 0 0 16px;
+    max-width: 22ch;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: -.005em;
+    color: #fff;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, .4);
+}
+
+.pep-svc-hero-lead {
+    margin: 0 0 30px;
+    max-width: 52ch;
+    text-align: left;
+    font-family: {{ site.data.template.font.secondary }};
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, .94);
+}
+
+.pep-svc-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+@media (min-width: 768px) {
+    .pep-svc-hero {
+        min-height: 500px;
+        padding: 150px 0 64px;
+    }
+
+    h1.pep-svc-hero-title { font-size: 46px; }
+    .pep-svc-hero-lead { font-size: 19px; }
+}
+
+@media (min-width: 1200px) {
+    h1.pep-svc-hero-title { font-size: 54px; }
+}
+
+/* --------------------------------------------------------------------------
+   Positionnement et capacités
+   -------------------------------------------------------------------------- */
+
+.pep-svc-intro {
+    padding: 66px 0;
+    background-color: #fff;
+}
+
+.pep-svc-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.pep-svc-intro-text p {
+    margin: 0 0 18px;
+    text-align: left;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 15.5px;
+    font-weight: 400;
+    line-height: 1.85;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-svc-intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+.pep-svc-caps {
+    padding: 28px 28px 30px;
+    border-top: 3px solid #{{ site.data.template.color.primary }};
+    background-color: #f7f7f7;
+}
+
+h2.pep-svc-caps-title {
+    margin: 0 0 18px;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: .11em;
+    color: #{{ site.data.template.color.primary }};
+}
+
+.pep-svc-caps-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pep-svc-caps-list li {
+    position: relative;
+    padding: 8px 0 8px 22px;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-svc-caps-list li + li {
+    border-top: 1px solid #e4e4e4;
+}
+
+.pep-svc-caps-list li::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #{{ site.data.template.color.primary }};
+}
+
+@media (min-width: 992px) {
+    .pep-svc-intro { padding: 88px 0; }
+
+    /* La colonne de texte porte la mesure — étirée sur tout le conteneur elle
+       dépassait 80 caractères par ligne. La paire est centrée, comme
+       .pep-about-grid dans home.css. */
+    .pep-svc-intro-grid {
+        grid-template-columns: minmax(0, 58ch) minmax(0, 360px);
+        gap: 56px;
+        align-items: start;
+        justify-content: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Études réalisées
+   -------------------------------------------------------------------------- */
+
+.pep-svc-cases {
+    padding: 68px 0;
+    background-color: #f7f7f7;
+    scroll-margin-top: 84px;
+}
+
+.pep-cases-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.pep-case {
+    padding: 28px 26px 30px;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1px 0 #e6e6e6, 0 14px 34px -30px rgba(0, 0, 0, .5);
+}
+
+.pep-case-client {
+    margin: 0 0 8px;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+h3.pep-case-title {
+    margin: 0 0 16px;
+    text-transform: none;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.32;
+    letter-spacing: -.005em;
+    color: #{{ site.data.template.color.primary }};
+}
+
+.pep-case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+    text-align: left;
+}
+
+.pep-case-tag {
+    display: inline-block;
+    padding: 5px 11px;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    color: #{{ site.data.template.color.primary }};
+    background-color: #f7f7f7;
+}
+
+h4.pep-case-label {
+    margin: 20px 0 8px;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+h4.pep-case-label:first-of-type {
+    margin-top: 0;
+}
+
+.pep-case-text {
+    margin: 0;
+    text-align: left;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-case-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pep-case-list li {
+    position: relative;
+    padding: 4px 0 4px 18px;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-case-list li::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #{{ site.data.template.color.primary }};
+}
+
+.pep-case-quote {
+    margin: 22px 0 0;
+    padding: 16px 0 0 18px;
+    border: 0;
+    border-left: 2px solid #{{ site.data.template.color.primary }};
+}
+
+.pep-case-quote-text {
+    margin: 0 0 8px;
+    text-align: left;
+    font-family: {{ site.data.template.font.secondary }};
+    font-size: 14.5px;
+    font-style: italic;
+    line-height: 1.7;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-case-quote-text::before { content: "« "; }
+.pep-case-quote-text::after  { content: " »"; }
+
+.pep-case-quote-by {
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: #{{ site.data.template.color.primary }};
+}
+
+@media (min-width: 992px) {
+    .pep-svc-cases { padding: 92px 0; }
+    .pep-cases-grid { grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    .pep-case { padding: 32px 32px 34px; }
+}
+
+/* --------------------------------------------------------------------------
+   Compétences mobilisées et plaquettes
+   -------------------------------------------------------------------------- */
+
+.pep-svc-depts {
+    padding: 68px 0;
+    background-color: #fff;
+}
+
+.pep-depts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.pep-dept {
+    padding-top: 22px;
+    border-top: 3px solid #{{ site.data.template.color.primary }};
+}
+
+h3.pep-dept-title {
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: .06em;
+    color: #{{ site.data.template.color.primary }};
+}
+
+.pep-dept-text {
+    margin: 0 0 16px;
+    text-align: left;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 14.5px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-svc-docs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 46px;
+    padding: 26px 28px;
+    border-radius: 3px;
+    background-color: #f7f7f7;
+}
+
+.pep-svc-docs-say {
+    margin: 0;
+    text-align: left;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-svc-docs-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 26px;
+}
+
+a.pep-doc-link,
+a.pep-doc-link:visited {
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    color: #{{ site.data.template.color.primary }};
+}
+
+a.pep-doc-link::before {
+    content: "↓";
+    display: inline-block;
+    margin-right: 9px;
+    transition: transform .3s cubic-bezier(.16, 1, .3, 1);
+}
+
+a.pep-doc-link:hover,
+a.pep-doc-link:focus {
+    color: #{{ site.data.template.color.primary }};
+    text-decoration: underline;
+}
+
+a.pep-doc-link:hover::before,
+a.pep-doc-link:focus::before {
+    transform: translateY(3px);
+}
+
+@media (min-width: 768px) {
+    .pep-svc-depts { padding: 92px 0; }
+    .pep-depts-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+
+    .pep-svc-docs {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Les autres lignes de service
+   -------------------------------------------------------------------------- */
+
+.pep-svc-others {
+    padding: 60px 0;
+    background-color: #f7f7f7;
+}
+
+h2.pep-svc-others-title {
+    margin: 0 0 28px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+.pep-svc-others-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a.pep-svc-other {
+    display: block;
+    height: 100%;
+    padding: 20px 22px;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: border-color .25s ease, transform .3s cubic-bezier(.16, 1, .3, 1);
+}
+
+a.pep-svc-other:hover,
+a.pep-svc-other:focus {
+    border-color: #{{ site.data.template.color.primary }};
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.pep-svc-other-title {
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: .05em;
+    color: #{{ site.data.template.color.primary }};
+}
+
+.pep-svc-other-lead {
+    display: block;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #{{ site.data.template.color.secondary-dark }};
+}
+
+@media (min-width: 768px) {
+    .pep-svc-others { padding: 76px 0; }
+    .pep-svc-others-list { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+}
+
+/* --------------------------------------------------------------------------
+   Mouvement réduit
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .pep-hub-card,
+    .pep-hub-media img,
+    a.pep-svc-other,
+    a.pep-doc-link::before {
+        transition-duration: .01ms !important;
+    }
+
+    .pep-hub-card:hover,
+    a.pep-svc-other:hover {
+        transform: none;
+    }
+}

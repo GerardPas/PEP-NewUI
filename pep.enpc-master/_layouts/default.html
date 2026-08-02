@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+    <body id="page-top" class="index">
+    {% include navbar.html %}
+    {% include js.html %}
+    {{ content }}
+    {% include footer.html %}
+    {% comment %}
+      La bannière vit dans le layout, pas dans les pages : le conteneur GTM est
+      chargé par head.html sur TOUTES les pages, le moyen de consentir doit
+      donc l'être aussi.
+    {% endcomment %}
+    {% include cookies/text.html %}
+    {% include cookies/extra-js.html %}
+    </body>
+</html>

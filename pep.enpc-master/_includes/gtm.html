@@ -1,0 +1,65 @@
+{%- comment -%}
+Google Tag Manager sous Consent Mode v2.
+
+L'ordre des trois blocs ci-dessous est le seul qui soit correct, et il n'est pas
+interchangeable :
+
+  1. le stub gtag() et l'état de consentement PAR DÉFAUT, tout en « denied » ;
+  2. la relecture d'un choix déjà exprimé, pour ne pas dégrader un visiteur qui
+     a déjà accepté ;
+  3. le conteneur gtm.js lui-même.
+
+Si gtm.js partait avant l'état par défaut, les tags du conteneur s'exécuteraient
+sans signal de consentement — c'est-à-dire exactement le comportement que cette
+installation vise à éviter (art. 82 de la Loi Informatique et Libertés).
+
+Le retour à « granted » est piloté par js/banniere-cookies.js, au clic sur
+« Accepter » uniquement. Un refus ne fait rien : tout reste refusé.
+
+Volontairement ABSENT : la balise <noscript><iframe> fournie par Google. Le
+Consent Mode ne s'y applique pas — sans JavaScript il n'existe aucun moyen de
+transmettre un choix — donc l'inclure enverrait l'IP du visiteur à Google avant
+tout consentement, sans possibilité de refus. Un visiteur sans JavaScript ne
+voit de toute façon pas la bannière et ne peut donc pas consentir.
+
+Volontairement ABSENT aussi : `url_passthrough`. Cette option préserve
+l'attribution publicitaire quand les cookies sont refusés, ce qui va contre le
+sens d'un refus. `ads_data_redaction` est en revanche activé : il caviarde les
+identifiants de clic tant que ad_storage est refusé.
+{%- endcomment -%}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'denied',
+    personalization_storage: 'denied',
+    security_storage: 'granted'
+  });
+
+  gtag('set', 'ads_data_redaction', true);
+
+  try {
+    if (window.localStorage && localStorage.getItem('pep-consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted',
+        functionality_storage: 'granted',
+        personalization_storage: 'granted'
+      });
+    }
+  } catch (e) { /* localStorage inaccessible (mode privé strict) : on reste refusé */ }
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ site.gtm_id }}');</script>
+<!-- End Google Tag Manager -->

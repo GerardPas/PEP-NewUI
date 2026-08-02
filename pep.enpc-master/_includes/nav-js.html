@@ -1,0 +1,82 @@
+<script>
+(function () {
+  var nav = document.querySelector('.pep-nav');
+  if (!nav) return;
+
+  var parents = nav.querySelectorAll('.pep-has-mega, .pep-has-drop');
+  var desktop = window.matchMedia('(min-width: 768px)');
+
+  // The bar is transparent at the top of the page. A panel opening over a photo
+  // needs an opaque bar behind it, so borrow the same shrink state the scroll
+  // handler uses (cbpAnimatedHeader.js).
+  var held = 0;
+
+  function hold() {
+    held++;
+    nav.classList.add('navbar-shrink');
+  }
+
+  function release() {
+    held = Math.max(0, held - 1);
+    if (held === 0 && window.pageYOffset < 100) {
+      nav.classList.remove('navbar-shrink');
+    }
+  }
+
+  Array.prototype.forEach.call(parents, function (li) {
+    var trigger = li.querySelector('.pep-nav-link');
+
+    function open() {
+      if (!desktop.matches || li.classList.contains('pep-open')) return;
+      li.classList.add('pep-open');
+      if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      hold();
+    }
+
+    function close() {
+      if (!li.classList.contains('pep-open')) return;
+      li.classList.remove('pep-open');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      release();
+    }
+
+    li.addEventListener('mouseenter', open);
+    li.addEventListener('mouseleave', close);
+    li.addEventListener('focusin', open);
+    li.addEventListener('focusout', function (e) {
+      if (!li.contains(e.relatedTarget)) close();
+    });
+
+    // Touch on a tablet-width viewport: first tap reveals, second follows.
+    if (trigger) {
+      trigger.addEventListener('click', function (e) {
+        if (!desktop.matches) return;
+        if (e.detail === 0) return; // keyboard Enter — let it navigate
+        if (!li.classList.contains('pep-open')) {
+          e.preventDefault();
+          open();
+        }
+      });
+    }
+
+    li._pepClose = close;
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' && e.keyCode !== 27) return;
+    Array.prototype.forEach.call(parents, function (li) {
+      if (li.classList.contains('pep-open')) {
+        var trigger = li.querySelector('.pep-nav-link');
+        li._pepClose();
+        if (trigger) trigger.focus();
+      }
+    });
+  });
+
+  function onBreakpoint() {
+    Array.prototype.forEach.call(parents, function (li) { li._pepClose(); });
+  }
+  if (desktop.addEventListener) desktop.addEventListener('change', onBreakpoint);
+  else if (desktop.addListener) desktop.addListener(onBreakpoint);
+}());
+</script>

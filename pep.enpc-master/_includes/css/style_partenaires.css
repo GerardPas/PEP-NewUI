@@ -1,0 +1,116 @@
+.intro-partenaire {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    font-weight: 550;
+}
+
+
+.partenaire-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3%;
+    margin: 40px auto;
+    max-width: 90%;
+    flex-wrap: wrap;
+    z-index: 0;
+}
+
+/* Coins par défaut : haut gauche et bas droit */
+.partenaire-section::before,
+.partenaire-section::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 3px solid #1a242f;
+    z-index: -1;
+}
+
+.partenaire-section::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.partenaire-section::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+/* Coins inversés : haut droit et bas gauche */
+.partenaire-section.reverse-layout::before,
+.partenaire-section.reverse-layout::after {
+    content: "";
+    position: absolute;
+    width: 55%;
+    height: 40%;
+    border: none;
+    z-index: -1;
+}
+
+.partenaire-section.reverse-layout::after {
+    top: 0;
+    right: 0;
+    border-top: 3px solid #1a242f;
+    border-right: 3px solid #1a242f;
+    z-index: -1;
+}
+
+.partenaire-section.reverse-layout {
+    margin-bottom: 0; /* Adjust this value to control the space after the reversed sections */
+}
+
+.partenaire-texte {
+    flex: 2;
+    padding: 0 3%;
+    min-width: 30%;
+}
+
+.partenaire-logo {
+    flex: 1;
+    padding: 0 3%;
+    min-width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partenaire-logo img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.partenaire-logo img:hover {
+    transform: scale(1.05);
+}
+
+.blank-space {
+    position: relative;
+    margin: 40px auto;
+    max-width: 90%;
+    padding: 0; /* No padding */
+    height: auto;
+    min-height: 0;
+    margin-top: 0;
+}
+
+/* Bottom left corner only */
+.blank-space::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 55%;
+    height: 80px; /* Set an explicit height for the corner */
+    border-left: 3px solid #1a242f;
+    border-bottom: 3px solid #1a242f;
+    z-index: 1;
+}

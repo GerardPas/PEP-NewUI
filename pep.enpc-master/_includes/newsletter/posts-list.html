@@ -1,0 +1,58 @@
+<section id="portfolio" class="bg-light-gray">
+    <div class="container" style="max-width: 1000px; margin: auto;">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading" style="padding-bottom: 20px; line-height: 1.1">Notre dernière newsletter</h2>
+            </div>
+            <div class="col-sm-12" style="align-content: center">
+                <div id="content" style="margin-right: 10px; margin-left: 10px; align-content: center">
+                    <div style="width: 100% !important;">
+                        {% include newsletter/newsletter.html %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div class="row">
+            <div class="embed-responsive-item" style="width: auto">
+                { include newsletter/newsletter_may.html %}
+
+
+                <!--
+                <div>
+
+                    <iframe id="my newsletter" src="/img/newsletter/newsletter_may.html" frameborder="0"
+                            style="position:relative;top:0;left:0;width:100%;height:100%;"></iframe>
+                    <script type="text/javascript">
+                        function getDocHeight(doc) {
+                            doc = doc || document;
+                            // stackoverflow.com/questions/1145850/
+                            var body = doc.body, html = doc.documentElement;
+                            var height = Math.max( body.scrollHeight, body.offsetHeight,
+                                html.clientHeight, html.scrollHeight, html.offsetHeight );
+                            return height;
+                        }
+
+                        function setIframeHeight(id) {
+                            var ifrm = document.getElementById(id);
+                            var doc = ifrm.contentDocument? ifrm.contentDocument:
+                                ifrm.contentWindow.document;
+                            ifrm.style.visibility = 'hidden';
+                            ifrm.style.height = "10px"; // reset to minimal height ...
+                            // IE opt. for bing/msn needs a bit added or scrollbar appears
+                            ifrm.style.height = getDocHeight( doc ) + 4 + "px";
+                            ifrm.style.visibility = 'visible';
+                        }
+
+                        document.getElementById('my newsletter').onload = function() { // Adjust the Id accordingly
+                            setIframeHeight(this.id);
+                        }
+                    </script>
+                </div>
+                -- >
+            </div>
+        </div>
+        -->
+    </div>
+</section>

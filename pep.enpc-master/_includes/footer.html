@@ -1,0 +1,29 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <span class="copyright">Copyright &copy; PEP {{ 'now' | date: "%Y" }}</span>
+            </div>
+            <div class="col-md-3">
+                <p class="pep-consent-links">
+                    <a href="{{ site.baseurl }}/contact/#mentions_legales">Mentions Légales</a>
+                    <a href="{{ site.baseurl }}/contact/#politique_de_cookies">Politique de cookies</a>
+                    <button type="button" class="pep-consent-reopen" hidden>Gérer mes cookies</button>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <ul class="list-inline social-buttons">
+                    {% for network in site.networks %}
+                    <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <p style="text-align: center; margin-top: 6px;">
+                    <a href="mailto:contact@junior-pep.fr">contact@junior-pep.fr</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

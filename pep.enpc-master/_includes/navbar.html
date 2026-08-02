@@ -1,0 +1,80 @@
+{% assign u = page.url %}
+<nav class="navbar navbar-default navbar-fixed-top pep-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="{{ site.baseurl }}/" class="pep-nav-brand" aria-label="Ponts Études Projets — accueil">
+                <img src="{{ site.baseurl }}/img/logo-header.png" width="212" height="50" alt="Ponts Études Projets"/>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#pep-nav-collapse" aria-expanded="false" aria-controls="pep-nav-collapse">
+                <span class="sr-only">Ouvrir le menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="pep-nav-collapse">
+            <ul class="nav navbar-nav navbar-right pep-nav-list">
+
+                <li class="pep-has-mega{% if u contains '/competences' or u contains '/services' or u contains '/mission' %} pep-current{% endif %}">
+                    <a href="{{ site.baseurl }}/competences/" class="pep-nav-link" aria-haspopup="true" aria-expanded="false">
+                        Nos services <span class="pep-caret" aria-hidden="true"></span>
+                    </a>
+
+                    <div class="pep-mega" role="group" aria-label="Nos services">
+                        <div class="pep-mega-grid">
+                            {% for service in site.data.services %}
+                            <div class="pep-mega-col">
+                                <a class="pep-mega-title" href="{{ site.baseurl }}{{ service.href }}">{{ service.title }}</a>
+                                <ul class="pep-mega-items">
+                                    {% for p in service.prestations %}
+                                    <li>{{ p }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="pep-mega-foot">
+                            <a href="{{ site.baseurl }}/mission/">Le déroulement d'une mission</a>
+                            <a href="{{ site.baseurl }}/competences/">Tous nos services</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="pep-has-drop{% if u contains '/presentation' or u contains '/equipe' or u contains '/partenaires' or u contains '/rapports' or u contains '/faq' %} pep-current{% endif %}">
+                    <a href="{{ site.baseurl }}/presentation/" class="pep-nav-link" aria-haspopup="true" aria-expanded="false">
+                        La Junior <span class="pep-caret" aria-hidden="true"></span>
+                    </a>
+                    <ul class="pep-drop">
+                        <li><a href="{{ site.baseurl }}/presentation/">Présentation</a></li>
+                        <li><a href="{{ site.baseurl }}/equipe/">Notre équipe</a></li>
+                        <li><a href="{{ site.baseurl }}/partenaires/">Nos partenaires</a></li>
+                        <li><a href="{{ site.baseurl }}/rapports/">Nos rapports</a></li>
+                        <li><a href="{{ site.baseurl }}/faq/">FAQ</a></li>
+                    </ul>
+                </li>
+
+                <li{% if u contains '/actualites' %} class="pep-current"{% endif %}>
+                    <a href="{{ site.baseurl }}/actualites/" class="pep-nav-link">Actualités</a>
+                </li>
+
+                <li{% if u contains '/contact' %} class="pep-current"{% endif %}>
+                    <a href="{{ site.baseurl }}/contact/" class="pep-nav-link">Contact</a>
+                </li>
+
+                <li class="pep-lang">
+                    <span class="pep-lang-on" aria-current="true">FR</span>
+                    <span class="pep-lang-sep" aria-hidden="true">/</span>
+                    <a href="{{ site.baseurl }}/en/" lang="en">EN</a>
+                </li>
+
+                <li class="pep-nav-cta-wrap">
+                    <a href="{{ site.baseurl }}/contact/" class="pep-nav-cta">Demander un devis</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% include nav-js.html %}

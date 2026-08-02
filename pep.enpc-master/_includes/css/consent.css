@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Liens légaux et contrôle de consentement du pied de page
+   Chargé après agency.css. Le bandeau lui-même est stylé par style_cookies.css.
+
+   « Gérer mes cookies » est un <button> et non un <a> : il n'a pas de
+   destination, il rouvre le bandeau. Il porte l'attribut `hidden` dans le HTML
+   et n'est révélé que par js/banniere-cookies.js — sans JavaScript il n'y a ni
+   bandeau ni conteneur GTM, donc rien à gérer, et un bouton inerte vaut moins
+   que pas de bouton.
+   ========================================================================== */
+
+.pep-consent-links {
+    margin-top: 6px;
+    text-align: center;
+}
+
+/* Trois libellés ne tiennent pas sur une ligne dans une colonne au quart de la
+   grille : ils sont empilés à toutes les largeurs plutôt que rompus au hasard.
+   Le filet est une boîte, pas un caractère — à cette taille un « · » n'aurait
+   aucun pixel pleinement couvert et ne pourrait pas atteindre un contraste
+   lisible. */
+.pep-consent-links a,
+.pep-consent-links button {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.pep-consent-links > * + * {
+    box-shadow: inset 0 1px 0 #e2e2e2;
+}
+
+/* Neutralise l'apparence native du bouton pour qu'il se lise comme ses voisins. */
+button.pep-consent-reopen {
+    border: 0;
+    text-align: center;
+    color: #{{ site.data.template.color.primary }};
+    background: none;
+    cursor: pointer;
+}
+
+button.pep-consent-reopen:hover,
+button.pep-consent-reopen:focus {
+    color: #{{ site.data.template.color.secondary-dark }};
+    text-decoration: underline;
+}
+
+button.pep-consent-reopen:focus-visible {
+    outline: 2px solid #{{ site.data.template.color.primary }};
+    outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Bandeau de consentement — corrections de lisibilité
+   -------------------------------------------------------------------------- */
+
+/* agency.css justifie tous les <p>. Dans une colonne de 300px cela ouvre des
+   rivières de blanc au milieu du texte. */
+.banniere-cookies .paragraphe {
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* Deux boutons de même poids : le refus doit être aussi accessible que
+   l'acceptation (lignes directrices CNIL du 17 septembre 2020). Ils partagent
+   déjà le style .bouton ; on ne fait ici que les aligner proprement. */
+.banniere-cookies .bouton + .bouton {
+    margin-left: 8px;
+}

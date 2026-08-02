@@ -1,0 +1,68 @@
+<div style="height: 30px;"></div>
+    {% for membre in site.equipe %}
+    <div class="row" style="margin-right: 10px; margin-left: 10px;">
+        <div style='max-width: 1000px; margin: 10px auto;'>
+            <section id="{{ competence.slug }}" style="padding-top: 10px; padding-bottom: 0px;">
+                <center>
+                    <table class="bg-light-gray" style="padding-bottom: 1px;">
+                        <tr>
+                            <td rowspan=2 width=30%>
+                                <div class="row" style="margin-right: 10px; margin-left: 10px;">
+                                    <div style='max-width: 1000px; margin: 10px auto;'>
+                                        <div style="width: 220px;
+                                        height: 220px;
+                                        clip-path: ellipse(50% 50%);
+                                        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                                                    url('{{ site.baseurl }}/img/equipe/{{ membre.img }}');
+                                        background-attachment: scroll;
+                                        background-position: center center;
+                                        background-repeat: none;
+                                        -webkit-background-size: cover;
+                                        -moz-background-size: cover;
+                                        background-size: cover;
+                                        -o-background-size: cover;
+                                        text-align: center;
+                                        line-height: 200px;
+                                        filter: brightness(1.4);">
+                            </div>
+                                    </div></div>
+                            </td>
+                            <td width=70%>
+                                <h5 align="center" style="font-size: 20px;">{{ membre.title }}</h5>
+                                <div style="font-size: 18px; text-align: center;">
+                                {{ membre.name }}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="row" style="margin-right: 10px; margin-left: 10px;">
+                                    <div style='max-width: 1000px; margin: 10px auto;'>
+                                        <ul class="list-inline social-buttons">
+                                            <li><a href="{{ membre.in }}"><center><i class="fa fa-linkedin"></i></center></a>
+                                            </li>
+                                        </ul>
+                                </div></div>
+                            </td>
+                            <td>
+                                <div class="row" style="margin-right: 10px; margin-left: 10px;">
+                                    <div style='max-width: 1000px; margin: 10px auto;'>
+                                        <ul class="list-inline social-buttons">
+                                            <li><a href="mailto:{{ membre.mail }}"><center><i class="fa fa-envelope"></i></center></a>
+                                            </li>
+                                        </ul>
+                                </div></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" colspan="3">
+                                <h7 class="team_description" style="min-width: 1000px;">
+                                    {{ membre.description }}
+                                </h7>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </section>
+        </div>
+    </div>
+    {% endfor %}
+<div style="height: 50px;"></div>

@@ -1,0 +1,32 @@
+<section class="pep-partners" id="partenaires">
+    <div class="container">
+        <!-- <details> plutôt qu'un bouton scripté : le repli, le clavier et le
+             retrait du contenu replié de l'ordre de tabulation sont natifs, et
+             le bloc reste utilisable sans JavaScript. -->
+        <details class="pep-partners-block">
+            <summary class="pep-partners-summary">
+                <h2 class="pep-partners-title">Nos partenaires</h2>
+                <span class="pep-partners-icon" aria-hidden="true"></span>
+            </summary>
+
+            <div class="pep-partners-panel">
+                <ul class="pep-partners-logos">
+                    {% for p in site.data.partenaires %}
+                    <li class="pep-partner">
+                        <a href="{{ p.url }}" target="_blank" rel="noopener">
+                            <img src="{{ site.baseurl }}/img/partenaires/{{ p.logo }}"
+                                 alt="{{ p.name }}" loading="lazy">
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <p class="pep-partners-foot">
+                    <a href="{{ site.baseurl }}/partenaires/" class="pep-link-arrow">
+                        Le détail de nos partenariats
+                    </a>
+                </p>
+            </div>
+        </details>
+    </div>
+</section>

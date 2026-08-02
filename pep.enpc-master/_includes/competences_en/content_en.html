@@ -1,0 +1,42 @@
+<div style="height: 30px;"></div>
+    {% for competence in site.competences %}
+        <div class="row" style="margin-right: 10px; margin-left: 10px;">
+            <div style='max-width: 1000px; margin: 10px auto;'>
+                <section id="{{ competence.slug }}" style="padding-top: 10px; padding-bottom: 0px;">
+                    <div class="bg-light-gray" style="padding-bottom: 1px;">
+                        <div 
+                            style=
+                                "height: 200px;
+                                background: linear-gradient(
+                                    rgba(0, 0, 0, 0.3), 
+                                    rgba(0, 0, 0, 0.3)
+                                ),url('{{ site.baseurl }}/img/competences/{{ competence.img }}');
+                                background-attachment: scroll;
+                                background-position: center center;
+                                background-repeat: none;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                background-size: cover;
+                                -o-background-size: cover;
+                                text-align: center;
+                                line-height: 200px;">
+                                <h2 class="section-heading" style="font-size: 30px; color: white; text-align: center; line-height: 200px;"><span style="vertical-align: middle; line-height: 30px; display: inline-block;">{{ competence.title_en }}</span></h2>
+                        </div>
+                        <div class="container" style="margin: 10px auto; max-width: 800px; margin-top: 20px; margin-bottom: 20px;">
+                            <div><p>{{ competence.description_en }}</p></div>
+                            <div id="description-{{ competence.slug }}" class="hidden-text">
+                                {% include competences_en/{{ competence.slug }}_en.html %}
+                                <div style="text-align: center;">
+                                    <a href="#{{ competence.slug }}_en" onclick="showtextonclick('description-{{ competence.slug }}', 'show-more-{{ competence.slug }}')"><i class="fas fa-chevron-up"></i></a>
+                                </div>
+                            </div>
+                            <div id="show-more-{{ competence.slug }}" style="display: block; text-align: center;">
+                                <a onclick="showtextonclick('show-more-{{ competence.slug }}', 'description-{{ competence.slug }}')"><i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div> 
+                    </div>
+                </section>
+            </div>
+        </div>
+    {% endfor %}
+<div style="height: 50px;"></div>

@@ -1,0 +1,532 @@
+/* ==========================================================================
+   Header / navigation — Ponts Études Projets
+   Loaded after agency.css so it wins on the shared .navbar-default selectors.
+   Uses only the existing tokens in _data/template.yml.
+   ========================================================================== */
+
+.pep-nav {
+    border: 0;
+    box-shadow: none;
+}
+
+.pep-nav .container {
+    position: relative;
+}
+
+/* ---------- Brand ---------- */
+
+.pep-nav-brand {
+    display: block;
+    float: left;
+    padding: 12px 0 12px 10px;
+    line-height: 0;
+}
+
+.pep-nav-brand img {
+    display: block;
+    width: 212px;
+    height: 50px;
+    transition: opacity .25s ease;
+}
+
+.pep-nav-brand:hover img,
+.pep-nav-brand:focus img {
+    opacity: .82;
+}
+
+.pep-nav-brand:focus-visible {
+    outline: 2px solid #{{ site.data.template.color.secondary }};
+    outline-offset: 3px;
+}
+
+/* ---------- Shared link treatment ---------- */
+
+.navbar-default .pep-nav-list > li > .pep-nav-link {
+    position: relative;
+    display: block;
+    padding: 14px 14px;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .09em;
+    color: #fff;
+    background: none;
+    transition: color .2s ease;
+}
+
+.navbar-default .pep-nav-list > li > .pep-nav-link:hover,
+.navbar-default .pep-nav-list > li > .pep-nav-link:focus,
+.navbar-default .pep-nav-list > li.pep-open > .pep-nav-link {
+    color: #{{ site.data.template.color.secondary }};
+    background: none;
+}
+
+.pep-nav-list a:focus-visible {
+    outline: 2px solid #{{ site.data.template.color.secondary }};
+    outline-offset: -2px;
+}
+
+/* Current-section marker: a rule under the label, not a filled pill. */
+.navbar-default .pep-nav-list > li > .pep-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 6px;
+    height: 2px;
+    background-color: #{{ site.data.template.color.secondary }};
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .32s cubic-bezier(.16, 1, .3, 1);
+}
+
+.navbar-default .pep-nav-list > li.pep-current > .pep-nav-link::after {
+    transform: scaleX(1);
+}
+
+.pep-caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: 2px;
+    border-top: 4px solid currentColor;
+    border-right: 3.5px solid transparent;
+    border-left: 3.5px solid transparent;
+    opacity: .7;
+}
+
+/* ---------- Language switch ---------- */
+
+.pep-lang {
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+}
+
+.pep-lang-on {
+    color: #fff;
+}
+
+/* .38 mesurait 2,5:1 sur les en-têtes photo les plus clairs, .62 encore 4,1:1
+   à 768px. Une barre oblique de 12px n'a presque que des pixels lissés, il
+   faut donc .72 pour dégager 4,5:1 au pire cas. */
+.pep-lang-sep {
+    margin: 0 4px;
+    color: rgba(255, 255, 255, .72);
+}
+
+.navbar-default .pep-lang a {
+    display: inline;
+    padding: 0;
+    color: rgba(255, 255, 255, .62);
+    transition: color .2s ease;
+}
+
+.navbar-default .pep-lang a:hover,
+.navbar-default .pep-lang a:focus {
+    color: #{{ site.data.template.color.secondary }};
+    background: none;
+}
+
+/* ---------- Quote CTA ---------- */
+
+.navbar-default .pep-nav-cta {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 1px solid #{{ site.data.template.color.primary }};
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: #fff;
+    background-color: #{{ site.data.template.color.primary }};
+    transition: background-color .22s ease, border-color .22s ease, color .22s ease;
+}
+
+.navbar-default .pep-nav-cta:hover,
+.navbar-default .pep-nav-cta:focus {
+    border-color: #{{ site.data.template.color.secondary }};
+    color: #{{ site.data.template.color.primary }};
+    background-color: #{{ site.data.template.color.secondary }};
+}
+
+/* ==========================================================================
+   Desktop
+   ========================================================================== */
+
+@media (min-width: 768px) {
+
+    /* The bar keeps a constant height and signals the scroll with the surface
+       and the mark instead, so nothing here animates a layout property. */
+    .pep-nav.navbar-default {
+        padding: 10px 0;
+        background-color: transparent;
+        background-image: linear-gradient(to bottom, rgba(8, 10, 16, .55), rgba(8, 10, 16, 0));
+        transition: background-color .32s ease, box-shadow .32s ease;
+    }
+
+    .pep-nav.navbar-default.navbar-shrink {
+        background-color: #222;
+        background-image: none;
+        box-shadow: 0 8px 26px -12px rgba(0, 0, 0, .55);
+    }
+
+    .pep-nav-brand {
+        padding: 8px 0 8px 10px;
+    }
+
+    .pep-nav-brand img {
+        transform-origin: left center;
+        transition: transform .34s cubic-bezier(.16, 1, .3, 1), opacity .25s ease;
+    }
+
+    .navbar-shrink .pep-nav-brand img {
+        transform: scale(.86);
+    }
+
+    .pep-nav-list {
+        display: flex;
+        align-items: center;
+    }
+
+    .pep-nav-list > li {
+        float: none;
+    }
+
+    .pep-lang {
+        margin: 0 6px 0 14px;
+        padding-left: 18px;
+        border-left: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .pep-nav-cta-wrap {
+        margin-left: 10px;
+    }
+
+    /* ---------- Simple dropdown ---------- */
+
+    .pep-drop {
+        position: absolute;
+        z-index: 1010;
+        top: 100%;
+        left: 0;
+        min-width: 216px;
+        margin: 0;
+        padding: 10px 0;
+        list-style: none;
+        border-radius: 0 0 3px 3px;
+        background-color: #222;
+        box-shadow: 0 22px 40px -18px rgba(0, 0, 0, .8);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity .24s ease, transform .32s cubic-bezier(.16, 1, .3, 1), visibility .24s;
+    }
+
+    /* Bootstrap ships `.nav > li { position: relative }` at specificity 0-1-1,
+       so these need two classes to win. */
+    .pep-nav .pep-has-drop {
+        position: relative;
+    }
+
+    .pep-open > .pep-drop {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .navbar-default .pep-drop > li > a {
+        display: block;
+        padding: 9px 22px;
+        text-transform: none;
+        font-family: {{ site.data.template.font.primary }};
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: .01em;
+        color: rgba(255, 255, 255, .78);
+        transition: color .18s ease, transform .24s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .navbar-default .pep-drop > li > a:hover,
+    .navbar-default .pep-drop > li > a:focus {
+        transform: translateX(5px);
+        color: #{{ site.data.template.color.secondary }};
+        background: none;
+    }
+
+    /* ---------- Mega panel ---------- */
+
+    /* Static so the panel below anchors to .pep-nav .container, not the <li>. */
+    .pep-nav .pep-has-mega {
+        position: static;
+    }
+
+    .pep-mega {
+        position: absolute;
+        z-index: 1010;
+        top: 100%;
+        /* Flush with the container box so the panel's content edge lines up
+           with the logo on the left and the quote button on the right. */
+        left: 0;
+        right: 0;
+        padding: 34px 25px 28px;
+        border-radius: 0 0 3px 3px;
+        background-color: #222;
+        box-shadow: 0 26px 50px -20px rgba(0, 0, 0, .8);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity .26s ease, transform .38s cubic-bezier(.16, 1, .3, 1), visibility .26s;
+    }
+
+    .pep-open > .pep-mega {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .pep-mega-grid {
+        display: flex;
+        gap: 34px;
+        text-align: left;
+    }
+
+    .pep-mega-col {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .navbar-default a.pep-mega-title {
+        display: block;
+        margin-bottom: 14px;
+        padding: 0 0 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, .14);
+        text-transform: uppercase;
+        font-family: {{ site.data.template.font.primary }};
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1.45;
+        letter-spacing: .06em;
+        color: #fff;
+        transition: color .18s ease, border-color .18s ease;
+    }
+
+    .navbar-default a.pep-mega-title:hover,
+    .navbar-default a.pep-mega-title:focus {
+        border-bottom-color: #{{ site.data.template.color.secondary }};
+        color: #{{ site.data.template.color.secondary }};
+        background: none;
+    }
+
+    .pep-mega-items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .pep-mega-items li {
+        margin-bottom: 7px;
+        font-family: {{ site.data.template.font.primary }};
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 0;
+        color: rgba(255, 255, 255, .66);
+        text-transform: none;
+    }
+
+    .pep-mega-foot {
+        display: flex;
+        gap: 32px;
+        margin-top: 26px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, .14);
+        text-align: left;
+    }
+
+    .navbar-default .pep-mega-foot a {
+        padding: 0;
+        text-transform: uppercase;
+        font-family: {{ site.data.template.font.primary }};
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: .08em;
+        color: #{{ site.data.template.color.secondary }};
+        transition: opacity .18s ease;
+    }
+
+    .navbar-default .pep-mega-foot a::before {
+        content: "→";
+        margin-right: 8px;
+        opacity: .75;
+    }
+
+    .navbar-default .pep-mega-foot a:hover,
+    .navbar-default .pep-mega-foot a:focus {
+        opacity: .72;
+        background: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-default .pep-nav-list > li > .pep-nav-link {
+        padding: 14px 9px;
+        font-size: 11.5px;
+        letter-spacing: .05em;
+    }
+
+    .navbar-default .pep-nav-list > li > .pep-nav-link::after {
+        left: 9px;
+        right: 9px;
+    }
+
+    .navbar-default .pep-nav-cta {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    .pep-nav-brand img {
+        width: 170px;
+        height: 40px;
+    }
+
+    .pep-mega-grid {
+        flex-wrap: wrap;
+        gap: 22px 28px;
+    }
+
+    .pep-mega-col {
+        flex: 0 0 calc(50% - 14px);
+    }
+}
+
+/* ==========================================================================
+   Mobile — one scrollable sheet, every level already open
+   ========================================================================== */
+
+@media (max-width: 767px) {
+
+    .pep-nav.navbar-default {
+        background-color: #222;
+    }
+
+    .pep-nav .navbar-toggle {
+        margin-top: 15px;
+        margin-right: 10px;
+        border-radius: 3px;
+    }
+
+    .pep-nav .navbar-collapse {
+        max-height: calc(100vh - 76px);
+        padding-bottom: 26px;
+        border-top: 1px solid rgba(255, 255, 255, .12);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Flex so the quote button can lead the sheet instead of being buried
+       under every nav group. */
+    .pep-nav-list {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .pep-nav-cta-wrap { order: -1; }
+    .pep-lang { order: 1; }
+
+    .navbar-default .pep-nav-list > li > .pep-nav-link {
+        padding: 15px 16px;
+        font-size: 14px;
+    }
+
+    .navbar-default .pep-nav-list > li > .pep-nav-link::after {
+        left: 16px;
+        right: auto;
+        bottom: 9px;
+        width: 26px;
+    }
+
+    .pep-caret {
+        display: none;
+    }
+
+    /* The prestation lists are too long for a phone sheet; the four service
+       names carry the structure and each one is still reachable. */
+    .pep-mega-items {
+        display: none;
+    }
+
+    .pep-mega,
+    .pep-drop {
+        margin: 0 0 8px;
+        padding: 2px 0 8px;
+        list-style: none;
+    }
+
+    .pep-mega-grid {
+        display: block;
+    }
+
+    .navbar-default a.pep-mega-title,
+    .navbar-default .pep-drop > li > a,
+    .navbar-default .pep-mega-foot a {
+        display: block;
+        padding: 11px 16px 11px 30px;
+        text-transform: none;
+        font-family: {{ site.data.template.font.primary }};
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0;
+        color: rgba(255, 255, 255, .72);
+    }
+
+    .navbar-default a.pep-mega-title:hover,
+    .navbar-default a.pep-mega-title:focus,
+    .navbar-default .pep-drop > li > a:hover,
+    .navbar-default .pep-drop > li > a:focus,
+    .navbar-default .pep-mega-foot a:hover,
+    .navbar-default .pep-mega-foot a:focus {
+        color: #{{ site.data.template.color.secondary }};
+        background-color: rgba(255, 255, 255, .05);
+    }
+
+    .pep-mega-foot {
+        margin-top: 6px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .navbar-default .pep-mega-foot a {
+        font-size: 13px;
+        color: #{{ site.data.template.color.secondary }};
+    }
+
+    .pep-lang {
+        padding: 18px 16px 8px;
+    }
+
+    .pep-nav-cta-wrap {
+        padding: 16px 16px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .navbar-default .pep-nav-cta {
+        display: block;
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pep-nav *,
+    .pep-nav *::after {
+        transition-duration: .01ms !important;
+    }
+}

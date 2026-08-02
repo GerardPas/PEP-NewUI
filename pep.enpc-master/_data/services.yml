@@ -1,0 +1,594 @@
+# Lignes de services orientées client — source unique pour le méga-menu,
+# la grille de la landing et les quatre pages /services/<slug>/.
+#
+# `prestations` reste court : c'est ce qui s'affiche au survol d'une carte et
+# dans le méga-menu. Le détail vit dans `capacites`, `departements` et `etudes`.
+# Les études et les chiffres proviennent des plaquettes 028 (assets/).
+
+- title: Transition écologique &amp; durable
+  title_plain: Transition écologique et durable
+  slug: transition-ecologique
+  img: vet.jpg
+  thumbnail: vet-thumbnail.jpg
+  alt: Chantier d'aménagement urbain
+  href: /services/transition-ecologique/
+  lead: >
+    Solutions urbaines, territoriales et de mobilité au service de la
+    transition écologique.
+  prestations:
+    - Faisabilité pour l'industrie et le génie civil
+    - Dimensionnement et calcul de structures
+    - Études thermiques
+    - Études bibliographiques
+    - Aménagement du territoire
+    - Conception et optimisation de processus
+  intro:
+    - >
+      L'École des Ponts, sous la tutelle du Ministère de la Transition écologique,
+      forme des étudiants sensibles aux enjeux climatiques et énergétiques. En
+      partenariat avec 12 laboratoires de recherche, elle développe des solutions
+      innovantes pour les villes durables, la mobilité et l'économie responsable.
+    - >
+      Vous êtes une collectivité, un aménageur, un promoteur immobilier, un
+      concessionnaire de réseau ou un opérateur de transport&nbsp;? Vous devez
+      transformer vos activités pour les adapter au changement climatique, en
+      limiter l'impact et répondre aux exigences de vos commanditaires&nbsp;?
+      Ponts Études Projets vous accompagne sur vos projets urbains, énergétiques,
+      d'eau et d'assainissement, d'écologie industrielle et de mobilité.
+  capacites:
+    - Analyser un contexte pour définir une stratégie urbaine ou territoriale
+    - Réaliser un benchmark ou une étude de marché
+    - Modéliser les impacts économiques et environnementaux de différentes options
+    - Bâtir un plan d'action, ses indicateurs et ses recommandations
+    - Mener des simulations et des études d'impact
+    - Conduire une consultation citoyenne ou une enquête de terrain
+    - Candidater à un appel à projet innovant
+  departements:
+    - name: Ville, Environnement et Transport (VET)
+      url: http://www.enpc.fr/ville-environnement-transport
+      text: >
+        Les élèves du département VET sont formés au contact des laboratoires de
+        recherche et des praticiens les plus réputés, et sont mis en situation de
+        commande réelle pour des institutions et think tanks de référence&nbsp;:
+        Ministère de la Transition écologique, Paris 2024, The Shift Project,
+        France Stratégie.
+  plaquettes:
+    - label: Plaquette Transition écologique
+      file: Plaquette_VET_028.pdf
+  etudes:
+    - client: Pour un cabinet de conseil en stratégie
+      title: Collecte et analyse de données
+      etudiants: 10 étudiants
+      duree: 5 semaines
+      besoin: >
+        Ce cabinet de conseil en stratégie de développement durable participe à un
+        appel d'offres d'assistance à maîtrise d'ouvrage relatif à l'étude du besoin
+        en avitaillement des professionnels de la logistique pour la métropole du
+        Grand Paris. Il fait appel à Ponts Études Projets pour une phase de collecte
+        et d'analyse de données auprès d'individus situés sur des zones logistiques
+        d'intérêt.
+      objet:
+        - Passation de questionnaires
+        - Analyse des résultats
+    - client: Pour un cabinet de conseil en stratégie
+      title: Optimisation territoriale
+      etudiants: 2 étudiants
+      duree: 7 semaines
+      besoin: >
+        Dans le cadre du même appel d'offres, le cabinet souhaite optimiser la
+        répartition des stations d'avitaillement sur le territoire en accord avec
+        les données de trafic. Ponts Études Projets développe un système permettant
+        d'analyser et de mettre à jour les connaissances sur les emplacements
+        actuels.
+      objet:
+        - Analyse des données existantes
+        - Développement du modèle d'optimisation du maillage géographique des stations
+    - client: Pour une métropole française
+      title: Développement du tri sélectif hors foyers
+      etudiants: 2 étudiants
+      duree: 16 semaines
+      besoin: >
+        Mise en place d'un plan d'action de gestion des déchets sur la place publique.
+      objet:
+        - >
+          État des lieux&nbsp;: analyse de la situation, rencontre des acteurs de la
+          propreté urbaine, regard critique d'ingénieur sur le matériel et les
+          procédés en place
+        - >
+          Benchmarking du déploiement du tri sélectif urbain — coût, faisabilité dans
+          le paysage social et urbain local, durabilité des solutions
+        - >
+          Plan d'action&nbsp;: justification des choix, recommandations de
+          communication et de sensibilisation, indicateurs de performance,
+          optimisation des ressources humaines et matérielles
+      apport: >
+        Un regard extérieur sur le plan de gestion des déchets, une proposition
+        personnalisée et argumentée, et des conseils sur l'optimisation des
+        ressources de la ville.
+      quote: >
+        Cette mission a été très enrichissante puisqu'elle m'a permis de découvrir
+        de façon concrète ce qu'est une mission de conseil — benchmarking, étude de
+        faisabilité, proposition technico-financière — au plus près des besoins d'un
+        acteur donné dans des domaines tels que l'aménagement et l'environnement.
+      quote_by: Julien Tramoni, VET 2023 en césure
+    - client: Pour une métropole française
+      title: Stratégie d'aménagement urbain
+      etudiants: 3 étudiants
+      duree: 8 semaines
+      besoin: >
+        Mise en place d'une stratégie de valorisation urbaine pour rendre la ville
+        plus attractive auprès d'une population et d'entreprises cibles.
+      apport: >
+        Un regard extérieur sur la ville et ses mécanismes, et une analyse poussée
+        de ses besoins d'aménagement grâce à l'expertise du département Ville
+        Environnement Transport.
+      quote: >
+        Les étudiants ont réalisé un travail efficace et ont proposé une vision
+        intéressante pour nos villes et nos territoires.
+      quote_by: Maire de la commune concernée
+    - client: Pour un cabinet de private equity
+      title: Modèle d'émission de CO₂
+      etudiants: 2 étudiants
+      duree: 6 semaines
+      besoin: >
+        Développer un modèle d'évaluation des émissions en temps réel pour déterminer
+        la quantité de CO₂ émise sur une portion d'autoroute située au Portugal.
+    - client: Pour un expert en solutions énergétiques
+      title: Aménagements énergétiquement plus responsables
+      etudiants: 3 étudiants
+      duree: 9 semaines
+      besoin: >
+        Mener une étude approfondie des différents procédés existants visant à
+        inciter les entreprises à réaliser des aménagements d'économie d'énergie.
+        Pays étudiés&nbsp;: Suède, Belgique, Allemagne, Angleterre, Portugal,
+        Pays-Bas et Suisse.
+    - client: Pour une région économique majeure
+      title: Consultation citoyenne
+      etudiants: 11 étudiants
+      duree: 5 semaines
+      besoin: >
+        Dans un contexte de révision du schéma directeur pour y inclure une dimension
+        environnementale, la région a fait appel à PEP pour mener une consultation
+        citoyenne.
+      objet:
+        - Assurer une présence pour informer sur le schéma directeur
+        - Recueillir de manière proactive les avis et retours des citoyens
+      apport: >
+        Le dynamisme des étudiants et leur connaissance du sujet ont facilité la
+        libération de la parole des populations interrogées.
+    - client: Pour un opérateur d'infrastructures de transport
+      title: Transit de camions en mer du Nord
+      besoin: >
+        Déterminer les indicateurs permettant d'estimer en temps réel le nombre de
+        camions empruntant la voie maritime en mer du Nord.
+
+- title: Transformation digitale
+  title_plain: Transformation digitale
+  slug: transformation-digitale
+  img: imi.jpg
+  thumbnail: imi-thumbnail.jpg
+  alt: Écran de code et de données
+  href: /services/transformation-digitale/
+  lead: >
+    IA, data et optimisation des flux au service de la performance de vos
+    processus.
+  prestations:
+    - Simulation et conception de produits
+    - Développement de logiciels et d'interfaces
+    - Conception et réalisation de sites internet
+    - Études de marché
+    - Bases de données (Excel, Access…)
+  intro:
+    - >
+      L'innovation guide notre engagement auprès des entreprises pour les
+      accompagner dans leur transformation digitale et industrielle. Grâce à
+      l'expertise des départements d'Ingénierie Mathématique et Informatique et de
+      Génie Industriel, nous mobilisons des compétences avancées en IA, Big Data,
+      Computer Vision et Supply Chain afin d'optimiser vos processus et d'améliorer
+      votre agilité.
+    - >
+      Un site web attrayant et fonctionnel comme un logiciel simple à prendre en
+      main changent la façon dont vous gérez vos problématiques. Nous intervenons
+      aussi bien sur la brique technique que sur l'organisation des flux qui
+      l'entoure.
+  capacites:
+    - Développement de logiciels et d'interfaces (Java, C++, Fortran…)
+    - Conception et réalisation de sites internet et d'applications mobiles
+    - Traitement d'image, computer vision et intelligence artificielle
+    - Réalisation et mise à jour de bases de données (Excel, Access…)
+    - Automatisation et refonte d'outils métier
+    - Conception ou optimisation de process, mapping de supply chain
+    - Benchmarks, simulations et études de marché
+    - Plans d'actions et évaluations
+  departements:
+    - name: Ingénierie Mathématique et Informatique (IMI)
+      url: http://www.enpc.fr/ingenierie-mathematique-et-informatique
+      text: >
+        Le cursus IMI est entièrement dédié à l'apprentissage de la programmation,
+        avec une formation d'excellence en mathématiques et statistiques. L'École
+        abrite par ailleurs l'un des meilleurs laboratoires d'informatique de
+        France, le laboratoire Imagine.
+    - name: Génie Industriel (GI)
+      url: http://www.enpc.fr/genie-industriel
+      text: >
+        Le département Génie Industriel forme des spécialistes de la supply chain,
+        de l'organisation des systèmes industriels et de l'innovation de rupture,
+        avec le soutien de la d.school, établissement de Design Thinking sponsorisé
+        par l'Université de Stanford.
+  plaquettes:
+    - label: Plaquette Informatique &amp; Data
+      file: Plaquette_IMI_028.pdf
+    - label: Plaquette Génie Industriel
+      file: Plaquette_GI_028.pdf
+  etudes:
+    - client: Pour un ministère français
+      title: Spécifications d'une plateforme de gestion et de stockage de données
+      etudiants: 2 étudiants
+      duree: 10 semaines
+      besoin: >
+        Le Service du Haut Fonctionnaire de Défense et de Sécurité abrite un centre
+        de veille et d'alerte qui reçoit et traite quotidiennement une grande
+        quantité de données, également traitées en parallèle par d'autres directions
+        générales. Le Ministère exprime un besoin de centralisation et de
+        rationalisation de la gestion de ces données.
+      objet:
+        - Dépôt et stockage des données de façon sécurisée
+        - Traitement et tri des données
+        - Analyse et visualisation
+        - Réutilisation des données
+        - >
+          Flexibilité, réactivité et résilience de la plateforme, qui a notamment
+          pour vocation d'améliorer les processus de gestion de crise
+    - client: Pour la Mairie de Paris
+      title: Extraction de données à partir de scans de pièces d'identité
+      etudiants: 3 étudiants
+      duree: 17 semaines
+      besoin: >
+        Avec plus de 2 millions d'habitants, la Mairie de Paris reçoit une quantité
+        abondante de documents chaque année. La municipalité souhaite une alternative
+        au traitement manuel en faisant appel aux compétences des étudiants des Ponts
+        en reconnaissance et traitement de l'image.
+      objet:
+        - >
+          Développement d'un site web prototype, accessible sur poste fixe comme sur
+          smartphone, permettant de scanner une carte d'identité ou un passeport
+        - Affichage des informations utiles tirées du document scanné
+    - client: Pour un leader mondial des produits cosmétiques
+      title: Simplification du portefeuille de produits
+      etudiants: 2 étudiants
+      duree: 11 semaines
+      besoin: >
+        L'entreprise possède un portefeuille de 14 000 références en Europe, source
+        de coûts productifs et organisationnels et d'inertie. L'objectif est
+        d'améliorer trois facteurs&nbsp;: les coûts, la réactivité et la durabilité.
+      objet:
+        - >
+          Cartographier les impacts de la simplification du catalogue au sein de
+          l'usine et de ses processus
+        - >
+          Réaliser un outil d'évaluation exhaustive et chiffrée de ces impacts,
+          permettant d'évaluer en temps réel quelles références supprimer
+        - Apporter un regard nouveau sur le marché et des solutions personnalisées
+    - client: Pour un bureau d'études en ingénierie
+      title: Optimisation de l'assignation d'appels d'offres
+      etudiants: 2 étudiants
+      duree: 10 semaines
+      besoin: >
+        Le client fait de l'assistance à maîtrise d'ouvrage sur des projets
+        d'infrastructures et doit passer des appels d'offres de marchés de travaux.
+        Avec 95 chantiers en cours et 37 nouveaux, le traitement manuel des réponses
+        est lourd et chronophage.
+      objet:
+        - >
+          Développer un programme modélisant l'évaluation des offres comme un système
+          d'optimisation sous contrainte
+        - >
+          Obtenir la combinaison la moins chère d'entreprises capables de réaliser
+          les lots
+    - client: Pour une coopérative laitière
+      title: Intelligence artificielle et maintenance industrielle
+      etudiants: 2 étudiants
+      duree: 15 semaines
+      besoin: >
+        Les importants équipements industriels de l'entreprise nécessitent une
+        maintenance régulière et coûteuse. Le client souhaite un POC autour de
+        l'intelligence artificielle pour optimiser la fréquence des opérations de
+        maintenance, sa production et ses coûts.
+      objet:
+        - >
+          Donner une vision claire de ce que l'IA peut améliorer dans la gestion de
+          la maintenance industrielle
+        - >
+          Permettre une prise de décision sur l'opportunité de lancer un projet
+          débouchant sur un Proof of Concept
+    - client: Pour un leader des produits verriers
+      title: Mapping d'une supply chain
+      etudiants: 2 étudiants
+      duree: 6 semaines
+      besoin: >
+        Le client souhaite cartographier sa supply chain afin de connaître les
+        procédures business et la durée de chacune des étapes de la vie d'un produit,
+        entre la prise de commande et la livraison, en distinguant ses deux grandes
+        familles de produits.
+      objet:
+        - Mapping de la supply chain
+        - Document expliquant la lecture du mapping
+    - client: Pour un opérateur foncier public
+      title: Déploiement d'un logiciel de gestion de projets d'aménagement
+      etudiants: 2 étudiants
+      duree: 4 semaines
+      besoin: >
+        Intégrer Gesprojet, logiciel de gestion de projets d'aménagement, aux
+        processus internes du client.
+      objet:
+        - Intégrer les données existantes dans le logiciel
+        - >
+          Finaliser son déploiement en assurant son efficacité et sa bonne prise en
+          main par les utilisateurs
+    - client: Pour une banque privée
+      title: Mise à jour des systèmes informatiques
+      etudiants: 1 étudiant
+      duree: 4 semaines
+      besoin: >
+        La banque souhaite améliorer ses outils informatiques, actuellement très peu
+        automatisés.
+      objet:
+        - Automatiser le modèle de plan d'activité grâce à des macros et formules Excel
+        - Simplifier au maximum son utilisation
+    - client: Pour la chaire d'une grande école d'ingénieurs
+      title: Questionnaire miroir et analyse
+      etudiants: 2 étudiants
+      duree: 5 semaines
+      besoin: >
+        La chaire Supply Chain cherche à analyser la perception et les attentes des
+        étudiants autour des métiers de la supply chain, puis à confronter ces
+        résultats au vécu des professionnels des quatre partenaires industriels de la
+        chaire.
+      objet:
+        - Double questionnaire en ligne
+        - Synthèse des analyses des réponses
+
+- title: Stratégie &amp; Aide à la décision
+  title_plain: Stratégie et Aide à la décision
+  slug: strategie-decision
+  img: segf.jpg
+  thumbnail: segf-thumbnail.jpg
+  alt: Salle de marché
+  href: /services/strategie-decision/
+  lead: >
+    Économie, finance et analyse de données pour éclairer vos décisions.
+  prestations:
+    - Économétrie
+    - Élaboration de business plan
+    - Gestion et optimisation de ressources
+    - Traduction technique
+  intro:
+    - >
+      L'École forme depuis toujours des experts en finance, économie et management.
+      Reconnue notamment à travers la Paris School of Economics et Jean Tirole
+      (prix Nobel 2014), elle offre un savoir-faire réputé en business plan, études
+      de marché, conseil stratégique et analyse économique.
+    - >
+      Son ouverture internationale — 15 langues parlées et 40&nbsp;% d'élèves
+      étrangers — lui permet de proposer ses services, y compris la traduction
+      technique, dans de nombreuses langues.
+  capacites:
+    - Analyse de données et économétrie
+    - Étude de marché à haut niveau de technicité
+    - Élaboration de business plan
+    - Gestion et optimisation de ressources
+    - Benchmark et conseil en stratégie
+    - Collecte d'avis, enquêtes de terrain et cartographie territoriale
+    - Traduction technique dans plus de 15 langues
+  departements:
+    - name: Sciences Économiques, Gestion, Finance (SEGF)
+      url: http://www.enpc.fr/sciences-economiques-gestion-finance
+      text: >
+        Le département SEGF forme des ingénieurs-managers capables de combiner
+        sciences de l'ingénieur, économie et finance pour créer et gérer des projets
+        complexes&nbsp;: financement de projets, gestion des risques, économie et
+        économétrie au sein d'institutions publiques, de centres de recherche et de
+        directions stratégiques.
+    - name: Langues et Cultures
+      url: http://www.enpc.fr/langues-et-cultures
+      text: >
+        Chaque élève des Ponts suit au moins deux langues étrangères et passe un
+        semestre à l'étranger. Notre formation d'ingénieur garantit une bonne
+        compréhension des termes techniques et la fidélité de la traduction.
+  plaquettes:
+    - label: Plaquette Stratégie &amp; Aide à la décision
+      file: Plaquette_SEGF_028.pdf
+  etudes:
+    - client: Pour un établissement public territorial
+      title: Élaboration d'une stratégie et collecte d'avis
+      etudiants: 61 étudiants
+      duree: 32 semaines
+      besoin: >
+        Dans le cadre de son plan d'action, la collectivité souhaite créer des
+        réseaux publics d'eaux usées dans les rues qui n'en sont pas équipées, afin
+        de réduire les rejets dans la rivière avoisinante et de la dépolluer. Elle a
+        fait appel à PEP pour informer et mobiliser les habitants des rues cibles.
+      objet:
+        - >
+          Analyser la situation technique, environnementale et politique de
+          l'assainissement des eaux usées sur propriétés privées
+        - Élaborer une stratégie pertinente et un discours impactant pour la population
+        - Aller à la rencontre des habitants par questionnaires en porte-à-porte
+        - Synthétiser et analyser les avis recueillis
+    - client: Pour une collectivité urbaine intercommunale
+      title: Cartographie de l'offre commerciale
+      etudiants: 3 étudiants
+      duree: 8 semaines
+      besoin: >
+        La métropole souhaite cartographier son offre commerciale dans une optique de
+        développement.
+      objet:
+        - >
+          Réaliser une cartographie de l'offre existante mettant en avant les
+          typologies de commerces manquants
+        - >
+          Interagir avec les acteurs de la métropole — citoyens, petits commerces,
+          élus, présidents d'associations de commerçants
+        - >
+          Inventorier les mesures prises par 3 métropoles avancées sur la question de
+          l'offre commerciale
+    - client: Pour un concepteur de solutions d'énergies renouvelables
+      title: Benchmark et conseil en stratégie
+      etudiants: 3 étudiants
+      duree: 8 semaines
+      besoin: >
+        Dans un contexte de crise énergétique, l'entreprise propose des solutions
+        comme les éoliennes à ceux qui vivent dans des conditions climatiques
+        difficiles, pour favoriser l'indépendance en eau et en énergie de ces
+        régions. Le client souhaite un avis extérieur et un regard innovant sur sa
+        nouvelle éolienne.
+      objet:
+        - >
+          Mener une discussion sur les axes d'amélioration de l'éolienne avec les
+          experts de l'entreprise
+        - >
+          Présenter un rapport détaillé&nbsp;: fonctionnement, avantages et
+          inconvénients techniques, historique de développement, axes d'amélioration
+          et solutions innovantes
+    - client: Pour un cabinet de conseil en infrastructure
+      title: Choix technologiques d'une plateforme web de tarification
+      etudiants: 1 étudiant
+      duree: 8 semaines
+      besoin: >
+        Le cabinet propose une aide à la tarification de l'électricité vendue sous
+        forme d'outil Excel, et souhaite la transformer en plateforme web. La
+        plateforme devant être développée par un prestataire externe, le cabinet doit
+        se renseigner sur les options technologiques disponibles.
+      objet:
+        - Rechercher les solutions technologiques adaptées au développement
+        - >
+          Étudier les avantages, inconvénients et étapes d'implémentation de chaque
+          solution
+
+- title: Génie Mécanique &amp; Construction
+  title_plain: Génie Mécanique et Construction
+  slug: genie-mecanique-construction
+  img: bridge-millau.jpg
+  thumbnail: bridge-millau-thumbnail.jpg
+  alt: Viaduc de Millau
+  href: /services/genie-mecanique-construction/
+  lead: >
+    L'excellence technique de l'École des Ponts au service de vos structures et
+    de vos procédés.
+  prestations:
+    - Faisabilité de projets
+    - Dimensionnement et calcul de structures
+    - Études thermiques
+    - Études de coûts-matières
+  intro:
+    - >
+      Les départements de Génie Civil &amp; Construction et de Génie Mécanique &amp;
+      Matériaux incarnent l'excellence technique de l'École des Ponts. Le premier
+      forme des experts en gestion de projet, organisation de chantier, conception et
+      innovation. Le second prépare des ingénieurs capables de maîtriser les outils
+      de la mécanique tout en intégrant les enjeux actuels.
+    - >
+      Ensemble, ils offrent les compétences clés pour accompagner la transformation
+      des infrastructures et des processus industriels — du calcul de structure à la
+      vérification normative, jusqu'à la fabrication et aux essais.
+  capacites:
+    - Faisabilité pour l'industrie et le génie civil
+    - 'Ingénierie&nbsp;: dimensionnement et calcul de structures'
+    - Études thermiques et simulations
+    - Études de coûts-matières
+    - Synthèse normative et rédaction de notices techniques
+    - Études bibliographiques et réglementaires
+    - Conception, fabrication et essais de calibration
+  departements:
+    - name: Génie Civil et Construction (GCC)
+      url: http://www.enpc.fr/genie-civil-et-construction
+      text: >
+        Pilier traditionnel de l'École des Ponts, le département forme les étudiants
+        à la gestion de projets, à l'organisation de chantiers, à la conception et au
+        développement de nouvelles techniques. Il entretient des liens étroits avec
+        trois laboratoires de recherche&nbsp;: le laboratoire Navier, l'IFSTTAR-UGE
+        et le laboratoire GSA de l'École d'Architecture de Paris-Malaquais.
+    - name: Génie Mécanique et Matériaux (GMM)
+      url: http://www.enpc.fr/genie-mecanique-et-materiaux
+      text: >
+        Le département ambitionne de former des ingénieurs-chercheurs et
+        ingénieurs-concepteurs capables de maîtriser les concepts et outils de la
+        mécanique, de mener à bien des projets, et conscients des défis de la
+        transition écologique et de la réindustrialisation.
+  plaquettes:
+    - label: Plaquette Génie civil &amp; mécanique
+      file: Plaquette_GCC_GMM_028.pdf
+  etudes:
+    - client: Pour un bureau d'études en ingénierie
+      title: Amélioration d'un outil d'aide à la simulation CFD
+      etudiants: 2 étudiants
+      duree: 5 semaines
+      besoin: >
+        FDS est un logiciel de simulation dynamique d'incendies. Le client souhaite
+        des notices et outils de formation afin que ses équipes puissent l'exploiter
+        de manière totalement indépendante, et former ensuite ses employés.
+      objet:
+        - >
+          Développer une version annotée et commentée de l'outil Grasshopper de
+          génération automatique de fichier FDS, traitant la décomposition en
+          maillages des intersections et des faces exposées pour des calculs Qarnot
+        - Élaborer les supports d'un atelier de formation traitant l'exemple d'un essai
+    - client: Pour une fédération sportive nationale
+      title: Dimensionnement d'un capteur de force
+      etudiants: 2 étudiants
+      duree: 8 semaines
+      besoin: >
+        Dans le cadre de l'amélioration de la préparation physique de ses athlètes,
+        le client a contacté PEP afin de concevoir une cible de frappe intégrant des
+        capteurs mesurant la force, la vitesse et la puissance des coups reçus.
+      objet:
+        - >
+          Analyser l'ordre de grandeur des forces en jeu et choisir les matériaux et
+          capteurs
+        - Effectuer les calculs de dimensionnement nécessaires
+        - Fabriquer le capteur et réaliser les essais de calibration
+    - client: Pour une startup innovante du BTP
+      title: Notice pour un projet d'échafaudage
+      etudiants: 1 étudiant
+      duree: 8 semaines
+      besoin: >
+        Le client propose une idée innovante de colonnes d'échafaudages rétractables.
+        Il souhaite une notice d'utilisation pour différents cas d'usage, une
+        représentation détaillée des éléments de la structure, une révision des
+        calculs mécaniques menés par un bureau d'études et une vérification du
+        respect des normes.
+      objet:
+        - Reprendre les calculs du bureau d'études avec une nouvelle aire d'échafaudage
+        - >
+          Conception informatique en «&nbsp;vue d'artiste&nbsp;» des divers éléments
+          d'ajout de l'échafaudage
+        - Conception de la notice
+    - client: Pour une entreprise de bâtiment
+      title: Recyclage et revalorisation des déchets du BTP
+      etudiants: 4 étudiants
+      duree: 9 semaines
+      besoin: >
+        Pour améliorer la gestion des déchets issus de son activité, le client
+        souhaite établir une infographie sur le recyclage et la revalorisation des
+        déchets du BTP.
+      objet:
+        - >
+          Rédaction d'une bibliographie détaillée sur la réglementation en vigueur,
+          les pratiques de chantier, les propositions d'entreprises et les limitations
+          liées aux assurances
+        - Rédaction de l'infographie et proposition des meilleures options au client
+    - client: Pour un spécialiste des aménagements métalliques
+      title: 'Étude de structure : plancher en verre'
+      etudiants: 1 étudiant
+      duree: 2 semaines
+      besoin: >
+        Le client souhaite réaliser un plancher en verre pour l'un de ses clients et a
+        besoin de connaître les normes en vigueur pour une telle structure.
+      objet:
+        - Synthétiser les normes Eurocodes applicables au dimensionnement
+        - >
+          Produire un document guide de référence, réutilisable par le client pour de
+          futurs projets
+        - >
+          Effectuer le dimensionnement du plancher selon les Eurocodes et les
+          matériaux utilisés par le client

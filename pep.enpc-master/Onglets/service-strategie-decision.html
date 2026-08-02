@@ -1,0 +1,12 @@
+---
+layout: default
+title: PEP - Stratégie et Aide à la décision
+description: "Économétrie, business plan, étude de marché à haut niveau de technicité et traduction technique : nos études pour éclairer vos décisions."
+permalink: /services/strategie-decision/
+service: strategie-decision
+---
+
+{% assign s = site.data.services | where: "slug", page.service | first %}
+{% include services/header.html service=s %}
+{% include services/content.html service=s %}
+{% include home/contact.html %}

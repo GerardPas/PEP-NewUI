@@ -1,0 +1,33 @@
+<div class="container">
+    <div id="contact-form" class="container">
+        <div id=”intro" class="intro-form-container">
+            You can contact us through our <a href="mailto:contact@junior-pep.fr">email adress</a> or by completing the following form:
+            <br><br>
+        </div>
+        <form id=”contact_form_data”>
+            <label for="entry.1951718622">Company*</label>
+            <input type="text" id="entreprise" name="entry.1951718622" placeholder="Your company...">
+            <label for="entry.396007678">First Name and surname*</label>
+            <input type="text" id="name" name="entry.396007678" placeholder="Your name and surname...">
+            <label for="entry.1332571731">Email*</label>
+            <input type="text" id="email" name="entry.1332571731" placeholder="Your email adress...">
+            <label for="entry.216023587">Phone number (optional)</label>
+            <input type="text" id="phone-number" name="entry.216023587" placeholder="Your phone number...">
+            <label for="entry.383904697">Your need*</label>
+            <textarea id="subject" name="entry.383904697" placeholder="Your message to the team..." style="height:200px"></textarea>
+            <label for="entry.1699257137">How have you heard about us ?*</label>
+            <select id="source-connaissance" name="entry.1699257137" placeholder="Your answer...">
+                <option value="">--Your answer--</option>
+                <option value="I am an alumnus from ENPC">I am an alumnus from ENPC</option>
+                <option value="I am a PEP alumnus">I am a PEP alumnus</option>
+                <option value="The school's renown">The school's renown</option>
+                <option value="We have already worked together">We have already worked together</option>
+                <option value="Personal or professional recommendation">Personal or professional recommendation</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="button" class="page-scroll btn btn-xl not-active-button" style="font-size: 1em; margin: 0px; padding: 10px; text-align: center;" value="Send the request" onclick="handleSubmitForm(this.form)"></input>
+            <div id="form-error"><p>Error - some fields are empty</p></div>
+            <div id="form-success"><p>Thank you - Your request will be considered as soon as possible</p></div>
+        </form>
+    </div>
+</div>
