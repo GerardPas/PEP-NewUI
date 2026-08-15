@@ -274,16 +274,12 @@
     }
 
     /* Les deux dernières entrées sont des raccourcis transversaux, pas des
-       domaines : un filet les détache de la liste. */
+       domaines : un filet les détache de la liste. Leur traitement bleu et
+       fléché est commun aux deux largeurs, plus bas dans ce fichier. */
     .pep-drop-sep {
         margin-top: 9px;
         padding-top: 9px;
         border-top: 1px solid rgba(255, 255, 255, .14);
-    }
-
-    .navbar-default .pep-drop > .pep-drop-sep > a,
-    .navbar-default .pep-drop > .pep-drop-sep ~ li > a {
-        color: #{{ site.data.template.color.secondary }};
     }
 }
 
@@ -403,11 +399,6 @@
         border-top: 1px solid rgba(255, 255, 255, .1);
     }
 
-    .navbar-default .pep-drop > .pep-drop-sep > a,
-    .navbar-default .pep-drop > .pep-drop-sep ~ li > a {
-        color: #{{ site.data.template.color.secondary }};
-    }
-
     .pep-lang {
         padding: 18px 16px 8px;
     }
@@ -425,8 +416,54 @@
     }
 }
 
+/* ==========================================================================
+   Raccourcis transversaux du déroulant « Nos services »
+   ========================================================================== */
+
+/* « Tous nos services » et « Le déroulement d'une mission » ne nomment pas un
+   domaine : ce sont deux renvois vers des pages transversales. Le filet les
+   détachait déjà, mais le bleu clair seul se lisait comme un gris à côté du
+   blanc à 78 % des domaines. La flèche qui les précède — le même signe que les
+   liens de renvoi du reste du site (.pep-link-arrow) — et la graisse 600 lèvent
+   l'ambiguïté. Ces règles valent aux deux largeurs, d'où leur place hors des
+   deux blocs media ; elles passent devant `.pep-drop > li > a` par spécificité,
+   pas par ordre. */
+
+.navbar-default .pep-drop > .pep-drop-sep > a,
+.navbar-default .pep-drop > .pep-drop-sep ~ li > a {
+    font-weight: 600;
+    color: #{{ site.data.template.color.secondary-vivid }};
+}
+
+.pep-drop > .pep-drop-sep > a::before,
+.pep-drop > .pep-drop-sep ~ li > a::before {
+    content: "→";
+    display: inline-block;
+    margin-right: 9px;
+    font-weight: 400;
+    transition: transform .32s cubic-bezier(.16, 1, .3, 1);
+}
+
+/* Le survol des domaines décale le lien entier de 5px. Ici c'est la flèche qui
+   avance : cumuler les deux déplacerait la ligne de 9px. */
+.navbar-default .pep-drop > .pep-drop-sep > a:hover,
+.navbar-default .pep-drop > .pep-drop-sep > a:focus,
+.navbar-default .pep-drop > .pep-drop-sep ~ li > a:hover,
+.navbar-default .pep-drop > .pep-drop-sep ~ li > a:focus {
+    transform: none;
+    color: #{{ site.data.template.color.secondary-vivid }};
+}
+
+.pep-drop > .pep-drop-sep > a:hover::before,
+.pep-drop > .pep-drop-sep > a:focus::before,
+.pep-drop > .pep-drop-sep ~ li > a:hover::before,
+.pep-drop > .pep-drop-sep ~ li > a:focus::before {
+    transform: translateX(5px);
+}
+
 @media (prefers-reduced-motion: reduce) {
     .pep-nav *,
+    .pep-nav *::before,
     .pep-nav *::after {
         transition-duration: .01ms !important;
     }

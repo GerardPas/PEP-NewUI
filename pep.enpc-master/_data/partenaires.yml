@@ -1,14 +1,30 @@
 # Partenaires de PEP — source du bloc déroulant de la landing.
 # La page /partenaires/ porte le détail de chaque collaboration ; ici, le logo
 # et le lien seulement.
+#
+# `width` et `height` sont les dimensions en pixels du fichier source dans
+# img/partenaires/. Elles ne fixent pas la taille d'affichage — home.css s'en
+# charge — mais donnent au navigateur le rapport d'aspect avant le chargement,
+# ce qui évite que la rangée se réajuste sous le pied de page. À relever avec
+# `sips -g pixelWidth -g pixelHeight img/partenaires/<fichier>` quand un logo
+# change.
 - name: Sopra Steria
   logo: logo-soprasteria.png
   url: https://www.soprasteria.com
+  width: 1656
+  height: 222
 
 - name: Bain &amp; Company
   logo: logo-bain.png
   url: https://www.bain.com
+  width: 872
+  height: 97
 
+# Source basse définition : 200px de large pour un affichage jusqu'à 190px.
+# Le logo est à la bonne taille mais reste tendre sur écran à haute densité ;
+# un fichier d'origine plus grand le réglerait.
 - name: Caisse d'Épargne Île-de-France
   logo: logo-ceidf.png
   url: https://www.caisse-epargne.fr/ile-de-france/
+  width: 200
+  height: 42

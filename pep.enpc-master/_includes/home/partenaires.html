@@ -9,7 +9,8 @@
                     <a href="{{ p.url }}" target="_blank" rel="noopener">
                         {% capture logo %}img/partenaires/{{ p.logo }}{% endcapture %}
                         {% include responsive-image.html src=logo widths="428"
-                           sizes="214px" alt=p.name %}
+                           sizes="220px" alt=p.name
+                           width=p.width height=p.height %}
                     </a>
                 </li>
                 {% endfor %}
