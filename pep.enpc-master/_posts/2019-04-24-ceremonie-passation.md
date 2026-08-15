@@ -17,7 +17,7 @@ Celle-ci a rassemblé l’entièreté des 2 mandats, entrant et sortant, ainsi q
 Ce fut l’occasion pour le mandat entrant de discuter et d’échanger avec les anciens mandats de PEP, à propos de l’expérience qu’ils ont acquise en JE et qu’ils mettent à profit dans leur carrière professionnelle actuelle.
 <br>
 <br>
-![Trois mandats de trésoriers](/img/opt/img/posts/trois-mandats-treso-1000.jpg){:class="img-responsive img-centered"}
+![Trois mandats de trésoriers]({{ site.baseurl }}/img/opt/img/posts/trois-mandats-treso-1000.jpg){:class="img-responsive img-centered"}
 <div>
     <p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">
         Trois mandats de trésoriers
@@ -29,7 +29,7 @@ Un accroissement du chiffre d’affaires, un nombre d’études accru et le dév
 Ce fut aussi le moment pour l'ex-président de souhaiter bonne chance au nouveau mandat pour une réussite plus belle encore !
 <br>
 <div style="text-align: center; margin: 0 auto; max-width: 500px; margin-bottom: 7px; margin-top: 20px">
-    <img src="/img/opt/img/posts/discussion-alumni-1000.jpg" style="width: 100%;" alt="discussions avec alumni">
+    <img src="{{ site.baseurl }}/img/opt/img/posts/discussion-alumni-1000.jpg" style="width: 100%;" alt="discussions avec alumni">
 </div>
 <div><p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">En pleine discussion avec les alumni</p></div>
 <br>
@@ -37,7 +37,7 @@ Ensuite, le mandat ‘021 a aussi été mis à l’honneur à travers le discour
  Entre autres, il a pu faire mention d’une volonté commune d’entretenir des liens plus forts avec l’École et d’organiser des partenariats ciblés afin de renforcer PEP au sein de son environnement.
 <br>
 <div style="text-align: center; margin: 0 auto; max-width: 500px; margin-bottom: 7px; margin-top: 20px">
-    <img src="/img/opt/img/posts/mandat-021-1000.jpg" style="width: 100%;" alt="equipe 2019-2020">
+    <img src="{{ site.baseurl }}/img/opt/img/posts/mandat-021-1000.jpg" style="width: 100%;" alt="equipe 2019-2020">
 </div>
 <div><p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">Le nouveau mandat 2019-2020</p></div>
 

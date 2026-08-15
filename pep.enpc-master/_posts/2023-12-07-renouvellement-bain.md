@@ -22,7 +22,7 @@ Bain & Co, avec sa renommée mondiale et son expertise plurisectorielle, continu
 Nous avons par ailleurs eu l'occasion de rencontrer une partie de l'équipe du bureau de Paris dans leurs locaux. Cet événement a permis aux élèves de l’École des Ponts ParisTech de découvrir le conseil en stratégie, les différents domaines d'expertise de Bain & Co ainsi que le quotidien d'un consultant. Nous remercions chaleureusement Sandra Dubois pour l'organisation de cet évènement ainsi que toute l'équipe du bureau de Paris de Bain & Co pour leur accueil et le partage de leur expérience !
 
 <br>
-![Partenariat avec Bain & Company](/img/opt/img/posts/thumbnails/photo-bain-1000.jpg){:class="img-responsive img-centered"}
+![Partenariat avec Bain & Company]({{ site.baseurl }}/img/opt/img/posts/thumbnails/photo-bain-800.jpg){:class="img-responsive img-centered"}
 <div><p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)"> Rencontre avec Bain & Company </p></div>
 <br>
  

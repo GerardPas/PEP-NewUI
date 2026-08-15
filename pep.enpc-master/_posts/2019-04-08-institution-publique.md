@@ -18,7 +18,7 @@ Cette étude s’avère particulièrement intéressante, puisque pour la réalis
 <br>
 
 
-![École des Ponts ParisTech](/img/opt/img/posts/enpc-exterieur-1000.jpg){:class="img-responsive img-centered"}
+![École des Ponts ParisTech]({{ site.baseurl }}/img/opt/img/posts/enpc-exterieur-1000.jpg){:class="img-responsive img-centered"}
 <div>
     <p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">
         L'École des Ponts ParisTech
@@ -35,13 +35,13 @@ Le deuxième étudiant, Basile, en première année durant l’étude, a lui aus
 <br>
 
 <div style="margin-top: 30px; margin-bottom: 30px;">
-    <img src="/img/posts/tools/quote-mode.png" alt="begin quote" style="float: left;" width="10" height="10">
+    <img src="{{ site.baseurl }}/img/posts/tools/quote-mode.png" alt="begin quote" style="float: left;" width="10" height="10">
     <div style="text-align: center; margin-right: 20px;margin-left: 20px;">
         <p>
             <i>
                 L'objectif est de proposer une méthode de scan des pièces d’identité pour rentrer l’état civil de l’individu automatiquement.
             </i>
-            <img src="/img/posts/tools/reverse-quote-mode.png" alt="end quote" style="float: right; margin-top: 7px;" width="10" height="10">
+            <img src="{{ site.baseurl }}/img/posts/tools/reverse-quote-mode.png" alt="end quote" style="float: right; margin-top: 7px;" width="10" height="10">
         </p>
     </div>
 </div>
@@ -51,7 +51,7 @@ La mission qui nous a été confiée nécessitait un vaste travail. “Pour mene
 <br>
 
 <div style="text-align: center; margin: 0 auto; max-width: 500px; margin-bottom: 7px;">
-    <img src="/img/opt/img/posts/equipe-1000.jpg" style="width: 100%;" alt="equipe 2018-2019">
+    <img src="{{ site.baseurl }}/img/opt/img/posts/equipe-1000.jpg" style="width: 100%;" alt="equipe 2018-2019">
 </div>
 <div><p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">Le mandat 2018-2019 de Ponts Études Projets</p></div>
 

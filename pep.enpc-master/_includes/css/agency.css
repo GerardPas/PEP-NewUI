@@ -1024,16 +1024,29 @@ img::-moz-selection {
     background: 0 0;
 }
 
+{% comment %}
+Footer collant : il est en `position: absolute; bottom: 0` et sort donc du flux.
+Le `padding-bottom` du body est la seule chose qui lui reserve de la place, il
+doit donc valoir la hauteur reelle du footer PLUS la respiration voulue.
+
+Les anciennes valeurs (160px / 90px) etaient inferieures a cette hauteur
+(268px sous 992px, 151px au-dessus) : le footer remontait sur la fin de chaque
+page et recouvrait le dernier element — le bouton « Charte RSE » etait coupe en
+deux sur /faq/ et /presentation/.
+
+160px + 60px de respiration ci-dessous, a tenir a jour si le contenu du footer
+change de hauteur.
+{% endcomment %}
 body {
     webkit-tap-highlight-color: #{{ site.data.template.color.primary }};
     min-height: 100vh;
     position: relative;
-    padding-bottom: 160px;
+    padding-bottom: 330px;
 }
 
 @media(min-width:992px) {
     body {
-        padding-bottom: 90px;
+        padding-bottom: 210px;
     }
 }
 

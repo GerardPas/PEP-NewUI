@@ -15,7 +15,7 @@ En cette dure période de confinement, Ponts Études Projets se rappelle d’une
 
 Une grande entreprise de construction s’est tournée vers nous pour réaliser une étude qui consistait à réaliser une recherche bibliographique du potentiel mobilité de quatre agglomérations françaises : Le Mans Métropole, Tours Métropole Val de Loire, Orléans Métropole et Nantes Métropole. Les étudiants choisis dans les départements VET et GCC, Louis SUCHIER et Valentin POUSSARD, devaient d’abord rechercher et s’entretenir avec de nombreux organismes de ces intercommunalités avant d’en rédiger une synthèse complète et précise. Peu à peu, les élèves ont appris à devenir plus rapides et plus efficaces. En effet, pendant cette longue phase de travail qui s’est étalée du 13 décembre au 24 janvier, les étudiants ont pu prendre le temps de mieux appréhender le sujet et de se familiariser avec les méthodes à mettre en œuvre au cours de la réalisation de l’étude. Traitant chaque agglomération l’une après l’autre, cette étude a permis non seulement de faire évoluer les élèves dans leur manière de traiter le problème, mais aussi de leur faire découvrir les différentes mobilités entre plusieurs agglomérations distinctes.
 
-![Bus - Le Mans](/img/opt/img/posts/bus-1000.jpg){:class="img-responsive img-centered"}
+![Bus - Le Mans]({{ site.baseurl }}/img/opt/img/posts/bus-1000.jpg){:class="img-responsive img-centered"}
 <div>
     <p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">
         Bus - Le Mans  
