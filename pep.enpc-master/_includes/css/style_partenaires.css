@@ -82,9 +82,17 @@
     align-items: center;
 }
 
+/* Emplacement en pixels plutôt que `max-width` + `height: auto` : la seconde
+   forme laissait la taille dépendre de la taille intrinsèque déduite du srcset,
+   et le dérivé « logo-ceidf-428 » ne fait en réalité que 200px de large (voir
+   la note de .pep-partner img dans home.css). Le logo Caisse d'Épargne sortait
+   à 93px de large quand ses voisins en faisaient 200. `object-fit: contain`
+   inscrit chaque logo dans l'emplacement sans toucher au rapport d'aspect. */
 .partenaire-logo img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    max-width: 200px;
+    height: 56px;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 

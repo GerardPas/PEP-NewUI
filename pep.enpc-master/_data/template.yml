@@ -12,6 +12,9 @@ color:
   primary-dark: 16273b   # Aplats sombres : nav réduite, menus déroulants, boutons sociaux
   primary-deep: 0b141e   # Voiles posés sur les photographies
   secondary: 97b5d8      # Accent clair, sur fond sombre — 7,2:1 sur primary-dark
+  secondary-vivid: 70a9eb # Même teinte, saturée : se lit bleu et non gris quand
+                          # il faut distinguer deux niveaux de texte clair sur
+                          # un même aplat sombre — 6,2:1 sur primary-dark
   accent: 3a679c         # Accent lisible, sur fond clair — 5,8:1 sur blanc
   secondary-dark: 2a3847 # Texte courant — 12,0:1 sur blanc
   muted: 5d6e82          # Texte secondaire — 5,2:1 sur blanc

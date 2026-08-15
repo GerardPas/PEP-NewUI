@@ -1056,22 +1056,14 @@ h2.pep-partners-title {
     list-style: none;
 }
 
-/* Les trois logos vont de 4,8:1 à 9:1 de rapport d'aspect. Sans emplacement de
-   taille fixe, les deux wordmarks larges mangent la rangée et le troisième
-   passe à la ligne. Chaque logo est donc contraint en largeur ET en hauteur,
-   ce qui égalise le poids optique. */
 .pep-partner {
     flex: 0 0 auto;
-    width: 172px;
-    height: 54px;
 }
 
 .pep-partner a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
     line-height: 0;
 }
 
@@ -1082,12 +1074,30 @@ h2.pep-partners-title {
 
 /* Logos à leur couleur de marque. Le survol ne peut donc plus se signaler par
    la couleur qui revient : c'est un léger agrandissement qui s'en charge, comme
-   sur la page /partenaires/. */
+   sur la page /partenaires/.
+
+   Chaque logo reçoit un emplacement en pixels — largeur ET hauteur — et c'est
+   `object-fit: contain` qui l'y inscrit. Ni la taille ni le rapport d'aspect ne
+   dépendent donc de l'image elle-même. Deux raisons :
+
+   1. Les trois logos vont de 4,8:1 à 9:1 de rapport d'aspect. Un emplacement
+      commun aligne les deux wordmarks d'une ligne sur la même largeur et laisse
+      le bloc-marque compact (Caisse d'Épargne) occuper toute la hauteur — le
+      rapport juste entre un bloc de deux lignes et un wordmark d'une ligne.
+   2. `max-width`/`max-height` seuls laissaient la taille dépendre de la taille
+      intrinsèque annoncée par le srcset. Or img/opt/ contient des dérivés plus
+      petits que la largeur inscrite dans leur nom : tools/build-images.py
+      n'agrandit jamais une source, mais responsive-image.html les déclare quand
+      même à la largeur demandée. Le logo Caisse d'Épargne, source de 200px
+      servie sous le nom « -428 », était ainsi rendu à 100x21px — moitié moins
+      que ses voisins.
+
+   À ne pas remplacer par une hauteur fixe et un `max-width` : une hauteur
+   explicite ne cède pas au plafond de largeur, et le logo s'écrase. */
 .pep-partner img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    width: 172px;
+    height: 32px;
+    object-fit: contain;
     transition: transform .25s ease;
 }
 
@@ -1106,9 +1116,9 @@ h2.pep-partners-title {
     h2.pep-partners-title { font-size: 24px; margin-bottom: 38px; }
     .pep-partners-logos { gap: 34px 64px; }
 
-    .pep-partner {
-        width: 214px;
-        height: 66px;
+    .pep-partner img {
+        width: 220px;
+        height: 40px;
     }
 }
 
