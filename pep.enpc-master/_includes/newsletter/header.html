@@ -3,9 +3,15 @@
     height: 300px;
     padding-top: 50px;
     background: linear-gradient(
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3)
-    ),url('/img/newsletter/images/printer.png');
+            rgba(11, 20, 30, 0.34),
+            rgba(11, 20, 30, 0.34)
+    ),url('{{ site.baseurl }}/img/opt/img/newsletter/images/printer-1920.png');
+    background-image: linear-gradient(
+            rgba(11, 20, 30, 0.34),
+            rgba(11, 20, 30, 0.34)
+    ), image-set(
+        url('{{ site.baseurl }}/img/opt/img/newsletter/images/printer-1920.webp') type('image/webp'),
+        url('{{ site.baseurl }}/img/opt/img/newsletter/images/printer-1920.png') type('image/png'));
     background-attachment: scroll;
     background-position: center center;
     background-repeat: no-repeat;

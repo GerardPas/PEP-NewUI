@@ -8,22 +8,47 @@
     {% endif %}
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    {%- comment -%}
+    Aucun <link rel="icon"> n'était déclaré : le navigateur retombait donc sur
+    /favicon.ico à la racine — un seul 256×222 en RGBA non compressé, soit 229 ko
+    téléchargés sur chaque page pour une icône d'onglet. Les fichiers ci-dessous
+    font 0,6 à 24 ko. L'ancien favicon.ico reste en place pour les robots qui
+    l'interrogent par convention.
+    {%- endcomment -%}
+    <link rel="icon" href="{{ '/img/opt/icons/favicon.ico' | prepend: site.baseurl }}" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/img/opt/icons/icon-32.png' | prepend: site.baseurl }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/img/opt/icons/icon-16.png' | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/opt/icons/apple-touch-icon-180.png' | prepend: site.baseurl }}">
+
     <link rel="stylesheet" href="{{ '/style.css' | prepend: site.baseurl }}">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!-- Custom Fonts -->
+
+    {%- comment -%}
+    Font Awesome 5 était chargé ici depuis use.fontawesome.com pour deux icônes
+    (les chevrons de /en/skills/), alors que la version 4.5 servie localement
+    plus bas les contient déjà. La requête externe partait sur chaque page, avant
+    tout consentement, à rebours du soin apporté au Consent Mode de gtm.html.
+    {%- endcomment -%}
+
+    {%- comment -%}
+    Polices servies depuis ce dépôt (css/fonts/files/). Elles étaient déclarées
+    localement mais chaque @font-face pointait sur fonts.gstatic.com.
+
+    Deux familles ont été retirées, faute d'usage : Lato n'était appelée nulle
+    part, et Kaushan Script ne servait qu'à `.navbar-brand`, une classe qu'aucune
+    page n'utilise depuis que la marque est une image (`.pep-nav-brand`).
+    {%- endcomment -%}
+    <!-- Polices -->
     <link href="{{ '/css/fonts/Montserrat.css' | prepend: site.baseurl }}" rel="stylesheet" type="text/css">
-    <link href="{{ '/css/fonts/KaushanScript.css' | prepend: site.baseurl }}" rel='stylesheet' type='text/css'>
-    <link href="{{ '/css/fonts/Lato.css' | prepend: site.baseurl }}" rel="stylesheet" type="text/css">
     <link href="{{ '/css/fonts/DroidSerif.css' | prepend: site.baseurl }}" rel='stylesheet' type='text/css'>
     <link href="{{ '/css/fonts/RobotoSlab.css' | prepend: site.baseurl }}" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/css/font-awesome/css/font-awesome.min.css' | prepend: site.baseurl }}" type="text/css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+    {%- comment -%}
+    Retirés ici : html5shiv et respond.js, tirés de oss.maxcdn.com dans un
+    commentaire conditionnel `[if lt IE 9]`. Aucun navigateur en service ne lit
+    plus ces commentaires, et l'hôte maxcdn n'existe plus depuis 2016.
+    {%- endcomment -%}
+
     <title>{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     {% seo title=false %}
     <meta property="og:website">

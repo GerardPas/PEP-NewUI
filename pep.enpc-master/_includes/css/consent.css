@@ -30,7 +30,7 @@
 }
 
 .pep-consent-links > * + * {
-    box-shadow: inset 0 1px 0 #e2e2e2;
+    box-shadow: inset 0 1px 0 #{{ site.data.template.color.line }};
 }
 
 /* Neutralise l'apparence native du bouton pour qu'il se lise comme ses voisins. */

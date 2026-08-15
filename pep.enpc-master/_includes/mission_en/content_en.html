@@ -10,7 +10,7 @@
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="../../mission/devis.jpg" alt="Rédaction d'un devis">
+                            {% include responsive-image.html src="mission/../../mission/devis.jpg" widths="340" sizes="170px" alt="Rédaction d'un devis" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -24,7 +24,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="../../mission/CE.jpg" alt="Proposition d'une offre">
+                            {% include responsive-image.html src="mission/../../mission/CE.jpg" widths="340" sizes="170px" alt="Proposition d'une offre" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -38,7 +38,7 @@
                     </li>
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="../../mission/recrutement.jpg" alt="Recrutement d'un étudiant">
+                            {% include responsive-image.html src="mission/../../mission/recrutement.jpg" widths="340" sizes="170px" alt="Recrutement d'un étudiant" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -52,7 +52,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="../../mission/suivi.jpg" alt="Suivi de l'étudiant">
+                            {% include responsive-image.html src="mission/../../mission/suivi.jpg" widths="340" sizes="170px" alt="Suivi de l'étudiant" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -66,7 +66,7 @@
                     </li>
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="../../mission/livrable.jpg" alt="Présentation des livrables">
+                            {% include responsive-image.html src="mission/../../mission/livrable.jpg" widths="340" sizes="170px" alt="Présentation des livrables" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -79,11 +79,11 @@
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image dark-grey-on-hover" onclick="location.href='{{ site.baseurl }}/en/contact/'">
+                        <a href="{{ site.baseurl }}/en/contact/" class="timeline-image dark-grey-on-hover">
                             <h4>Try
                             <br>the JE
                             <br>journey&nbsp;!</h4>
-                        </div>
+                        </a>
                     </li>
                 </ul>
             </div>

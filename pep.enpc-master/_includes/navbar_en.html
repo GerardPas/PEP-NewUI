@@ -3,7 +3,8 @@
     <div class="container">
         <div class="navbar-header">
             <a href="{{ site.baseurl }}/en/" class="pep-nav-brand" aria-label="Ponts Études Projets — home">
-                <img src="{{ site.baseurl }}/img/logo-header.png" width="212" height="50" alt="Ponts Études Projets"/>
+                <img src="{{ site.baseurl }}/img/opt/img/logo-header-424.png"
+                     width="212" height="50" alt="Ponts Études Projets" fetchpriority="high"/>
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#pep-nav-collapse" aria-expanded="false" aria-controls="pep-nav-collapse">
@@ -17,12 +18,22 @@
         <div class="collapse navbar-collapse" id="pep-nav-collapse">
             <ul class="nav navbar-nav navbar-right pep-nav-list">
 
-                <li{% if u contains '/en/skills' %} class="pep-current"{% endif %}>
-                    <a href="{{ site.baseurl }}/en/skills/" class="pep-nav-link">Our services</a>
-                </li>
-
-                <li{% if u contains '/en/mission' %} class="pep-current"{% endif %}>
-                    <a href="{{ site.baseurl }}/en/mission/" class="pep-nav-link">How it works</a>
+                {% comment %}
+                  Même structure que navbar.html : les quatre domaines de compétence,
+                  puis les deux raccourcis transversaux détachés par un filet. « How it
+                  works » rejoint le déroulant plutôt que d'occuper une entrée à lui.
+                {% endcomment %}
+                <li class="pep-has-drop{% if u contains '/en/skills' or u contains '/en/services' or u contains '/en/mission' %} pep-current{% endif %}">
+                    <a href="{{ site.baseurl }}/en/skills/" class="pep-nav-link" aria-haspopup="true" aria-expanded="false">
+                        Our services <span class="pep-caret" aria-hidden="true"></span>
+                    </a>
+                    <ul class="pep-drop pep-drop-wide">
+                        {% for service in site.data.services %}
+                        <li><a href="{{ site.baseurl }}/en/services/{{ service.slug }}/">{{ service.title_en }}</a></li>
+                        {% endfor %}
+                        <li class="pep-drop-sep"><a href="{{ site.baseurl }}/en/skills/">All our services</a></li>
+                        <li><a href="{{ site.baseurl }}/en/mission/">How an assignment runs</a></li>
+                    </ul>
                 </li>
 
                 <li{% if u contains '/en/team' %} class="pep-current"{% endif %}>

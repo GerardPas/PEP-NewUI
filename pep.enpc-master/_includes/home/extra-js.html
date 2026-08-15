@@ -1,4 +1,10 @@
-<script src="{{ "/js/jquery.numscroller-1.0.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/js/clients-carousel.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/js/slick-carousel-1.6.0.js" | prepend: site.baseurl }}""></script>
+{%- comment -%}
+slick doit être défini avant clients-carousel.js, qui l'appelle : l'ordre était
+inversé et seul le `$(document).ready` du carrousel sauvait la mise.
 
+jquery.numscroller n'est plus rechargé ici — js.html le charge désormais une
+seule fois, après jQuery et sans version concurrente qui vienne effacer son
+enregistrement.
+{%- endcomment -%}
+<script defer src="{{ "/js/slick-carousel-1.6.0.js" | prepend: site.baseurl }}"></script>
+<script defer src="{{ "/js/clients-carousel.js" | prepend: site.baseurl }}"></script>

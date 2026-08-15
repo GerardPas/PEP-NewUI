@@ -10,8 +10,10 @@
                 <a href="{{ site.baseurl }}{{ post.url }}" class="pep-news-link">
                     <span class="pep-news-media">
                         {% if post.thumbnail %}
-                        <img src="{{ site.baseurl }}/img/posts/thumbnails/{{ post.thumbnail }}"
-                             alt="" aria-hidden="true" loading="lazy">
+                        {% capture vignette %}img/posts/thumbnails/{{ post.thumbnail }}{% endcapture %}
+                        {% include responsive-image.html src=vignette widths="800,400"
+                           sizes="(min-width: 768px) calc(33vw - 30px), calc(100vw - 30px)"
+                           alt="" width="800" height="464" %}
                         {% endif %}
                     </span>
                     <time class="pep-news-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">

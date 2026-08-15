@@ -1,8 +1,9 @@
 /* ==========================================================================
    Landing page — Ponts Études Projets
    Loaded after agency.css. Composition and layout only: every colour and
-   type face below comes from _data/template.yml or the surfaces already in
-   agency.css (#fff, #f7f7f7, #222).
+   type face below comes from _data/template.yml — le blanc, `surface` pour
+   l'aplat clair alterné, `line` pour les filets, et le bleu de la charte pour
+   tout le reste.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -75,7 +76,7 @@
 }
 
 .pep-btn:focus-visible {
-    outline: 2px solid #{{ site.data.template.color.secondary }};
+    outline: 2px solid #{{ site.data.template.color.accent }};
     outline-offset: 3px;
 }
 
@@ -88,9 +89,9 @@
 
 .pep-btn-solid:hover,
 .pep-btn-solid:focus {
-    border-color: #{{ site.data.template.color.secondary }};
-    color: #{{ site.data.template.color.primary }};
-    background-color: #{{ site.data.template.color.secondary }};
+    border-color: #{{ site.data.template.color.accent }};
+    color: #fff;
+    background-color: #{{ site.data.template.color.accent }};
 }
 
 .pep-btn-ghost,
@@ -164,7 +165,10 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url('{{ site.baseurl }}/img/headers/home-bg.jpg');
+    background-image: url('{{ site.baseurl }}/img/opt/img/headers/home-bg-1920.jpg');
+    background-image: image-set(
+        url('{{ site.baseurl }}/img/opt/img/headers/home-bg-1920.webp') type('image/webp'),
+        url('{{ site.baseurl }}/img/opt/img/headers/home-bg-1920.jpg') type('image/jpeg'));
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -186,8 +190,8 @@
     bottom: 0;
     left: 0;
     background-image:
-        radial-gradient(ellipse 66% 46% at 50% 52%, rgba(10, 12, 20, .68) 0%, rgba(10, 12, 20, 0) 100%),
-        linear-gradient(180deg, rgba(10, 12, 20, .70) 0%, rgba(10, 12, 20, .46) 40%, rgba(10, 12, 20, .58) 72%, rgba(10, 12, 20, .86) 100%);
+        radial-gradient(ellipse 66% 46% at 50% 52%, rgba(11, 20, 30, .68) 0%, rgba(11, 20, 30, 0) 100%),
+        linear-gradient(180deg, rgba(11, 20, 30, .70) 0%, rgba(11, 20, 30, .46) 40%, rgba(11, 20, 30, .58) 72%, rgba(11, 20, 30, .86) 100%);
 }
 
 .pep-hero-inner {
@@ -237,7 +241,7 @@
     line-height: 1.04;
     letter-spacing: -.015em;
     color: #fff;
-    text-shadow: 0 2px 26px rgba(0, 0, 0, .35);
+    text-shadow: 0 2px 26px rgba(11, 20, 30, .35);
 }
 
 .pep-hero-lead {
@@ -316,7 +320,7 @@
 @media (max-width: 767px) {
     .pep-hero-scrim {
         background-image:
-            linear-gradient(180deg, rgba(10, 12, 20, .72) 0%, rgba(10, 12, 20, .80) 45%, rgba(10, 12, 20, .88) 100%);
+            linear-gradient(180deg, rgba(11, 20, 30, .72) 0%, rgba(11, 20, 30, .80) 45%, rgba(11, 20, 30, .88) 100%);
     }
 }
 
@@ -361,7 +365,7 @@
 }
 
 .pep-stat + .pep-stat {
-    box-shadow: inset 1px 0 0 #e6e6e6;
+    box-shadow: inset 1px 0 0 #{{ site.data.template.color.line }};
 }
 
 .pep-stat:nth-child(3) {
@@ -411,7 +415,7 @@
         gap: 0;
     }
 
-    .pep-stat:nth-child(3) { box-shadow: inset 1px 0 0 #e6e6e6; }
+    .pep-stat:nth-child(3) { box-shadow: inset 1px 0 0 #{{ site.data.template.color.line }}; }
     .pep-stat-num { font-size: 62px; }
 }
 
@@ -421,7 +425,7 @@
 
 .pep-about {
     padding: 78px 0;
-    background-color: #f7f7f7;
+    background-color: #{{ site.data.template.color.surface }};
 }
 
 .pep-about-grid {
@@ -486,7 +490,7 @@
         flex-direction: column;
         gap: 34px;
         padding-left: 44px;
-        border-left: 1px solid #e2e2e2;
+        border-left: 1px solid #{{ site.data.template.color.line }};
     }
 
     .pep-about-marks img { max-width: 160px; }
@@ -527,7 +531,7 @@
 }
 
 .pep-service:focus-visible {
-    outline: 2px solid #{{ site.data.template.color.secondary }};
+    outline: 2px solid #{{ site.data.template.color.accent }};
     outline-offset: 3px;
 }
 
@@ -549,7 +553,7 @@
     bottom: 0;
     left: 0;
     background-image:
-        linear-gradient(to top, rgba(9, 11, 18, .94) 0%, rgba(9, 11, 18, .78) 46%, rgba(9, 11, 18, .38) 100%);
+        linear-gradient(to top, rgba(11, 20, 30, .94) 0%, rgba(11, 20, 30, .78) 46%, rgba(11, 20, 30, .38) 100%);
     transition: opacity .45s ease;
 }
 
@@ -647,7 +651,7 @@
     .pep-service:focus-visible .pep-service-scrim {
         opacity: 1;
         background-image:
-            linear-gradient(to top, rgba(9, 11, 18, .96) 0%, rgba(9, 11, 18, .9) 55%, rgba(9, 11, 18, .66) 100%);
+            linear-gradient(to top, rgba(11, 20, 30, .96) 0%, rgba(11, 20, 30, .9) 55%, rgba(11, 20, 30, .66) 100%);
     }
 }
 
@@ -686,7 +690,7 @@
 
     .pep-service-scrim {
         background-image:
-            linear-gradient(to top, rgba(9, 11, 18, .95) 0%, rgba(9, 11, 18, .9) 60%, rgba(9, 11, 18, .82) 100%);
+            linear-gradient(to top, rgba(11, 20, 30, .95) 0%, rgba(11, 20, 30, .9) 60%, rgba(11, 20, 30, .82) 100%);
     }
 }
 
@@ -696,7 +700,7 @@
 
 .pep-process {
     padding: 78px 0;
-    background-color: #f7f7f7;
+    background-color: #{{ site.data.template.color.surface }};
 }
 
 .pep-steps {
@@ -725,7 +729,7 @@
     margin: 0 auto 20px;
     border-radius: 50%;
     background-color: #{{ site.data.template.color.primary }};
-    box-shadow: 0 0 0 6px #fff, 0 10px 24px -14px rgba(0, 0, 0, .55);
+    box-shadow: 0 0 0 6px #fff, 0 10px 24px -14px rgba(11, 20, 30, .55);
 }
 
 .pep-step-media img {
@@ -752,7 +756,7 @@
     font-weight: 700;
     color: #fff;
     background-color: #{{ site.data.template.color.primary }};
-    box-shadow: 0 0 0 3px #f7f7f7;
+    box-shadow: 0 0 0 3px #{{ site.data.template.color.surface }};
 }
 
 .pep-step-title {
@@ -807,7 +811,7 @@
         left: 10%;
         right: 10%;
         height: 1px;
-        background-color: #dcdcdc;
+        background-color: #{{ site.data.template.color.line-strong }};
     }
 }
 
@@ -879,7 +883,7 @@
 
 .pep-news {
     padding: 78px 0;
-    background-color: #f7f7f7;
+    background-color: #{{ site.data.template.color.surface }};
 }
 
 .pep-news-grid {
@@ -916,7 +920,7 @@
     padding-top: 58%;
     overflow: hidden;
     border-radius: 3px;
-    background-color: #e9e9e9;
+    background-color: #{{ site.data.template.color.line }};
 }
 
 .pep-news-media img {
@@ -1012,7 +1016,10 @@
 }
 
 /* --------------------------------------------------------------------------
-   8. Partenaires — bloc déroulant
+   8. Partenaires
+   Bande sourde entre les actualités et l'appel à l'action : les trois logos
+   sont visibles d'emblée, les filets haut et bas la posent sans lui donner le
+   poids d'une section pleine.
    -------------------------------------------------------------------------- */
 
 .pep-partners {
@@ -1021,31 +1028,14 @@
 }
 
 .pep-partners-block {
-    border-top: 1px solid #e6e6e6;
-    border-bottom: 1px solid #e6e6e6;
-}
-
-.pep-partners-summary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    padding: 30px 0;
-    cursor: pointer;
-    list-style: none;
-}
-
-/* Le triangle natif est remplacé par le chevron ci-dessous. */
-.pep-partners-summary::-webkit-details-marker { display: none; }
-.pep-partners-summary::marker { content: ""; }
-
-.pep-partners-summary:focus-visible {
-    outline: 2px solid #{{ site.data.template.color.primary }};
-    outline-offset: 4px;
+    padding: 44px 0 42px;
+    border-top: 1px solid #{{ site.data.template.color.line }};
+    border-bottom: 1px solid #{{ site.data.template.color.line }};
 }
 
 h2.pep-partners-title {
-    margin: 0;
+    margin: 0 0 30px;
+    text-align: center;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
     font-size: 20px;
@@ -1053,45 +1043,6 @@ h2.pep-partners-title {
     line-height: 1.2;
     letter-spacing: .015em;
     color: #{{ site.data.template.color.secondary-dark }};
-    transition: color .2s ease;
-}
-
-.pep-partners-summary:hover h2.pep-partners-title {
-    color: #{{ site.data.template.color.primary }};
-}
-
-/* Chevron dessiné en bordures : rien à charger, et il pivote à l'ouverture. */
-.pep-partners-icon {
-    display: block;
-    flex: 0 0 auto;
-    width: 10px;
-    height: 10px;
-    margin-top: -5px;
-    border-right: 2px solid #{{ site.data.template.color.primary }};
-    border-bottom: 2px solid #{{ site.data.template.color.primary }};
-    transform: rotate(45deg);
-    transform-origin: center;
-    transition: transform .32s cubic-bezier(.16, 1, .3, 1);
-}
-
-.pep-partners-block[open] .pep-partners-icon {
-    margin-top: 4px;
-    transform: rotate(225deg);
-}
-
-.pep-partners-panel {
-    padding-bottom: 40px;
-}
-
-.pep-partners-block[open] .pep-partners-panel {
-    animation: pep-partners-in .42s cubic-bezier(.16, 1, .3, 1);
-}
-
-@keyframes pep-partners-in {
-    from {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
 }
 
 .pep-partners-logos {
@@ -1129,20 +1080,20 @@ h2.pep-partners-title {
     outline-offset: 6px;
 }
 
+/* Logos à leur couleur de marque. Le survol ne peut donc plus se signaler par
+   la couleur qui revient : c'est un léger agrandissement qui s'en charge, comme
+   sur la page /partenaires/. */
 .pep-partner img {
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    opacity: .78;
-    filter: grayscale(1);
-    transition: opacity .25s ease, filter .25s ease;
+    transition: transform .25s ease;
 }
 
 .pep-partner a:hover img,
 .pep-partner a:focus-visible img {
-    opacity: 1;
-    filter: grayscale(0);
+    transform: scale(1.05);
 }
 
 .pep-partners-foot {
@@ -1151,9 +1102,8 @@ h2.pep-partners-title {
 }
 
 @media (min-width: 768px) {
-    .pep-partners-summary { padding: 38px 0; }
-    h2.pep-partners-title { font-size: 24px; }
-    .pep-partners-panel { padding-bottom: 54px; }
+    .pep-partners-block { padding: 58px 0 56px; }
+    h2.pep-partners-title { font-size: 24px; margin-bottom: 38px; }
     .pep-partners-logos { gap: 34px 64px; }
 
     .pep-partner {
@@ -1240,7 +1190,9 @@ section#contact .pep-cta-title {
         transition-duration: .01ms !important;
     }
 
-    .pep-partners-block[open] .pep-partners-panel {
-        animation: none;
+    /* Sans transition, l'agrandissement au survol serait un saut sec. */
+    .pep-partner a:hover img,
+    .pep-partner a:focus-visible img {
+        transform: none;
     }
 }

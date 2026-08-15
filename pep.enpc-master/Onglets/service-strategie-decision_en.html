@@ -1,0 +1,12 @@
+---
+layout: default_en
+title: PEP - Strategy and decision support
+description: "Econometrics, business plans, highly technical market studies and technical translation: our studies to inform your decisions."
+permalink: /en/services/strategie-decision/
+service: strategie-decision
+---
+
+{% assign s = site.data.services | where: "slug", page.service | first %}
+{% include services_en/header_en.html service=s %}
+{% include services_en/content_en.html service=s %}
+{% include home_en/contact_en.html %}

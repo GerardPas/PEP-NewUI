@@ -10,7 +10,7 @@
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="devis.jpg" alt="Rédaction d'un devis">
+                            {% include responsive-image.html src="mission/devis.jpg" widths="340" sizes="170px" alt="Rédaction d'un devis" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -24,11 +24,11 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="CE.jpg" alt="Proposition d'une offre">
+                            {% include responsive-image.html src="mission/CE.jpg" widths="340" sizes="170px" alt="Proposition d'une offre" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>Convention d'Etude</h4>
+                                <h4>Convention d'Étude</h4>
                                 <h4 class="subheading">Notre proposition</h4>
                             </div>
                             <div class="timeline-body">
@@ -38,7 +38,7 @@
                     </li>
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="recrutement.jpg" alt="Recrutement d'un étudiant">
+                            {% include responsive-image.html src="mission/recrutement.jpg" widths="340" sizes="170px" alt="Recrutement d'un étudiant" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -52,7 +52,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="suivi.jpg" alt="Suivi de l'étudiant">
+                            {% include responsive-image.html src="mission/suivi.jpg" widths="340" sizes="170px" alt="Suivi de l'étudiant" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -66,7 +66,7 @@
                     </li>
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="livrable.jpg" alt="Présentation des livrables">
+                            {% include responsive-image.html src="mission/livrable.jpg" widths="340" sizes="170px" alt="Présentation des livrables" class="img-circle img-responsive" %}
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -74,16 +74,16 @@
                                 <h4 class="subheading">En temps et en heure</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">Nous garantissons un rendu de livrable demandé avec une garantie de 90 jours</p>
+                                <p class="text-muted">Nous garantissons un rendu du livrable demandé avec une garantie de 90 jours</p>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image dark-grey-on-hover" onclick="location.href='{{ site.baseurl }}/contact/'">
+                        <a href="{{ site.baseurl }}/contact/" class="timeline-image dark-grey-on-hover">
                             <h4>Osez
                             <br>l'aventure
                             <br>JE&nbsp;!</h4>
-                        </div>
+                        </a>
                     </li>
                 </ul>
             </div>

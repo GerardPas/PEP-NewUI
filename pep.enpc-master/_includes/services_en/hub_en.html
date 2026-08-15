@@ -1,0 +1,57 @@
+{%- comment -%}
+Hub anglais, calqué sur services/hub.html. Réutilise .pep-hub-* de services.css :
+aucune règle nouvelle. La liste des prestations de la carte française est remplacée
+par les capacités, seul équivalent traduit dans _data/services.yml.
+{%- endcomment -%}
+<header class="subpages-header competences-header pep-svc-hub-header">
+    <div class="container">
+        <h1 class="intro-heading pep-svc-hub-title">Our services</h1>
+    </div>
+</header>
+
+<section class="pep-svc-hub">
+    <div class="container">
+        <div class="pep-section-head">
+            <p class="pep-svc-hub-say">
+                Four lines of work, carried by the departments of École des Ponts.
+                More than 20 studies a year, delivered by engineering students under
+                the supervision of our project managers.
+            </p>
+        </div>
+
+        <div class="pep-hub-grid">
+            {% for s in site.data.services %}
+            <article class="pep-hub-card">
+                <a class="pep-hub-media" href="{{ site.baseurl }}/en/services/{{ s.slug }}/" tabindex="-1" aria-hidden="true">
+                    {% include responsive-image.html
+                         src=s.img_src
+                         widths="1000,600"
+                         sizes="(min-width: 768px) calc(50vw - 30px), calc(100vw - 30px)"
+                         alt="" width="1000" height="665" %}
+                </a>
+
+                <div class="pep-hub-body">
+                    <h2 class="pep-hub-title">
+                        <a href="{{ site.baseurl }}/en/services/{{ s.slug }}/">{{ s.title_en }}</a>
+                    </h2>
+                    <p class="pep-hub-lead">{{ s.lead_en }}</p>
+
+                    <ul class="pep-hub-items">
+                        {% for c in s.capacites_en limit: 5 %}
+                        <li>{{ c }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <a class="pep-link-arrow" href="{{ site.baseurl }}/en/services/{{ s.slug }}/">
+                        See our references
+                    </a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        <p class="pep-svc-hub-foot">
+            <a href="{{ site.baseurl }}/en/mission/" class="pep-link-arrow">How an assignment runs</a>
+        </p>
+    </div>
+</section>

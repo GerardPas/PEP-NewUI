@@ -15,9 +15,12 @@
                                     height: 220px;
                                     clip-path:ellipse(50% 50%);
                                     background: linear-gradient(
-                                    rgba(0, 0, 0, 0.3), 
-                                    rgba(0, 0, 0, 0.3)
-                                 ),url('{{ site.baseurl }}/img/equipe/{{ membre.img }}');
+                                    rgba(11, 20, 30, 0.34), 
+                                    rgba(11, 20, 30, 0.34)
+                                 ),url('{{ site.baseurl }}/img/opt/img/equipe/{{ membre.img | split: '.' | first }}-440.jpg');
+                                        background-image: linear-gradient(rgba(11, 20, 30, 0.34), rgba(11, 20, 30, 0.34)),
+                                            image-set(url('{{ site.baseurl }}/img/opt/img/equipe/{{ membre.img | split: '.' | first }}-440.webp') type('image/webp'),
+                                                      url('{{ site.baseurl }}/img/opt/img/equipe/{{ membre.img | split: '.' | first }}-440.jpg') type('image/jpeg'));
                                     background-attachment: scroll;
                                     background-position: center center;
                                     background-repeat: none;
@@ -58,9 +61,9 @@
                         </tr>
                         <tr>
                             <td valign="top" colspan="3">
-                                <h7 class="team_description" style="min-width: 1000px;">
+                                <p class="team_description">
                                     {{ membre.description_en }}
-                                </h7>
+                                </p>
                             </td>
                         </tr>
                     </table>

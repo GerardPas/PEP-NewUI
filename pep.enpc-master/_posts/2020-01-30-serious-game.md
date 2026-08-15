@@ -9,11 +9,11 @@ thumbnail: serious-game-thumbnail.png
 alt: Serious Game
 ---
 
-# Un *serious game* pour l'école des Ponts
+# Un *serious game* pour l'École des Ponts
 
 En ce début d’année 2020, Ponts Études Projets termine une nouvelle étude, cette fois-ci en cycle court. 
 En effet, c’est directement l’École des Ponts ParisTech qui a fait appel à PEP afin de réaliser une étude pour le 
-[département de Génie Mécanique des Matériaux (GMM)](https://www.enpc.fr/genie-mecanique-et-materiaux). 
+[département de Génie Mécanique et Matériaux (GMM)](https://www.enpc.fr/genie-mecanique-et-materiaux). 
 L’École souhaitait innover en modifiant sa manière d’enseigner certains cours de mécanique. 
 Ces cours, souvent très théoriques et fortement mathématisés, sont enseignés depuis des dizaines d’années à l’École des Ponts.
 Laurent MAGHDISSIAN (le responsable académique du département GMM) désirait conserver l’excellence des cours de mécanique tout en les rendant plus modernes.
@@ -26,7 +26,7 @@ Laurent MAGHDISSIAN (le responsable académique du département GMM) désirait c
         - Credits : 
         <a title="Cjp24 / CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)" 
         href="https://commons.wikimedia.org/wiki/File:Three_point_flexural_test.jpg">
-        Cpj24 / CC BY-SA
+        Cjp24 / CC BY-SA
         </a>
         </span>
     </p>
@@ -34,12 +34,12 @@ Laurent MAGHDISSIAN (le responsable académique du département GMM) désirait c
 <br>
 
 Le département s’était penché en 2019 sur la création d’un *serious game*. 
-Un *serious game* est un jeu ayant un but sérieux (informatif, pédagogique, communicatif, etc). 
+Un *serious game* est un jeu ayant un but sérieux (informatif, pédagogique, communicatif, etc.). 
 Ici, le département cherchait un moyen ludique pour appliquer les cours théoriques de mécanique. 
 L’idée est donc d’enseigner la théorie en cours avant de laisser les étudiants s’exercer, ou même de les évaluer, grâce au *serious game*. 
 
   Cette étude avait pour but de travailler sur la partie pédagogique du jeu. Le jeu s’articule en onze salles. 
-Le but de chacune d’entre elle est de sortir en résolvant différents problèmes scientifiques. 
+Le but de chacune d’entre elles est de sortir en résolvant différents problèmes scientifiques. 
 Pour concevoir le jeu, quatre élèves du département GMM (trois élèves de deuxième année et un élève en stage long) 
 ont dû tout d’abord imaginer les scenarii des salles, c’est-à-dire décrire précisément la manière dont les salles 
 étaient disposées et comment passer d’une salle à une autre.   

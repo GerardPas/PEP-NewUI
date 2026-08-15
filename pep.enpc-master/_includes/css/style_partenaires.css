@@ -26,7 +26,7 @@
     position: absolute;
     width: 50%;
     height: 50%;
-    border: 3px solid #1a242f;
+    border: 3px solid #{{ site.data.template.color.primary }};
     z-index: -1;
 }
 
@@ -58,8 +58,8 @@
 .partenaire-section.reverse-layout::after {
     top: 0;
     right: 0;
-    border-top: 3px solid #1a242f;
-    border-right: 3px solid #1a242f;
+    border-top: 3px solid #{{ site.data.template.color.primary }};
+    border-right: 3px solid #{{ site.data.template.color.primary }};
     z-index: -1;
 }
 
@@ -110,7 +110,7 @@
     left: 0;
     width: 55%;
     height: 80px; /* Set an explicit height for the corner */
-    border-left: 3px solid #1a242f;
-    border-bottom: 3px solid #1a242f;
+    border-left: 3px solid #{{ site.data.template.color.primary }};
+    border-bottom: 3px solid #{{ site.data.template.color.primary }};
     z-index: 1;
 }

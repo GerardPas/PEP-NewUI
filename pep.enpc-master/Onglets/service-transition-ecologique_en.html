@@ -1,0 +1,12 @@
+---
+layout: default_en
+title: PEP - Ecological and sustainable transition
+description: "Urban and territorial strategy, mobility, energy, sanitation: our studies for local authorities, developers and transport operators."
+permalink: /en/services/transition-ecologique/
+service: transition-ecologique
+---
+
+{% assign s = site.data.services | where: "slug", page.service | first %}
+{% include services_en/header_en.html service=s %}
+{% include services_en/content_en.html service=s %}
+{% include home_en/contact_en.html %}

@@ -1,0 +1,19 @@
+<section class="pep-partners" id="partners">
+    <div class="container">
+        <div class="pep-partners-block">
+            <h2 class="pep-partners-title">Our partners</h2>
+
+            <ul class="pep-partners-logos">
+                {% for p in site.data.partenaires %}
+                <li class="pep-partner">
+                    <a href="{{ p.url }}" target="_blank" rel="noopener">
+                        {% capture logo %}img/partenaires/{{ p.logo }}{% endcapture %}
+                        {% include responsive-image.html src=logo widths="428"
+                           sizes="214px" alt=p.name %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

@@ -6,19 +6,19 @@ alt: ENPC
 permalink: institution-publique/
 date: 2019-04-08
 lang: fr
-description: En 2017, Ponts Etudes Projets a pu s’investir dans une étude commanditée par une importante institution publique française. La mission avait pour objectif de proposer une méthode de scan des pièces d’identité qui permettrait de rentrer l’état civil de l’individu automatiquement dans une base de données, en utilisant un logiciel de reconnaissance de caractères.
+description: En 2017, Ponts Études Projets a pu s’investir dans une étude commanditée par une importante institution publique française. La mission avait pour objectif de proposer une méthode de scan des pièces d’identité qui permettrait de rentrer l’état civil de l’individu automatiquement dans une base de données, en utilisant un logiciel de reconnaissance de caractères.
 ---
 
 
 # Conception d'un programme de vision artificielle
 
-En 2017, Ponts Etudes Projets a pu s’investir dans une étude commanditée par une importante institution publique française. La mission avait pour objectif de proposer une méthode de scan des pièces d’identité qui permettrait de rentrer l’état civil de l’individu automatiquement dans une base de données, en utilisant un logiciel de reconnaissance de caractères.
+En 2017, Ponts Études Projets a pu s’investir dans une étude commanditée par une importante institution publique française. La mission avait pour objectif de proposer une méthode de scan des pièces d’identité qui permettrait de rentrer l’état civil de l’individu automatiquement dans une base de données, en utilisant un logiciel de reconnaissance de caractères.
 Cette étude s’avère particulièrement intéressante, puisque pour la réaliser, PEP est parti du besoin exprimé par le client pour construire pas à pas, de zéro, une solution innovante et efficiente qui répondrait aux besoins du commanditaire.
 <br>
 <br>
 
 
-![École des Ponts ParisTech](/img/posts/enpc-exterieur.jpg){:class="img-responsive img-centered"}
+![École des Ponts ParisTech](/img/opt/img/posts/enpc-exterieur-1000.jpg){:class="img-responsive img-centered"}
 <div>
     <p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">
         L'École des Ponts ParisTech
@@ -27,7 +27,7 @@ Cette étude s’avère particulièrement intéressante, puisque pour la réalis
 <br>
 
 
-L’étude demandée par le client a nécessité un bagage technique et des notions informatiques très poussés que les étudiants des Ponts ParisTech acquièrent tout au long de leur cursus.
+L’étude demandée par le client a nécessité un bagage technique et des notions informatiques très poussées que les étudiants des Ponts ParisTech acquièrent tout au long de leur cursus.
 Pour commencer, le premier contact avec le client a permis de cibler et d'appréhender son besoin afin de respecter au maximum les attentes qu'il pouvait avoir pour son projet pour rédiger un Cahier des Charges précis. Cette phase primordiale faite, le recrutement d'étudiants pouvait donc avoir lieu.
 
 Les 2 étudiants réalisateurs ont été choisis pour leur motivation et leur compétence approfondie dans le domaine Informatique. De plus, Louis, l’un des 2 étudiants, était issu du département « Ingénierie Mathématique et Informatique » (IMI), et cette étude lui a permis de mettre en pratique les notions qu’il étudiait au sein de son cursus.
@@ -46,12 +46,12 @@ Le deuxième étudiant, Basile, en première année durant l’étude, a lui aus
     </div>
 </div>
 
-La mission qui nous a été confiée nécessitait un vaste travail “Pour mener à bien cette mission, notre choix s’est porté vers Louis, d’une part, étudiant en filière Ingénierie Mathématiques et Informatique (IMI) et vers Basile d’autre part, étudiant en Première Année. Je voulais laisser sa chance à Basile qui était motivé et témoignait de son appétence pour le secteur Informatique.” se rappelle Claire Lin, la chef de Projet responsable du suivi de l’étude. Malgré cette charge de travail conséquente, le commanditaire pouvait compter sur la Chef de Projet, agissant en tant qu'intermédiaire entre les étudiants et le client, et qui lui dressait régulièrement l'état actuel de l'étude ainsi que son avancement.
+La mission qui nous a été confiée nécessitait un vaste travail. “Pour mener à bien cette mission, notre choix s’est porté vers Louis, d’une part, étudiant en filière Ingénierie Mathématique et Informatique (IMI) et vers Basile d’autre part, étudiant en Première Année. Je voulais laisser sa chance à Basile qui était motivé et témoignait de son appétence pour le secteur Informatique.” se rappelle Claire Lin, la chef de Projet responsable du suivi de l’étude. Malgré cette charge de travail conséquente, le commanditaire pouvait compter sur la Chef de Projet, agissant en tant qu'intermédiaire entre les étudiants et le client, et qui lui dressait régulièrement l'état actuel de l'étude ainsi que son avancement.
 
 <br>
 
 <div style="text-align: center; margin: 0 auto; max-width: 500px; margin-bottom: 7px;">
-    <img src="/img/posts/equipe.jpg" style="width: 100%;" alt="equipe 2018-2019">
+    <img src="/img/opt/img/posts/equipe-1000.jpg" style="width: 100%;" alt="equipe 2018-2019">
 </div>
 <div><p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">Le mandat 2018-2019 de Ponts Études Projets</p></div>
 

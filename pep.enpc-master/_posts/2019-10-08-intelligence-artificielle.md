@@ -4,14 +4,14 @@ layout: posts
 permalink: ia-maintenance/
 date: 2019-10-08
 lang: fr
-description: "Cette année, Ponts Études Projet (PEP) a effectué une étude pour une coopérative œuvrant dans le secteur agroalimentaire. L’entreprise avait besoin d’une vision claire des bénéfices que l’intelligence artificielle pourrait apporter à son secteur le plus coûteux : la maintenance."
+description: "Cette année, Ponts Études Projets (PEP) a effectué une étude pour une coopérative œuvrant dans le secteur agroalimentaire. L’entreprise avait besoin d’une vision claire des bénéfices que l’intelligence artificielle pourrait apporter à son secteur le plus coûteux : la maintenance."
 thumbnail: artificial-intelligence-thumbnail.jpg
 alt: Intelligence artificielle
 ---
 
 # L'intelligence artificielle dans la maintenance
 
-Cette année, Ponts Études Projet (PEP) a effectué une étude pour une coopérative œuvrant dans le secteur agroalimentaire. 
+Cette année, Ponts Études Projets (PEP) a effectué une étude pour une coopérative œuvrant dans le secteur agroalimentaire. 
 L’entreprise avait besoin d’une vision claire des bénéfices que l’intelligence artificielle pouvait apporter à l’amélioration de son poste de dépense le plus élevé : la maintenance. 
 La société a donc fait appel à PEP dans l’optique de prendre une décision éclairée quant à la réalisation d’un POC (Proof of Concept) au premier semestre 2020. 
 Cette étude s’inscrit tout à fait dans la formation mettant l’emphase sur l’industrie du futur reçue par les élèves du département Génie Industriel de l’école. 
@@ -22,10 +22,10 @@ La personne ayant contacté notre association nous explique son choix de faire a
     <div style="text-align: center; margin-right: 20px; margin-left: 20px;">
         <p>
             <i>
-                L’entreprise souhaite moderniser son approche de la maintenance et notamment rentrer de plein-pied dans le monde industriel 2.0. 
+                L’entreprise souhaite moderniser son approche de la maintenance et notamment rentrer de plain-pied dans le monde industriel 2.0. 
                 Nous souhaitions nous lancer directement dans un projet de mise en place. 
                 J’ai proposé d’avoir une première phase exploratoire pour définir les contours et les enjeux de l’IA appliquée à la maintenance prédictive. 
-                Pour se faire, et sur une étude d’ouverture d’esprit, j’ai pensé faire appel à une JE.
+                Pour ce faire, et sur une étude d’ouverture d’esprit, j’ai pensé faire appel à une JE.
                 J’étais convaincu que cette problématique de recherche des best practices était parfaitement adaptée à une JE.
             </i>
             <img src="/img/posts/tools/reverse-quote-mode.png" alt="end quote" style="float: right; margin-top: 7px;" width="10" height="10">
@@ -33,7 +33,7 @@ La personne ayant contacté notre association nous explique son choix de faire a
     </div>
 </div>
 
-![Maintenance](/img/posts/machinerie-chrome.jpg){:class="img-responsive img-centered"}
+![Maintenance](/img/opt/img/posts/machinerie-chrome-1000.jpg){:class="img-responsive img-centered"}
 <div>
     <p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">
         La maintenance, secteur clé de l'industrie

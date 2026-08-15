@@ -1,8 +1,62 @@
-{% capture srcset %}
-    {% for i in resized %}
-        /{{ i.path }} {{ i.width }}w,
-    {% endfor %}
-{% endcapture %}
-<div style="text-align: center; width: 100%;">
-    <img src="/{{ path }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }}" style="max-width: 100%">
-</div>
+{%- comment -%}
+Produit un <picture> WebP + repli, à partir des dérivés de img/opt/.
+
+L'ancienne version de ce fichier bouclait sur une variable `resized` fournie par
+un plugin de redimensionnement absent du projet : l'include ne rendait rien
+d'exploitable et n'était appelé nulle part.
+
+Les dérivés sont générés par tools/build-images.py, qui écrit
+img/opt/<sous-chemin de la source>/<nom>-<largeur>.<ext|webp>. Le chemin est donc
+déductible du chemin source, ce qui permet de tout construire ici sans avoir à
+tester l'existence d'un fichier — impossible en Liquid.
+
+Paramètres
+  src      chemin de la source depuis la racine du dépôt, ex. img/competences/vet.jpg
+  widths   largeurs disponibles, ex. "1600,1000,600" — doivent exister dans img/opt/
+  sizes    attribut `sizes`, ex. "(min-width: 768px) 50vw, 100vw"
+  alt      texte alternatif ; chaîne vide pour une image décorative
+  class    classe(s) posée(s) sur le <img>
+  width    largeur intrinsèque, en pixels — avec height, supprime le décalage de
+           mise en page au chargement
+  height   hauteur intrinsèque, en pixels
+  loading  "lazy" (défaut) ou "eager" pour une image visible d'emblée
+  fetchpriority  facultatif, "high" pour l'image principale d'une page
+
+Exemple
+  {% include responsive-image.html src="img/competences/vet.jpg"
+     widths="1600,1000,600" sizes="(min-width: 768px) 50vw, 100vw"
+     alt="" class="pep-service-img" width="1600" height="1063" %}
+{%- endcomment -%}
+
+{%- comment -%}
+`remove_first: "/"` retirerait le premier slash où qu'il soit, pas seulement en
+tête : « img/competences/vet.jpg » devenait « imgcompetences/vet.jpg ». D'où le
+test explicite sur le premier caractère.
+{%- endcomment -%}
+{%- assign source = include.src -%}
+{%- assign tete = source | slice: 0 -%}
+{%- if tete == "/" -%}{%- assign source = source | slice: 1, 4096 -%}{%- endif -%}
+{%- assign fichier = source | split: "/" | last -%}
+{%- assign morceaux = fichier | split: "." -%}
+{%- assign extension = morceaux | last -%}
+{%- assign base = fichier | remove: "." | remove: extension -%}
+{%- assign dossier = source | remove: fichier -%}
+{%- assign racine = "/img/opt/" | append: dossier | append: base -%}
+{%- assign largeurs = include.widths | default: "1000" | split: "," -%}
+{%- assign chargement = include.loading | default: "lazy" -%}
+
+{%- capture jeu_webp -%}
+{%- for l in largeurs -%}{% unless forloop.first %}, {% endunless %}{{ racine | prepend: site.baseurl }}-{{ l }}.webp {{ l }}w{%- endfor -%}
+{%- endcapture -%}
+{%- capture jeu_repli -%}
+{%- for l in largeurs -%}{% unless forloop.first %}, {% endunless %}{{ racine | prepend: site.baseurl }}-{{ l }}.{{ extension }} {{ l }}w{%- endfor -%}
+{%- endcapture -%}
+{%- assign plus_grande = largeurs | first -%}
+
+<picture>
+    <source type="image/webp" srcset="{{ jeu_webp }}"{% if include.sizes %} sizes="{{ include.sizes }}"{% endif %}>
+    <img src="{{ racine | prepend: site.baseurl }}-{{ plus_grande }}.{{ extension }}"
+         srcset="{{ jeu_repli }}"{% if include.sizes %} sizes="{{ include.sizes }}"{% endif %}
+         alt="{{ include.alt }}"{% if include.alt == "" %} aria-hidden="true"{% endif %}
+         {% if include.class %}class="{{ include.class }}" {% endif %}{% if include.width %}width="{{ include.width }}" {% endif %}{% if include.height %}height="{{ include.height }}" {% endif %}loading="{{ chargement }}"{% if include.fetchpriority %} fetchpriority="{{ include.fetchpriority }}"{% endif %} decoding="async">
+</picture>

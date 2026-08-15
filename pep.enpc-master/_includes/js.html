@@ -1,16 +1,36 @@
- <!-- jQuery Version 3.3.1 -->
-   <script src="{{ "/js/jquery-3.3.1.min.js" | prepend: site.baseurl }}"></script>
-   <script src="{{ "/js/jquery.numscroller-1.0.js" | prepend: site.baseurl }}"></script>
-   <script src="{{ "/js/jquery-1.11.0.js" | prepend: site.baseurl }}"></script>
+{%- comment -%}
+Ordre de chargement : jQuery, puis ses greffons, puis les scripts du thème.
 
-   <!-- Bootstrap Core JavaScript -->
-   <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+Tout est en `defer`. Cet include est placé en haut du <body> : sans `defer`, il
+bloquait l'affichage de la page entière derrière le téléchargement de six
+scripts. Les scripts différés s'exécutent dans l'ordre du document après
+l'analyse du HTML et AVANT DOMContentLoaded — les rappels `$(document).ready`
+et les gestionnaires `onclick` en ligne continuent donc de fonctionner.
 
-   <!-- Plugin JavaScript -->
-   <script src="{{ "/js/jquery.easing.min.js" | prepend: site.baseurl }}"></script>
-   <script src="{{ "/js/classie.js" | prepend: site.baseurl }}"></script>
-   <script src="{{ "/js/cbpAnimatedHeader.js" | prepend: site.baseurl }}"></script>
+Une seule version de jQuery. Il y en avait trois :
+  - la 3.3.1 locale ;
+  - la 1.11.0 locale, chargée deux lignes plus bas, qui la remplaçait — et avec
+    elle l'enregistrement de numscroller effectué entre les deux ;
+  - une 2.2.0 tirée de code.jquery.com après agency.js, qui écrasait `window.$`
+    une troisième fois sans qu'aucun greffon n'y soit enregistré.
+Aucun script du site ne dépend des deux dernières : slick 1.6.0 appelle sa
+propre méthode `unload()` et non celle retirée de jQuery 3, et le seul `.bind()`
+du thème est déprécié mais toujours fonctionnel (corrigé dans agency.js).
+{%- endcomment -%}
 
-   <!-- Custom Theme JavaScript -->
-   <script src="{{ "/js/agency.js" | prepend: site.baseurl }}"></script>
-   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<!-- jQuery -->
+<script defer src="{{ "/js/jquery-3.3.1.min.js" | prepend: site.baseurl }}"></script>
+
+<!-- Greffons jQuery -->
+<script defer src="{{ "/js/jquery.easing.min.js" | prepend: site.baseurl }}"></script>
+<script defer src="{{ "/js/jquery.numscroller-1.0.js" | prepend: site.baseurl }}"></script>
+
+<!-- Bootstrap -->
+<script defer src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+
+<!-- Contraction de la barre de navigation au défilement -->
+<script defer src="{{ "/js/classie.js" | prepend: site.baseurl }}"></script>
+<script defer src="{{ "/js/cbpAnimatedHeader.js" | prepend: site.baseurl }}"></script>
+
+<!-- Thème -->
+<script defer src="{{ "/js/agency.js" | prepend: site.baseurl }}"></script>

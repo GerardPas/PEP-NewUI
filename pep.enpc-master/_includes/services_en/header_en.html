@@ -1,0 +1,30 @@
+{% assign s = include.service %}
+
+<header class="pep-svc-hero">
+    {% include responsive-image.html
+         src=s.img_src
+         widths="1600,1000,600"
+         sizes="100vw"
+         alt="" class="pep-svc-hero-img" width="1600" height="1063"
+         loading="eager" fetchpriority="high" %}
+    <span class="pep-svc-hero-scrim" aria-hidden="true"></span>
+
+    <div class="container pep-svc-hero-inner">
+        <nav class="pep-svc-crumbs" aria-label="Breadcrumb">
+            <a href="{{ site.baseurl }}/en/skills/">Our services</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">{{ s.title_en }}</span>
+        </nav>
+
+        <h1 class="pep-svc-hero-title">{{ s.title_en }}</h1>
+        <p class="pep-svc-hero-lead">{{ s.lead_en }}</p>
+
+        <div class="pep-svc-hero-actions">
+            <a href="{{ site.baseurl }}/en/contact/" class="pep-btn pep-btn-solid">Request a quote</a>
+            {% for p in s.plaquettes limit: 1 %}
+            <a href="{{ site.baseurl }}/assets/{{ p.file }}" class="pep-btn pep-btn-ghost"
+               target="_blank" rel="noopener">Brochure (in French)</a>
+            {% endfor %}
+        </div>
+    </div>
+</header>

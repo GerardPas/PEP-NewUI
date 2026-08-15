@@ -1,9 +1,9 @@
-url: "bonjour"
+url: "https://junior-pep.fr"
 baseurl: 
 
 title: Ponts Études Projets | Junior-Entreprise des Ponts
 email: contact@junior-pep.fr
-description: La Junior-Entreprise de l'École des Ponts est experte en génie civil, informatique et finance. Pour un site web, une traduction ou une étude de marché, contactez nos Junior-Entrepreuneurs.
+description: La Junior-Entreprise de l'École des Ponts est experte en génie civil, informatique et finance. Pour un site web, une traduction ou une étude de marché, contactez nos Junior-Entrepreneurs.
 logo: /img/logo.png 
 lang: fr
 
@@ -27,10 +27,10 @@ author:
 
 twitter:
   username: pontsetudes
-  card: Ponts Etudes Projets
+  card: Ponts Études Projets
 
 social:
-  name: Ponts Etudes Projets
+  name: Ponts Études Projets
   links:
     - http://www.linkedin.com/company/ponts-etudes-projets/
     - https://www.instagram.com/ponts.etudes.projets/
@@ -43,8 +43,8 @@ plugins:
 networks:
   - title: linkedin
     url: http://www.linkedin.com/company/ponts-etudes-projets/
-  - title : instagram
-    url : https://www.instagram.com/ponts.etudes.projets/
+  - title: instagram
+    url: https://www.instagram.com/ponts.etudes.projets/
 
 address:
   - line: 6-8 boulevard Copernic
@@ -65,7 +65,7 @@ competences:
     thumbnail: imi-thumbnail.jpg
     img: imi.jpg
     alt: Mathématiques et Informatique
-    description: L’informatique est au cœur de la formation dispensée aux Ponts dès la première année, prolongée par un master en ingénierie mathématique et informatique. La formation généraliste de l’école permet en outre aux étudiants d’adopter une approche globale face à un problème informatique, et ainsi de réaliser vos projets les plus pointus. Notre Junior-Entreprise excelle dans la conception de sites webs et de programmes en tout genre, allant du domaine de la Vision Artificielle au Machine Learning.
+    description: L’informatique est au cœur de la formation dispensée aux Ponts dès la première année, prolongée par un master en ingénierie mathématique et informatique. La formation généraliste de l’école permet en outre aux étudiants d’adopter une approche globale face à un problème informatique, et ainsi de réaliser vos projets les plus pointus. Notre Junior-Entreprise excelle dans la conception de sites web et de programmes en tout genre, allant du domaine de la Vision Artificielle au Machine Learning.
     title_en: COMPUTER AND DATA SCIENCE
     description_en: Computer science is at the heart of the training provided at Les Ponts from the first year, extended by a master's degree in mathematical and computer engineering. The school's generalist training also enables students to adopt a global approach to a computer problem, and thus to carry out your most specialised projects. Our Junior-Enterprise excels in the design of websites and programs of all kinds, ranging from Artificial Vision to Machine Learning.
   - title: Stratégie, Finance <br> et Économie
@@ -97,7 +97,7 @@ competences:
     thumbnail: trad-thumbnail.jpg
     img: trad.jpg
     alt: Traduction Technique
-    description: Ponts Etudes Projets, avec son cortège d’élèves étrangers (40% de la promotion), est à même de traduire tout document technique dans plus de 15 langues différentes ! Ce rayonnement international permet à notre Junior-Entreprise de se démarquer dans les projets de Traductions Techniques.
+    description: Ponts Études Projets, avec son cortège d’élèves étrangers (40% de la promotion), est à même de traduire tout document technique dans plus de 15 langues différentes ! Ce rayonnement international permet à notre Junior-Entreprise de se démarquer dans les projets de Traductions Techniques.
     title_en: TECHNICAL TRANSLATION
     description_en: Ponts Études Projets, with its foreign students (40% of the graduates), is able to translate any technical document in more than 15 different languages! This international scope allows our Junior-Enterprise to stand out in Technical Translation projects.
 
@@ -148,7 +148,7 @@ equipe:
     title_en: Vice-Treasurer
     slug: vtrez
     img: vtrez.jpg
-    alt: Vice-Trésorière
+    alt: Vice-Trésorier
     name: Franz LORENZELLI
     description: Le Vice-Trésorier est l'adjoint du Trésorier de la Junior-Entreprise. Sa mission principale est de gérer la comptabilité en lien avec l’expert-comptable, de vérifier les opérations du Trésorier et de l’assister dans l’élaboration du budget. Il s’occupe aussi de l’archivage des documents.
     description_en: The Vice-Treasurer is the assistant of the Junior-Enterprise Treasurer. His main mission is to manage the accounting in connection with the chartered accountant, to check the operations of the Treasurer and to assist him in the elaboration of the budget. He also takes care of the storage of the documents.
@@ -174,21 +174,21 @@ equipe:
 #    description: Le Responsable Commercial assiste le directeur commercial. Il organise également la prospection et y participe avec l’ensemble des pôles.
 #    description_en: The Commercial Manager assists the commercial director. He also organizes prospecting activities and takes part in them with all the departments.
 #    in: https://www.linkedin.com/in/erwann-carn/
-  - title: Directeur d'Etudes
+  - title: Directeur d'Études
     title_en: Head of Project Managers
     slug: detudes
     img: detudes.jpg
-    alt: Directrice d'études
+    alt: Directeur d'Études
     name: Jules QUIRIN 
     mail: jules.quirin@junior-pep.fr
-    description: Le Directeur d'Etudes est à la tête du pôle étude et s’occupe d’organiser la prospection commerciale ainsi que d’encadrer les relations client-étudiant. Il a une vue d’ensemble sur les missions en cours et s’assure de leur bon déroulé tout comme de la bonne coordination des membres de son équipe.
+    description: Le Directeur d'Études est à la tête du pôle étude et s’occupe d’organiser la prospection commerciale ainsi que d’encadrer les relations client-étudiant. Il a une vue d’ensemble sur les missions en cours et s’assure de leur bon déroulé tout comme de la bonne coordination des membres de son équipe.
     description_en: The Head of Project Managers heads the business unit and is responsible for organising business development and managing student-client relations. He has an overview of the missions in progress and ensures that they run smoothly and that the members of his team are well coordinated.
     in: https://www.linkedin.com/in/julesquirin/
   - title: Chef de Projet & Chargé de Communication
     title_en: Project & Communication Manager
     slug: chefcomm1
     img: chefcomm1.jpg
-    alt: Cheffe de Projet & Chargée de Communication
+    alt: Chef de Projet & Chargé de Communication
     name: Edgar BOURDIER 
     description: Tout au long d'une étude, les Chefs de Projets & Chargés de Communication, travaillant en binôme, sont les intermédiaires de référence entre le Client et le(s) étudiant(s) réalisateur(s). Ils accompagnent les étudiants du recrutement jusqu'à la clôture de l'étude, tout en assurant la communication de PEP sur les réseaux sociaux.
     description_en: Throughout a project, Project Managers & Communication Officers, working in pairs, serve as the primary point of contact between the Client and the student consultant(s). They guide the students from recruitment to project completion, while also managing PEP’s social media presence.
@@ -198,7 +198,7 @@ equipe:
     title_en: Project & Communication Manager
     slug: chefcomm2
     img: chefcomm2.jpg
-    alt: Cheffe de Projet & Chargée de Communication
+    alt: Chef de Projet & Chargé de Communication
     name: Baptiste HOMBREUX
     description: Avant le début d’une étude, il est du ressort des Chefs de Projets & Chargés de Communication de rédiger et diffuser l'annonce sur nos canaux pour trouver les étudiants les plus qualifiés. La sélection sur CVs et lettres de motivation permet ensuite de ne garder que les meilleurs candidats pour répondre au mieux aux exigences du Client.
     description_en: Before the start of a study, Project Managers & Communication Officers are responsible for drafting and publishing the call for applications across our channels to target the most qualified students. CVs and cover letters are then carefully reviewed to select only the best candidates who best meet the Client's requirements.
@@ -208,7 +208,7 @@ equipe:
     title_en: Project Manager
     slug: chef1
     img: chef1.jpg
-    alt: Cheffe de Projet
+    alt: Chef de Projet
     name: Augustin BRUNET
     description: Le travail du chef de projet, c'est également d'entretenir le contact entre la Junior et les entreprises. Ils sont en permanence en relation avec des chefs d'entreprises ou de départements techniques pour comprendre leurs besoins et y apporter des solutions adaptées.
     description_en: The project manager's job is also to maintain contact between the Junior and the companies. They are in constant contact with the heads of companies or technical departments to understand their needs and provide them with appropriate solutions.
@@ -218,7 +218,7 @@ equipe:
     title_en: Project Manager
     slug: chef2
     img: chef2.jpg
-    alt: Cheffe de Projet
+    alt: Chef de Projet
     name: Etienne SCHUMACHER
     description: Les chefs de projet transmettent les  questions des étudiants, informent sur l'avancée de la mission, proposent et organisent des réunions en présence des deux partis pour une première rencontre ou encore pour une présentation des livrables.
     description_en: The project managers transmit the students' questions, inform on the progress of the mission, propose and organise meetings with both parties for a first meeting or for a presentation of the deliverables.
@@ -228,30 +228,30 @@ equipe:
     title_en: Head of CSR / Project Manager
     slug: chefrse
     img: chefrse.jpg
-    alt: Responsable RSE / Cheffe de Projet
+    alt: Responsable RSE / Chef de Projet
     name: Arthur ALLOUCHE
     description: Le Responsable RSE est garant du respect des enjeux RSE au sein de la Junior-Entreprise. Il s'assure notamment du respect de la charte RSE lors des différents évènements auxquels Ponts Études Projets participe ou organise. Il suit également les études aux enjeux RSE.   
-    description_en: The ESG Director makes sure that the Junior-Entreprise complies with the ESG charter, especially when it organizes or takes part in events. He also oversees missions that are related to ESG issues. 
+    description_en: The ESG Director makes sure that the Junior-Enterprise complies with the ESG charter, especially when it organizes or takes part in events. He also oversees missions that are related to ESG issues. 
     mail: arthur.allouche@junior-pep.fr
-    in : https://www.linkedin.com/in/arthur-allouche-82a168376/
+    in: https://www.linkedin.com/in/arthur-allouche-82a168376/
   - title: Directeur Qualité
     title_en: Quality Manager
     slug: quali
     img: quali.jpg
-    alt: Directrice Qualité
+    alt: Directeur Qualité
     name: Grégoire SERRES
-    description: La Directrice Qualité s’assure du bon fonctionnement des services de la Junior Entreprise. En relisant chaque document, elle s’assure de leur conformité au cadre légal. Elle se charge aussi de gérer les différents indicateurs de performance qui aideront la Junior Entreprise à améliorer ses services.
-    description_en: The Quality Manager ensures that the services of the Junior Entreprise are working properly. By re-reading each document, she makes sure that they comply with the legal framework. She is also in charge of managing the different performance indicators that will help the Junior Entreprise to improve its services.
+    description: Le Directeur Qualité s’assure du bon fonctionnement des services de la Junior-Entreprise. En relisant chaque document, il s’assure de leur conformité au cadre légal. Il se charge aussi de gérer les différents indicateurs de performance qui aideront la Junior-Entreprise à améliorer ses services.
+    description_en: The Quality Manager ensures that the services of the Junior-Enterprise are working properly. By re-reading each document, she makes sure that they comply with the legal framework. She is also in charge of managing the different performance indicators that will help the Junior-Enterprise to improve its services.
     mail: gregoire.serres@junior-pep.fr
     in: https://www.linkedin.com/in/grégoire-serres-b42764378/
   - title: Directeur des Systèmes d'Information / Responsable Qualité
     title_en: Director of Information Systems / Head of Quality
     slug: dsi
     img: dsi.jpg
-    alt: Directrice des Systèmes d'Information / Responsable Qualité
+    alt: Directeur des Systèmes d'Information / Responsable Qualité
     name: Matéo RENOIR
     description: Le DSI s'occupe de la maintenance du site internet et de l'ensemble des moyens informatiques utilisés par les membres de la Junior et les intervenants. Il assiste aussi le responsable qualité dans la relecture des documents études.
-    description_en: The IT Director is in charge of the maintenance of the website and all the IT means used by the members of the Junior Entreprise and the stakeholders. He also assists the quality manager in the review of the study documents.
+    description_en: The IT Director is in charge of the maintenance of the website and all the IT means used by the members of the Junior-Enterprise and the stakeholders. He also assists the quality manager in the review of the study documents.
     mail: mateo.renoir@junior-pep.fr
     in: https://www.linkedin.com/in/matéo-renoir-96a1b0390/
 #  - title: Directeur Communication

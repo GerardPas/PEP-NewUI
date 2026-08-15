@@ -18,7 +18,7 @@ Cet échange privilégié a permis aux participants de :
 - Poser leurs questions aux professionnels de Bain
 - S’entraîner aux entretiens et affiner leurs compétences
 
-![Collaboration Bain](/img/posts/collab_bain.jpg){:class="img-responsive img-centered"}
+![Collaboration Bain](/img/opt/img/posts/collab_bain-1000.jpg){:class="img-responsive img-centered"}
 <div>
     <p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">
         Les étudiants de l'ENPC chez Bain & Company !

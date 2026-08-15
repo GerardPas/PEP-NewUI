@@ -1,9 +1,23 @@
-# Color settings (hex-codes without the leading hash-tag)
+# Palette du site — dérivée du bleu de la charte graphique PEP (#1f3753).
+# Codes hexadécimaux sans le dièse : les feuilles de style les préfixent.
+#
+# Toute la gamme est construite sur la même teinte (212°) et la même saturation
+# (46 %) que le bleu de la charte, en ne faisant varier que la luminosité. Deux
+# accents sont nécessaires et non interchangeables : `secondary` est le bleu
+# clair qui se pose sur les aplats sombres (barre de navigation, voiles photo),
+# `accent` est le bleu moyen qui reste lisible sur les fonds clairs. Les
+# rapports de contraste mesurés sont indiqués en regard.
 color:
-  primary: 3C4568
-  secondary: 4bdefb   
-  secondary-dark: 333
-  muted: 777
+  primary: 1f3753        # Bleu de la charte — 12,1:1 sur blanc
+  primary-dark: 16273b   # Aplats sombres : nav réduite, menus déroulants, boutons sociaux
+  primary-deep: 0b141e   # Voiles posés sur les photographies
+  secondary: 97b5d8      # Accent clair, sur fond sombre — 7,2:1 sur primary-dark
+  accent: 3a679c         # Accent lisible, sur fond clair — 5,8:1 sur blanc
+  secondary-dark: 2a3847 # Texte courant — 12,0:1 sur blanc
+  muted: 5d6e82          # Texte secondaire — 5,2:1 sur blanc
+  surface: f4f7fb        # Aplat clair alternant avec le blanc
+  line: dde5ee           # Filets et bordures
+  line-strong: cfd9e6    # Filets appuyés
 
 # Font Families
 font:

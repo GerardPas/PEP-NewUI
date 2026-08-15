@@ -1,12 +1,16 @@
 {% assign s = include.service %}
 
 <header class="pep-svc-hero">
-    <img class="pep-svc-hero-img" src="{{ site.baseurl }}/img/competences/{{ s.img }}"
-         alt="" aria-hidden="true">
+    {% include responsive-image.html
+         src=s.img_src
+         widths="1600,1000,600"
+         sizes="100vw"
+         alt="" class="pep-svc-hero-img" width="1600" height="1063"
+         loading="eager" fetchpriority="high" %}
     <span class="pep-svc-hero-scrim" aria-hidden="true"></span>
 
     <div class="container pep-svc-hero-inner">
-        <nav class="pep-svc-crumbs" aria-label="Fil d'ariane">
+        <nav class="pep-svc-crumbs" aria-label="Fil d'Ariane">
             <a href="{{ site.baseurl }}/competences/">Nos services</a>
             <span aria-hidden="true">/</span>
             <span aria-current="page">{{ s.title }}</span>

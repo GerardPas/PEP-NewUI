@@ -1,11 +1,19 @@
-<section id="contact">
+{%- comment -%}
+Reprend le bloc .pep-cta de home/contact.html. La version précédente était un
+`section#contact` avec un simple bouton centré ; elle hérite maintenant du même
+fond photo voilé et de la même composition que la version française.
+{%- endcomment -%}
+<section id="contact" class="pep-cta">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Contact us</h2>
-            </div>
-            <div class="col-lg-12 text-center" style="padding-top: 10px;">
-                <a href="/en/contact/" class="page-scroll btn btn-xl">Contact</a>
+        <div class="pep-cta-inner">
+            <h2 class="section-heading pep-cta-title">Have a project in mind?</h2>
+            <p class="pep-cta-say">
+                Tell us about your need: we will come back to you with an approach
+                and a quote.
+            </p>
+            <div class="pep-cta-actions">
+                <a href="{{ site.baseurl }}/en/contact/" class="pep-btn pep-btn-solid">Request a quote</a>
+                <a href="mailto:{{ site.email }}" class="pep-btn pep-btn-ghost pep-btn-mail">{{ site.email }}</a>
             </div>
         </div>
     </div>

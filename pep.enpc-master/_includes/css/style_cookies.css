@@ -1,6 +1,6 @@
 .banniere-cookies{
     display: none;
-    background :#f0f0f2 ;
+    background: #{{ site.data.template.color.surface }};
     width: calc(100% - 40px);
     max-width: 300px;
     padding:20px;
@@ -11,7 +11,7 @@
     left: 20px;
     z-index: 100;
     padding-top: 60px;
-    box-shadow: 0px 2px 20px 10px rgba(222,222,222,.25) ;
+    box-shadow: 0px 2px 20px 10px rgba(31, 55, 83, .12);
     text-align: center;
 }
 
@@ -33,7 +33,7 @@
 
 .banniere-cookies .bouton{
     width: 100px;
-    background:#595959;
+    background:#{{ site.data.template.color.primary }};
     border: none;
     color: #fff;
     font-family: 'Roboto', sans-serif;
@@ -48,12 +48,12 @@
 }
 
 .banniere-cookies .bouton:hover{
-    background: #000;
+    background: #{{ site.data.template.color.primary-dark }};
 }
 
 .fond-banniere-cookies {
     display: none;
-    background: rgba(0,0,0,.20);
+    background: rgba(11, 20, 30, .28);
     position: fixed;
     z-index: 99;
     width: 100vw;

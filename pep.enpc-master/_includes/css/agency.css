@@ -43,7 +43,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #{{ site.data.template.color.secondary }};
+    color: #{{ site.data.template.color.accent }};
 }
 
 h1,
@@ -66,20 +66,20 @@ h6 {
     font-weight: 700;
 }
 
-h7 {
-    text-align: justify;
-}
+/* `h7` n'existe pas en HTML : le sélecteur ne visait rien, et `text-align`
+   n'aurait rien fait sur l'élément inline inconnu que les navigateurs en
+   déduisaient. Les biographies de l'équipe sont maintenant des <p>. */
 
 .img-centered {
     margin: 0 auto;
 }
 
 .bg-light-gray {
-    background-color: #f7f7f7;
+    background-color: #{{ site.data.template.color.surface }};
 }
 
 .bg-darkest-gray {
-    background-color: #222;
+    background-color: #{{ site.data.template.color.primary-dark }};
 }
 
 .btn-primary {
@@ -96,9 +96,9 @@ h7 {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    border-color: #{{ site.data.template.color.primary }};
+    border-color: #{{ site.data.template.color.accent }};
     color: #fff;
-    background-color: #{{ site.data.template.color.secondary }};
+    background-color: #{{ site.data.template.color.accent }};
 }
 
 .btn-primary:active,
@@ -145,8 +145,13 @@ fieldset[disabled] .btn-primary.active {
     background-color: #{{ site.data.template.color.primary }};
 }
 
-.btn-xl.useless-button {
-    background: #{{ site.data.template.color.secondary-dark}};
+/* Le bouton de l'onglet courant : le bleu-gris sourd le distingue du bleu de la
+   charte porté par l'onglet vers lequel on peut aller. */
+.btn-xl.useless-button,
+.btn-xl.useless-button:hover,
+.btn-xl.useless-button:focus {
+    border-color: #{{ site.data.template.color.muted }};
+    background: #{{ site.data.template.color.muted }};
 }
 
 @media(min-width: 375px) {
@@ -161,9 +166,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-    border-color: #{{ site.data.template.color.primary }};
+    border-color: #{{ site.data.template.color.accent }};
     color: #fff;
-    background-color: #{{ site.data.template.color.secondary }};
+    background-color: #{{ site.data.template.color.accent }};
 }
 
 .btn-xl:active,
@@ -198,7 +203,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default { 
     border-color: transparent;
-    background-color: #202020;
+    background-color: #{{ site.data.template.color.primary-dark }};
 }
 
 .navbar-default .navbar-brand {
@@ -257,18 +262,18 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
-    background-color: #{{ site.data.template.color.secondary }};
+    background-color: #{{ site.data.template.color.accent }};
 }
 
 .dropdown-menu {
     background-image: transparent ;
-    background-color:#222 ;
+    background-color:#{{ site.data.template.color.primary-dark }} ;
 }
 
 .navbar-default .navbar-nav>.open>a, 
 .navbar-default .navbar-nav>.open>a:hover, 
 .navbar-default .navbar-nav>.open>a:focus {
-    background-color: #222;
+    background-color: #{{ site.data.template.color.primary-dark }};
     color: #ffffff;
 }
 
@@ -295,7 +300,7 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: #222;
+        background-color: #{{ site.data.template.color.primary-dark }};
     }
 
     .navbar-default.navbar-shrink .navbar-brand {
@@ -308,220 +313,91 @@ header {
     color: #fff;
 }
 
-.home-header {
-    height: 410px;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/home-bg.jpg');
+{%- comment -%}
+Les en-têtes photo, en un seul endroit.
+
+Ces onze règles répétaient à l'identique le voile, l'attachement, le cadrage et
+le `cover` ; seule l'image changeait. Elles sont maintenant produites par une
+boucle, à partir des deux listes ci-dessous.
+
+Chaque en-tête est servi en WebP avec repli JPEG, via `image-set()`. La première
+déclaration `background` est le repli pour les navigateurs sans `image-set()` ;
+la seconde, plus spécifique dans l'ordre du cascade, la remplace quand elle est
+comprise. La bande ne dépassant jamais 420 px de haut, la variante 1920 suffit
+sur grand écran et la 960 est servie sous 768 px : la photo des actualités
+passait 6,7 Mo en 5472 px de large, elle en fait 252.
+
+Le voile bleu profond (`primary-deep` à 0,34) est celui posé lors de la refonte.
+{%- endcomment -%}
+
+{%- assign entete_classes = ".home-header,.competences-header,.equipe-header,.mission-header,.rapports-header,.faq-header,.presentation-header,.references-header,.partenaires-header,.blog-header,.contact-form-header" | split: "," -%}
+{%- assign entete_images  = "home-bg,competences-bg,equipe,missions-bg,rapports,faq,presentation-bg,references-bg,partenaires-bg,actu-bg,contact-bg" | split: "," -%}
+{%- assign voile = "rgba(11, 20, 30, 0.34), rgba(11, 20, 30, 0.34)" -%}
+
+{% for classe in entete_classes -%}
+{%- assign image = entete_images[forloop.index0] -%}
+{{ classe }} {
+    background: linear-gradient({{ voile }}),
+        url('{{ site.baseurl }}/img/opt/img/headers/{{ image }}-1920.jpg');
+    background-image: linear-gradient({{ voile }}),
+        image-set(url('{{ site.baseurl }}/img/opt/img/headers/{{ image }}-1920.webp') type('image/webp'),
+                  url('{{ site.baseurl }}/img/opt/img/headers/{{ image }}-1920.jpg') type('image/jpeg'));
     background-attachment: scroll;
     background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    background-repeat: no-repeat;
     background-size: cover;
-    -o-background-size: cover;
 }
 
+@media (max-width: 767px) {
+    {{ classe }} {
+        background: linear-gradient({{ voile }}),
+            url('{{ site.baseurl }}/img/opt/img/headers/{{ image }}-960.jpg');
+        background-image: linear-gradient({{ voile }}),
+            image-set(url('{{ site.baseurl }}/img/opt/img/headers/{{ image }}-960.webp') type('image/webp'),
+                      url('{{ site.baseurl }}/img/opt/img/headers/{{ image }}-960.jpg') type('image/jpeg'));
+        background-size: cover;
+    }
+}
+
+{% endfor -%}
+
+/* Hauteurs propres à certains en-têtes. */
+.home-header {
+    height: 410px;
+}
+
+/* Le 404 montrait le pont du Gard en lien direct vers upload.wikimedia.org :
+   une requête vers un tiers avant tout consentement, et un lien que Wikimedia
+   peut couper à tout moment. Le viaduc de Millau, déjà dans le dépôt, tient le
+   même rôle sans dépendance ni obligation de crédit — d'où ses largeurs
+   propres, celles de img/competences/. */
 .error-header {
     height: 600px;
     color: #000;
-    background: linear-gradient(
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3)
-    ), url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Le_pont_du_Gard_%288110616773%29.jpg/1024px-Le_pont_du_Gard_%288110616773%29.jpg');
-    /*url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Pont_du_Gard_BLS.jpg/1024px-Pont_du_Gard_BLS.jpg');*/
+    background: linear-gradient(rgba(11, 20, 30, 0.34), rgba(11, 20, 30, 0.34)),
+        url('{{ site.baseurl }}/img/opt/img/competences/bridge-millau-1600.jpg');
+    background-image: linear-gradient(rgba(11, 20, 30, 0.34), rgba(11, 20, 30, 0.34)),
+        image-set(url('{{ site.baseurl }}/img/opt/img/competences/bridge-millau-1600.webp') type('image/webp'),
+                  url('{{ site.baseurl }}/img/opt/img/competences/bridge-millau-1600.jpg') type('image/jpeg'));
     background-attachment: scroll;
     background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    background-repeat: no-repeat;
     background-size: cover;
-    -o-background-size: cover;
 }
 
-header .intro-text {
-    padding-top: 90px;
-    padding-bottom: 50px;
-}
-
-header .competences-intro-text {
-    padding-top: 70px;
-    padding-bottom: 50px;
-}
-
-header .competences-intro-text .intro-heading {
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    font-family: {{ site.data.template.font.primary }};
-    font-size: 35px;
-    font-weight: 700;
-    line-height: 35px;
-}
-
-header .intro-text .intro-lead-in {
-    margin-bottom: 25px;
-    font-family: {{ site.data.template.font.secondary }};
-    font-size: 22px;
-    font-style: italic;
-    line-height: 22px;
-}
-
-header .intro-text .intro-heading {
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    font-family: {{ site.data.template.font.primary }};
-    font-size: 35px;
-    font-weight: 700;
-    line-height: 35px;
-}
-
-.subpages-header {
-    height: 300px;
-    padding-top: 50px;
-}
-
-.competences-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/competences-bg.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.equipe-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/equipe.jpg');
-    background-attachment: scroll;
-    background-position: center 40% ;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.mission-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/missions-bg.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-.rapports-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/rapports.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.faq-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/faq.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.presentation-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/presentation-bg.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.references-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/references-bg.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.partenaires-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/partenaires-bg.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.blog-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/actu-bg.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+@media (max-width: 767px) {
+    .error-header {
+        background: linear-gradient(rgba(11, 20, 30, 0.34), rgba(11, 20, 30, 0.34)),
+            url('{{ site.baseurl }}/img/opt/img/competences/bridge-millau-600.jpg');
+        background-image: linear-gradient(rgba(11, 20, 30, 0.34), rgba(11, 20, 30, 0.34)),
+            image-set(url('{{ site.baseurl }}/img/opt/img/competences/bridge-millau-600.webp') type('image/webp'),
+                      url('{{ site.baseurl }}/img/opt/img/competences/bridge-millau-600.jpg') type('image/jpeg'));
+        background-size: cover;
+    }
 }
 
 .post-header {
     height: 200px;
-}
-
-.contact-form-header {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-    ),url('{{ site.baseurl }}/img/headers/contact-bg.jpg');
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
 
 @media(min-width:554px) {
@@ -643,8 +519,7 @@ section h3.section-subheading {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
-    background: rgba(254,209,54,.9); /* Fallback when no plugin support */
-    background: rgba({{ site.data.template.color.primary | hex_to_rgb | join: ',' }}, .9);
+    background: rgba(31, 55, 83, .9);
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
@@ -715,7 +590,7 @@ section h3.section-subheading {
     left: 40px;
     width: 2px;
     margin-left: -1.5px;
-    background-color: #f1f1f1;
+    background-color: #{{ site.data.template.color.line }};
 }
 
 .timeline>li {
@@ -763,7 +638,7 @@ section h3.section-subheading {
     width: 80px;
     height: 80px;
     margin-left: 0;
-    border: 7px solid #f1f1f1;
+    border: 7px solid #{{ site.data.template.color.line }};
     border-radius: 100%;
     text-align: center;
     color: #fff;
@@ -927,11 +802,16 @@ aside.clients img {
 }
 
 section#contact {
-    background-color: #222;
+    background-color: #{{ site.data.template.color.primary-deep }};
     background: linear-gradient(
-        rgba(0, 0, 0, 0.7), 
-        rgba(0, 0, 0, 0.7)
-    ),url('{{ site.baseurl }}/img/headers/equipe.jpg');
+        rgba(11, 20, 30, 0.78),
+        rgba(11, 20, 30, 0.78)
+    ),url('{{ site.baseurl }}/img/opt/img/headers/equipe-1920.jpg');
+    background-image: linear-gradient(
+        rgba(11, 20, 30, 0.78),
+        rgba(11, 20, 30, 0.78)
+    ), image-set(url('{{ site.baseurl }}/img/opt/img/headers/equipe-1920.webp') type('image/webp'),
+                 url('{{ site.baseurl }}/img/opt/img/headers/equipe-1920.jpg') type('image/jpeg'));
     background-size: cover;
     background-position: center 40%;
     background-repeat: no-repeat;
@@ -998,7 +878,7 @@ section#contact .text-danger {
 footer {
     padding: 25px 0;
     text-align: center;
-    background-color: rgba(247, 247, 247, 1);
+    background-color: #{{ site.data.template.color.surface }};
     bottom: 0;
     left: 0;
     right: 0;
@@ -1034,7 +914,7 @@ ul.social-buttons li a {
     line-height: 40px;
     outline: 0;
     color: #fff;
-    background-color: #222;
+    background-color: #{{ site.data.template.color.primary-dark }};
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
@@ -1043,7 +923,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #{{ site.data.template.color.primary }};
+    background-color: #{{ site.data.template.color.accent }};
 }
 
 .btn:focus,
@@ -1108,7 +988,7 @@ ul.social-buttons li a:active {
     width: 1px;
     height: 75px;
     margin-left: 35px;
-    background-color: #222;
+    background-color: #{{ site.data.template.color.secondary-dark }};
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -1118,7 +998,7 @@ ul.social-buttons li a:active {
     z-index: 1052;
     width: 1px;
     height: 75px;
-    background-color: #222;
+    background-color: #{{ site.data.template.color.secondary-dark }};
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -1181,8 +1061,8 @@ body {
 }
 .fade-carousel .carousel-indicators > li {
     margin: 0 2px;
-    background-color: #2490a8;
-    border-color: #2490a8;
+    background-color: #{{ site.data.template.color.secondary }};
+    border-color: #{{ site.data.template.color.secondary }};
     opacity: .7;
 }
 .fade-carousel .carousel-indicators > li.active {
@@ -1198,7 +1078,7 @@ body {
     z-index: 3;
     color: #fff;
     text-align: center;
-    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+    text-shadow: 1px 1px 0 rgba(11, 20, 30, .75);
       -webkit-transform: translate3d(-50%,-50%,0);
          -moz-transform: translate3d(-50%,-50%,0);
           -ms-transform: translate3d(-50%,-50%,0);
@@ -1246,7 +1126,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: #080d15;
+    background-color: #{{ site.data.template.color.primary-deep }};
     opacity: .7;
 }
 
@@ -1255,15 +1135,15 @@ body {
 .btn.btn-hero >a,
 .btn.btn-hero:hover,
 .btn.btn-hero:focus {
-    color: #f5f5f5;
-    background-color: #303854;
-    border-color: #303854;
+    color: #fff;
+    background-color: #{{ site.data.template.color.primary }};
+    border-color: #{{ site.data.template.color.primary }};
     outline: none;
     margin: 20px auto;
 }
 
 .btn.btn-hero:hover >a{
-    color: #4bdefb;
+    color: #{{ site.data.template.color.secondary }};
 }
 
 .fade-carousel .slides .slide-1, 
@@ -1277,26 +1157,30 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-.fade-carousel .slides .slide-1 {
-    background-image: url('{{ site.baseurl }}/img/competences/vet.jpg');
+{%- comment -%}
+Les six diapositives du carrousel de la page d'accueil anglaise. Elles
+pointaient sur les originaux de img/competences/, dont deux pèsent 1 Mo — soit
+plus de 3 Mo pour un carrousel dont on ne voit qu'une image à la fois.
+{%- endcomment -%}
+{%- assign diapos = "vet,imi,segf,bridge-millau,gi,trad" | split: "," -%}
+{% for diapo in diapos -%}
+.fade-carousel .slides .slide-{{ forloop.index }} {
+    background-image: url('{{ site.baseurl }}/img/opt/img/competences/{{ diapo }}-1600.jpg');
+    background-image: image-set(
+        url('{{ site.baseurl }}/img/opt/img/competences/{{ diapo }}-1600.webp') type('image/webp'),
+        url('{{ site.baseurl }}/img/opt/img/competences/{{ diapo }}-1600.jpg') type('image/jpeg'));
 }
-.fade-carousel .slides .slide-2 {
-    background-image: url('{{ site.baseurl }}/img/competences/imi.jpg');
-  
+
+@media (max-width: 767px) {
+    .fade-carousel .slides .slide-{{ forloop.index }} {
+        background-image: url('{{ site.baseurl }}/img/opt/img/competences/{{ diapo }}-600.jpg');
+        background-image: image-set(
+            url('{{ site.baseurl }}/img/opt/img/competences/{{ diapo }}-600.webp') type('image/webp'),
+            url('{{ site.baseurl }}/img/opt/img/competences/{{ diapo }}-600.jpg') type('image/jpeg'));
+    }
 }
-.fade-carousel .slides .slide-3 {
-    background-image: url('{{ site.baseurl }}/img/competences/segf.jpg');
-}
-.fade-carousel .slides .slide-4 {
-    
-    background-image: url('{{ site.baseurl }}/img/competences/bridge-millau.jpg');
-}
-.fade-carousel .slides .slide-5 {
-    background-image: url('{{ site.baseurl }}/img/competences/gi.jpg');
-}
-.fade-carousel .slides .slide-6 {
-    background-image: url('{{ site.baseurl }}/img/competences/trad.jpg');
-}
+
+{% endfor -%}
 
 @media screen and (min-width: 980px){
     .hero { width: 980px; }    
@@ -1325,13 +1209,39 @@ body {
 }
 
 .grey-on-hover:hover {
-    background-color: rgba(220, 220, 220, 0.9);
+    background-color: rgba(221, 229, 238, 0.9);
     cursor: pointer;
 }
 
 .dark-grey-on-hover:hover {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: #{{ site.data.template.color.primary-dark }};
     cursor: pointer;
+}
+
+/* Les vignettes d'articles et la pastille « Osez l'aventure JE ! » étaient des
+   <div onclick> : ni tabulables, ni annoncées comme liens, ni ouvrables dans un
+   nouvel onglet. Ce sont maintenant des <a>, qui ne doivent pas pour autant
+   prendre la couleur et le soulignement d'un lien de texte. */
+a.pep-post-row,
+a.pep-post-row:hover,
+a.pep-post-row:focus {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+a.pep-post-row:focus-visible,
+a.timeline-image:focus-visible {
+    outline: 2px solid #{{ site.data.template.color.accent }};
+    outline-offset: 3px;
+}
+
+.timeline > li > a.timeline-image,
+.timeline > li > a.timeline-image:hover,
+.timeline > li > a.timeline-image:focus {
+    display: block;
+    color: #fff;
+    text-decoration: none;
 }
 
 h1 {
@@ -1370,7 +1280,7 @@ a:hover {
 input[type=text], select, textarea {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */  
-    border: 1px solid #ccc; /* Gray border */
+    border: 1px solid #{{ site.data.template.color.line-strong }}; /* Blue-grey border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */ 
     margin-top: 6px; /* Add a top margin */
@@ -1572,7 +1482,7 @@ span {}
 }
 
 .border-value{
-    border: solid 1px #303854;
+    border: solid 1px #{{ site.data.template.color.primary }};
     border-radius: 50%;
 }
 
@@ -1583,7 +1493,7 @@ span {}
 }
 
 .lang-button:hover {
-    color: #303854;
+    color: #{{ site.data.template.color.secondary }};
 }
 
 @media(max-width:600px) {

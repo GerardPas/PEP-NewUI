@@ -2,6 +2,10 @@
    Header / navigation — Ponts Études Projets
    Loaded after agency.css so it wins on the shared .navbar-default selectors.
    Uses only the existing tokens in _data/template.yml.
+
+   Le menu « Nos services » est un simple déroulant qui ne porte que le nom des
+   quatre domaines de compétence — les prestations n'ont pas de page dédiée et
+   vivent sur /competences/ et sur les pages de domaine.
    ========================================================================== */
 
 .pep-nav {
@@ -148,6 +152,8 @@
     transition: background-color .22s ease, border-color .22s ease, color .22s ease;
 }
 
+/* Le bouton s'éclaircit au survol : le bleu clair de la charte porte le texte
+   bleu foncé à 5,7:1. */
 .navbar-default .pep-nav-cta:hover,
 .navbar-default .pep-nav-cta:focus {
     border-color: #{{ site.data.template.color.secondary }};
@@ -166,14 +172,14 @@
     .pep-nav.navbar-default {
         padding: 10px 0;
         background-color: transparent;
-        background-image: linear-gradient(to bottom, rgba(8, 10, 16, .55), rgba(8, 10, 16, 0));
+        background-image: linear-gradient(to bottom, rgba(11, 20, 30, .55), rgba(11, 20, 30, 0));
         transition: background-color .32s ease, box-shadow .32s ease;
     }
 
     .pep-nav.navbar-default.navbar-shrink {
-        background-color: #222;
+        background-color: #{{ site.data.template.color.primary-dark }};
         background-image: none;
-        box-shadow: 0 8px 26px -12px rgba(0, 0, 0, .55);
+        box-shadow: 0 8px 26px -12px rgba(11, 20, 30, .55);
     }
 
     .pep-nav-brand {
@@ -208,7 +214,7 @@
         margin-left: 10px;
     }
 
-    /* ---------- Simple dropdown ---------- */
+    /* ---------- Dropdown ---------- */
 
     .pep-drop {
         position: absolute;
@@ -220,12 +226,20 @@
         padding: 10px 0;
         list-style: none;
         border-radius: 0 0 3px 3px;
-        background-color: #222;
-        box-shadow: 0 22px 40px -18px rgba(0, 0, 0, .8);
+        background-color: #{{ site.data.template.color.primary-dark }};
+        box-shadow: 0 22px 40px -18px rgba(11, 20, 30, .8);
         opacity: 0;
         visibility: hidden;
         transform: translateY(-8px);
         transition: opacity .24s ease, transform .32s cubic-bezier(.16, 1, .3, 1), visibility .24s;
+    }
+
+    /* Les noms de domaine sont longs : 216px les coupait sur deux lignes, et 310px
+       ne suffisait pas à « Mechanical engineering & construction », le plus long des
+       intitulés anglais. Le déroulant des services est donc plus large ; celui de
+       « La Junior » garde sa largeur. */
+    .pep-drop-wide {
+        min-width: 342px;
     }
 
     /* Bootstrap ships `.nav > li { position: relative }` at specificity 0-1-1,
@@ -259,117 +273,17 @@
         background: none;
     }
 
-    /* ---------- Mega panel ---------- */
-
-    /* Static so the panel below anchors to .pep-nav .container, not the <li>. */
-    .pep-nav .pep-has-mega {
-        position: static;
-    }
-
-    .pep-mega {
-        position: absolute;
-        z-index: 1010;
-        top: 100%;
-        /* Flush with the container box so the panel's content edge lines up
-           with the logo on the left and the quote button on the right. */
-        left: 0;
-        right: 0;
-        padding: 34px 25px 28px;
-        border-radius: 0 0 3px 3px;
-        background-color: #222;
-        box-shadow: 0 26px 50px -20px rgba(0, 0, 0, .8);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: opacity .26s ease, transform .38s cubic-bezier(.16, 1, .3, 1), visibility .26s;
-    }
-
-    .pep-open > .pep-mega {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    .pep-mega-grid {
-        display: flex;
-        gap: 34px;
-        text-align: left;
-    }
-
-    .pep-mega-col {
-        flex: 1 1 0;
-        min-width: 0;
-    }
-
-    .navbar-default a.pep-mega-title {
-        display: block;
-        margin-bottom: 14px;
-        padding: 0 0 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, .14);
-        text-transform: uppercase;
-        font-family: {{ site.data.template.font.primary }};
-        font-size: 12.5px;
-        font-weight: 700;
-        line-height: 1.45;
-        letter-spacing: .06em;
-        color: #fff;
-        transition: color .18s ease, border-color .18s ease;
-    }
-
-    .navbar-default a.pep-mega-title:hover,
-    .navbar-default a.pep-mega-title:focus {
-        border-bottom-color: #{{ site.data.template.color.secondary }};
-        color: #{{ site.data.template.color.secondary }};
-        background: none;
-    }
-
-    .pep-mega-items {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .pep-mega-items li {
-        margin-bottom: 7px;
-        font-family: {{ site.data.template.font.primary }};
-        font-size: 13px;
-        font-weight: 400;
-        line-height: 1.5;
-        letter-spacing: 0;
-        color: rgba(255, 255, 255, .66);
-        text-transform: none;
-    }
-
-    .pep-mega-foot {
-        display: flex;
-        gap: 32px;
-        margin-top: 26px;
-        padding-top: 20px;
+    /* Les deux dernières entrées sont des raccourcis transversaux, pas des
+       domaines : un filet les détache de la liste. */
+    .pep-drop-sep {
+        margin-top: 9px;
+        padding-top: 9px;
         border-top: 1px solid rgba(255, 255, 255, .14);
-        text-align: left;
     }
 
-    .navbar-default .pep-mega-foot a {
-        padding: 0;
-        text-transform: uppercase;
-        font-family: {{ site.data.template.font.primary }};
-        font-size: 11.5px;
-        font-weight: 700;
-        letter-spacing: .08em;
+    .navbar-default .pep-drop > .pep-drop-sep > a,
+    .navbar-default .pep-drop > .pep-drop-sep ~ li > a {
         color: #{{ site.data.template.color.secondary }};
-        transition: opacity .18s ease;
-    }
-
-    .navbar-default .pep-mega-foot a::before {
-        content: "→";
-        margin-right: 8px;
-        opacity: .75;
-    }
-
-    .navbar-default .pep-mega-foot a:hover,
-    .navbar-default .pep-mega-foot a:focus {
-        opacity: .72;
-        background: none;
     }
 }
 
@@ -394,15 +308,6 @@
         width: 170px;
         height: 40px;
     }
-
-    .pep-mega-grid {
-        flex-wrap: wrap;
-        gap: 22px 28px;
-    }
-
-    .pep-mega-col {
-        flex: 0 0 calc(50% - 14px);
-    }
 }
 
 /* ==========================================================================
@@ -412,13 +317,26 @@
 @media (max-width: 767px) {
 
     .pep-nav.navbar-default {
-        background-color: #222;
+        background-color: #{{ site.data.template.color.primary-dark }};
     }
 
+    .navbar-default .pep-nav .navbar-toggle,
     .pep-nav .navbar-toggle {
         margin-top: 15px;
         margin-right: 10px;
         border-radius: 3px;
+        border-color: rgba(255, 255, 255, .38);
+        background-color: transparent;
+    }
+
+    .navbar-default .pep-nav .navbar-toggle:hover,
+    .navbar-default .pep-nav .navbar-toggle:focus {
+        border-color: #{{ site.data.template.color.secondary }};
+        background-color: rgba(255, 255, 255, .08);
+    }
+
+    .pep-nav .navbar-toggle .icon-bar {
+        background-color: #fff;
     }
 
     .pep-nav .navbar-collapse {
@@ -456,26 +374,13 @@
         display: none;
     }
 
-    /* The prestation lists are too long for a phone sheet; the four service
-       names carry the structure and each one is still reachable. */
-    .pep-mega-items {
-        display: none;
-    }
-
-    .pep-mega,
     .pep-drop {
         margin: 0 0 8px;
         padding: 2px 0 8px;
         list-style: none;
     }
 
-    .pep-mega-grid {
-        display: block;
-    }
-
-    .navbar-default a.pep-mega-title,
-    .navbar-default .pep-drop > li > a,
-    .navbar-default .pep-mega-foot a {
+    .navbar-default .pep-drop > li > a {
         display: block;
         padding: 11px 16px 11px 30px;
         text-transform: none;
@@ -486,24 +391,20 @@
         color: rgba(255, 255, 255, .72);
     }
 
-    .navbar-default a.pep-mega-title:hover,
-    .navbar-default a.pep-mega-title:focus,
     .navbar-default .pep-drop > li > a:hover,
-    .navbar-default .pep-drop > li > a:focus,
-    .navbar-default .pep-mega-foot a:hover,
-    .navbar-default .pep-mega-foot a:focus {
+    .navbar-default .pep-drop > li > a:focus {
         color: #{{ site.data.template.color.secondary }};
         background-color: rgba(255, 255, 255, .05);
     }
 
-    .pep-mega-foot {
+    .pep-drop-sep {
         margin-top: 6px;
         padding-top: 8px;
         border-top: 1px solid rgba(255, 255, 255, .1);
     }
 
-    .navbar-default .pep-mega-foot a {
-        font-size: 13px;
+    .navbar-default .pep-drop > .pep-drop-sep > a,
+    .navbar-default .pep-drop > .pep-drop-sep ~ li > a {
         color: #{{ site.data.template.color.secondary }};
     }
 

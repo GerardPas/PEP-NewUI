@@ -3,8 +3,7 @@
    Chargé après agency.css et home.css. Réutilise les primitives de home.css
    (.pep-h2, .pep-btn, .pep-link-arrow, .pep-section-head). Composition et
    mise en page seulement : chaque couleur et police vient de
-   _data/template.yml ou des surfaces déjà présentes dans agency.css
-   (#fff, #f7f7f7, #222).
+   _data/template.yml — blanc, `surface`, `line`, et le bleu de la charte.
 
    agency.css impose `h1..h6 { text-transform: uppercase }` et
    `p { text-align: justify }` sur les sélecteurs d'élément — les règles de
@@ -32,7 +31,7 @@ h1.pep-svc-hub-title {
     line-height: 1.15;
     letter-spacing: .02em;
     color: #fff;
-    text-shadow: 0 2px 22px rgba(0, 0, 0, .5);
+    text-shadow: 0 2px 22px rgba(11, 20, 30, .5);
 }
 
 .pep-svc-hub {
@@ -65,7 +64,7 @@ h1.pep-svc-hub-title {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #{{ site.data.template.color.line }};
     border-radius: 3px;
     background-color: #fff;
     transition: border-color .25s ease, box-shadow .25s ease, transform .35s cubic-bezier(.16, 1, .3, 1);
@@ -73,7 +72,7 @@ h1.pep-svc-hub-title {
 
 .pep-hub-card:hover {
     border-color: #{{ site.data.template.color.primary }};
-    box-shadow: 0 18px 40px -26px rgba(0, 0, 0, .5);
+    box-shadow: 0 18px 40px -26px rgba(11, 20, 30, .5);
     transform: translateY(-3px);
 }
 
@@ -146,7 +145,7 @@ h2.pep-hub-title a:focus {
 
 .pep-hub-items li {
     padding: 7px 0;
-    border-top: 1px solid #ececec;
+    border-top: 1px solid #{{ site.data.template.color.line }};
     font-family: {{ site.data.template.font.primary }};
     font-size: 13.5px;
     font-weight: 400;
@@ -197,8 +196,8 @@ h2.pep-hub-title a:focus {
    plaque le bas de l'image, là où vit le texte, et assombrit le haut pour
    asseoir la barre de navigation.
    Les paliers sont calés sur le pire cas mesuré — le ciel blanc du viaduc de
-   Millau sous le fil d'ariane, qui demande au moins .69 d'opacité pour tenir
-   4,5:1 avec l'accent cyan. */
+   Millau sous le fil d'Ariane, qui demande au moins .69 d'opacité pour tenir
+   4,5:1 avec l'accent bleu clair. */
 .pep-svc-hero-scrim {
     position: absolute;
     top: 0;
@@ -207,10 +206,10 @@ h2.pep-hub-title a:focus {
     left: 0;
     background-image:
         linear-gradient(180deg,
-            rgba(10, 12, 20, .82) 0%,
-            rgba(10, 12, 20, .64) 22%,
-            rgba(10, 12, 20, .82) 44%,
-            rgba(10, 12, 20, .92) 100%);
+            rgba(11, 20, 30, .82) 0%,
+            rgba(11, 20, 30, .64) 22%,
+            rgba(11, 20, 30, .82) 44%,
+            rgba(11, 20, 30, .92) 100%);
 }
 
 /* Sur téléphone le bloc de texte est bien plus haut que la bande sombre
@@ -219,9 +218,9 @@ h2.pep-hub-title a:focus {
     .pep-svc-hero-scrim {
         background-image:
             linear-gradient(180deg,
-                rgba(10, 12, 20, .76) 0%,
-                rgba(10, 12, 20, .82) 40%,
-                rgba(10, 12, 20, .92) 100%);
+                rgba(11, 20, 30, .76) 0%,
+                rgba(11, 20, 30, .82) 40%,
+                rgba(11, 20, 30, .92) 100%);
     }
 }
 
@@ -273,7 +272,7 @@ h1.pep-svc-hero-title {
     line-height: 1.14;
     letter-spacing: -.005em;
     color: #fff;
-    text-shadow: 0 2px 24px rgba(0, 0, 0, .4);
+    text-shadow: 0 2px 24px rgba(11, 20, 30, .4);
 }
 
 .pep-svc-hero-lead {
@@ -339,7 +338,7 @@ h1.pep-svc-hero-title {
 .pep-svc-caps {
     padding: 28px 28px 30px;
     border-top: 3px solid #{{ site.data.template.color.primary }};
-    background-color: #f7f7f7;
+    background-color: #{{ site.data.template.color.surface }};
 }
 
 h2.pep-svc-caps-title {
@@ -370,7 +369,7 @@ h2.pep-svc-caps-title {
 }
 
 .pep-svc-caps-list li + li {
-    border-top: 1px solid #e4e4e4;
+    border-top: 1px solid #{{ site.data.template.color.line }};
 }
 
 .pep-svc-caps-list li::before {
@@ -404,7 +403,7 @@ h2.pep-svc-caps-title {
 
 .pep-svc-cases {
     padding: 68px 0;
-    background-color: #f7f7f7;
+    background-color: #{{ site.data.template.color.surface }};
     scroll-margin-top: 84px;
 }
 
@@ -419,7 +418,7 @@ h2.pep-svc-caps-title {
     padding: 28px 26px 30px;
     border-radius: 3px;
     background-color: #fff;
-    box-shadow: 0 1px 0 #e6e6e6, 0 14px 34px -30px rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 0 #{{ site.data.template.color.line }}, 0 14px 34px -30px rgba(11, 20, 30, .5);
 }
 
 .pep-case-client {
@@ -455,7 +454,7 @@ h3.pep-case-title {
 .pep-case-tag {
     display: inline-block;
     padding: 5px 11px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #{{ site.data.template.color.line-strong }};
     border-radius: 2px;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
@@ -463,7 +462,7 @@ h3.pep-case-title {
     font-weight: 700;
     letter-spacing: .1em;
     color: #{{ site.data.template.color.primary }};
-    background-color: #f7f7f7;
+    background-color: #{{ site.data.template.color.surface }};
 }
 
 h4.pep-case-label {
@@ -601,7 +600,7 @@ h3.pep-dept-title {
     margin-top: 46px;
     padding: 26px 28px;
     border-radius: 3px;
-    background-color: #f7f7f7;
+    background-color: #{{ site.data.template.color.surface }};
 }
 
 .pep-svc-docs-say {
@@ -666,7 +665,7 @@ a.pep-doc-link:focus::before {
 
 .pep-svc-others {
     padding: 60px 0;
-    background-color: #f7f7f7;
+    background-color: #{{ site.data.template.color.surface }};
 }
 
 h2.pep-svc-others-title {
@@ -693,7 +692,7 @@ a.pep-svc-other {
     display: block;
     height: 100%;
     padding: 20px 22px;
-    border: 1px solid #e2e2e2;
+    border: 1px solid #{{ site.data.template.color.line }};
     border-radius: 3px;
     background-color: #fff;
     transition: border-color .25s ease, transform .3s cubic-bezier(.16, 1, .3, 1);

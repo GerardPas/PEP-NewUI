@@ -12,7 +12,7 @@ alt: Audit 022
 # Mention satisfaisant pour le mandat 022 à l'Audit-Conseil
 
 <br>
-<p>Il y a quelques jours s'est tenu l'audit de Ponts Études Projets. Le mandat sortant a ainsi pu présenter leur travail et les nombreux projets accomplis tout au long de l’année. </p>
+<p>Il y a quelques jours s'est tenu l'audit de Ponts Études Projets. Le mandat sortant a ainsi pu présenter son travail et les nombreux projets accomplis tout au long de l’année. </p>
 
 <p>Nous sommes très fiers de pouvoir vous annoncer que PEP a obtenu la mention "satisfaisant", meilleure sanction décernée par la Confédération Nationale des Junior-Entreprises. </p>
 
@@ -22,7 +22,7 @@ alt: Audit 022
 <br>
 
 
-![Audit - Distanciel](/img/posts/audit-022-distanciel.jpg){:class="img-responsive img-centered"}
+![Audit - Distanciel](/img/opt/img/posts/audit-022-distanciel-1000.jpg){:class="img-responsive img-centered"}
 <div>
     <p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">
         Audit du mandat 022

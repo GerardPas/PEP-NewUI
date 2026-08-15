@@ -1,0 +1,128 @@
+{% assign s = include.service %}
+
+<!-- Positioning and capabilities ------------------------------------------- -->
+<section class="pep-svc-intro">
+    <div class="container">
+        <div class="pep-svc-intro-grid">
+            <div class="pep-svc-intro-text">
+                {% for para in s.intro_en %}
+                <p>{{ para }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="pep-svc-caps">
+                <h2 class="pep-svc-caps-title">What we can do</h2>
+                <ul class="pep-svc-caps-list">
+                    {% for c in s.capacites_en %}
+                    <li>{{ c }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Selected studies ------------------------------------------------------- -->
+{%- comment -%}
+Trois études représentatives par ligne de service, contre l'ensemble côté français :
+c'est le périmètre de traduction arrêté. Le renvoi en pied de section mène à la page
+française, qui porte la liste complète.
+{%- endcomment -%}
+<section class="pep-svc-cases" id="references">
+    <div class="container">
+        <div class="pep-section-head">
+            <h2 class="pep-h2">Selected studies</h2>
+        </div>
+
+        <div class="pep-cases-grid">
+            {% for e in s.etudes_en %}
+            <article class="pep-case">
+                <p class="pep-case-client">{{ e.client }}</p>
+                <h3 class="pep-case-title">{{ e.title }}</h3>
+
+                {% if e.etudiants or e.duree %}
+                <p class="pep-case-meta">
+                    {% if e.etudiants %}<span class="pep-case-tag">{{ e.etudiants }}</span>{% endif %}
+                    {% if e.duree %}<span class="pep-case-tag">{{ e.duree }}</span>{% endif %}
+                </p>
+                {% endif %}
+
+                {% if e.besoin %}
+                <h4 class="pep-case-label">The client's need</h4>
+                <p class="pep-case-text">{{ e.besoin }}</p>
+                {% endif %}
+
+                {% if e.objet %}
+                <h4 class="pep-case-label">Scope of the study</h4>
+                <ul class="pep-case-list">
+                    {% for o in e.objet %}
+                    <li>{{ o }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if e.apport %}
+                <h4 class="pep-case-label">What PEP brought</h4>
+                <p class="pep-case-text">{{ e.apport }}</p>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+
+        <p class="pep-svc-hub-foot">
+            <a href="{{ site.baseurl }}{{ s.href }}" class="pep-link-arrow" lang="fr">
+                All our studies in this field (in French)
+            </a>
+        </p>
+    </div>
+</section>
+
+<!-- Departments and brochures ---------------------------------------------- -->
+<section class="pep-svc-depts">
+    <div class="container">
+        <div class="pep-section-head">
+            <h2 class="pep-h2">The expertise we draw on</h2>
+        </div>
+
+        <div class="pep-depts-grid">
+            {% for d in s.departements_en %}
+            <article class="pep-dept">
+                <h3 class="pep-dept-title">{{ d.name }}</h3>
+                <p class="pep-dept-text">{{ d.text }}</p>
+                <a class="pep-link-arrow" href="{{ d.url }}" target="_blank" rel="noopener">
+                    Discover the programme
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+
+        <div class="pep-svc-docs">
+            <p class="pep-svc-docs-say" lang="fr">Our full offer, figures and references (in French):</p>
+            <div class="pep-svc-docs-links">
+                {% for p in s.plaquettes %}
+                <a href="{{ site.baseurl }}/assets/{{ p.file }}" class="pep-doc-link"
+                   target="_blank" rel="noopener" lang="fr">{{ p.label }} <span aria-hidden="true">(PDF)</span></a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The other service lines ------------------------------------------------ -->
+<section class="pep-svc-others">
+    <div class="container">
+        <h2 class="pep-svc-others-title">Our other services</h2>
+        <ul class="pep-svc-others-list">
+            {% for other in site.data.services %}
+            {% unless other.slug == s.slug %}
+            <li>
+                <a href="{{ site.baseurl }}/en/services/{{ other.slug }}/" class="pep-svc-other">
+                    <span class="pep-svc-other-title">{{ other.title_en }}</span>
+                    <span class="pep-svc-other-lead">{{ other.lead_en }}</span>
+                </a>
+            </li>
+            {% endunless %}
+            {% endfor %}
+        </ul>
+    </div>
+</section>

@@ -18,7 +18,11 @@
             {% for s in site.data.services %}
             <article class="pep-hub-card">
                 <a class="pep-hub-media" href="{{ site.baseurl }}{{ s.href }}" tabindex="-1" aria-hidden="true">
-                    <img src="{{ site.baseurl }}/img/competences/{{ s.img }}" alt="" loading="lazy">
+                    {% include responsive-image.html
+                         src=s.img_src
+                         widths="1000,600"
+                         sizes="(min-width: 768px) calc(50vw - 30px), calc(100vw - 30px)"
+                         alt="" width="1000" height="665" %}
                 </a>
 
                 <div class="pep-hub-body">

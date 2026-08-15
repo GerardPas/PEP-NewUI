@@ -7,8 +7,11 @@
         <div class="pep-services-grid">
             {% for service in site.data.services %}
             <a class="pep-service" id="service-{{ service.slug }}" href="{{ site.baseurl }}{{ service.href }}">
-                <img class="pep-service-img" src="{{ site.baseurl }}/img/competences/{{ service.img }}"
-                     alt="" aria-hidden="true" loading="lazy">
+                {% include responsive-image.html
+                     src=service.img_src
+                     widths="1000,600"
+                     sizes="(min-width: 768px) calc(50vw - 27px), calc(100vw - 30px)"
+                     alt="" class="pep-service-img" width="1000" height="665" %}
                 <span class="pep-service-scrim" aria-hidden="true"></span>
 
                 <span class="pep-service-body">

@@ -8,6 +8,87 @@
 - title: Transition écologique &amp; durable
   title_plain: Transition écologique et durable
   slug: transition-ecologique
+  title_en: Ecological &amp; sustainable transition
+  lead_en: >
+    Urban, territorial and mobility solutions serving the ecological
+    transition.
+  intro_en:
+    - >
+      École des Ponts, under the authority of the French Ministry for the
+      Ecological Transition, trains engineers attuned to climate and energy
+      challenges. Working with 12 research laboratories, the school develops
+      innovative solutions for sustainable cities, mobility and the responsible
+      economy.
+    - >
+      Are you a local authority, a land-use planner, a property developer, a
+      network concession holder or a transport operator? Do you need to
+      transform your activities to adapt them to climate change, limit their
+      impact and meet the requirements of those who commission you? Ponts
+      Études Projets supports you on your urban, energy, water and sanitation,
+      industrial ecology and mobility projects.
+  capacites_en:
+    - Analyse a context to define an urban or territorial strategy
+    - Carry out a benchmark or a market study
+    - Model the economic and environmental impacts of different options
+    - Build an action plan with its indicators and recommendations
+    - Run simulations and impact studies
+    - Conduct a public consultation or a field survey
+    - Apply for an innovation call for projects
+  departements_en:
+    - name: City, Environment and Transport (VET)
+      url: http://www.enpc.fr/en/city-environment-transport
+      text: >
+        VET students are trained alongside the most respected research
+        laboratories and practitioners, and work on real commissions for
+        landmark institutions and think tanks: the Ministry for the Ecological
+        Transition, Paris 2024, The Shift Project, France Stratégie.
+  etudes_en:
+    - client: For a strategy consulting firm
+      title: Data collection and analysis
+      etudiants: 10 students
+      duree: 5 weeks
+      besoin: >
+        This sustainable development strategy consultancy was bidding for a
+        project management support contract on refuelling needs among logistics
+        professionals across the Greater Paris metropolitan area. It called on
+        Ponts Études Projets for a data collection and analysis phase, carried
+        out with individuals working in the logistics zones concerned.
+      objet:
+        - Administering questionnaires
+        - Analysing the results
+    - client: For a French metropolitan authority
+      title: Rolling out kerbside recycling
+      etudiants: 2 students
+      duree: 16 weeks
+      besoin: >
+        Building an action plan for waste management in public spaces.
+      objet:
+        - >
+          Baseline review: analysis of the situation, meetings with urban
+          cleanliness stakeholders, an engineer's critical look at the equipment
+          and processes in place
+        - >
+          Benchmarking of urban recycling rollouts — cost, feasibility within the
+          local social and urban landscape, durability of the solutions
+        - >
+          Action plan: rationale for the choices made, communication and
+          awareness recommendations, performance indicators, optimisation of
+          human and material resources
+      apport: >
+        An outside view of the waste management plan, a tailored and
+        evidence-based proposal, and advice on optimising the city's resources.
+    - client: For a French metropolitan authority
+      title: Urban development strategy
+      etudiants: 3 students
+      duree: 8 weeks
+      besoin: >
+        Building an urban regeneration strategy to make the city more attractive
+        to target populations and businesses.
+      apport: >
+        An outside view of the city and how it works, and a thorough analysis of
+        its development needs, drawing on the expertise of the City, Environment
+        and Transport department.
+  img_src: img/competences/vet.jpg
   img: vet.jpg
   thumbnail: vet-thumbnail.jpg
   alt: Chantier d'aménagement urbain
@@ -165,6 +246,92 @@
 - title: Transformation digitale
   title_plain: Transformation digitale
   slug: transformation-digitale
+  title_en: Digital transformation
+  lead_en: >
+    AI, data and flow optimisation serving the performance of your processes.
+  intro_en:
+    - >
+      Innovation guides our work with companies as we support them through their
+      digital and industrial transformation. Drawing on the Mathematical and
+      Computer Engineering and Industrial Engineering departments, we mobilise
+      advanced skills in AI, big data, computer vision and supply chain to
+      optimise your processes and improve your agility.
+    - >
+      An attractive, functional website and software that is easy to pick up both
+      change how you handle your day-to-day problems. We work on the technical
+      building blocks as much as on the organisation of the flows around them.
+  capacites_en:
+    - Software and interface development (Java, C++, Fortran…)
+    - Design and build of websites and mobile applications
+    - Image processing, computer vision and artificial intelligence
+    - Building and updating databases (Excel, Access…)
+    - Automation and overhaul of business tools
+    - Process design and optimisation, supply chain mapping
+    - Benchmarks, simulations and market studies
+    - Action plans and assessments
+  departements_en:
+    - name: Mathematical and Computer Engineering (IMI)
+      url: http://www.enpc.fr/en/mathematical-and-computer-engineering
+      text: >
+        The IMI programme is devoted to programming, with outstanding training in
+        mathematics and statistics. The school is also home to one of the finest
+        computer science laboratories in France, the Imagine laboratory.
+    - name: Industrial Engineering (GI)
+      url: http://www.enpc.fr/en/industrial-engineering
+      text: >
+        The Industrial Engineering department trains specialists in supply chain,
+        industrial systems organisation and disruptive innovation, supported by
+        the d.school, a design thinking institution sponsored by Stanford
+        University.
+  etudes_en:
+    - client: For a French government ministry
+      title: Specifications for a data management and storage platform
+      etudiants: 2 students
+      duree: 10 weeks
+      besoin: >
+        The Defence and Security Senior Officer's Department runs a monitoring
+        and alert centre that receives and processes large volumes of data every
+        day, data also handled in parallel by other directorates-general. The
+        ministry needed to centralise and rationalise how it is managed.
+      objet:
+        - Secure data submission and storage
+        - Data processing and sorting
+        - Analysis and visualisation
+        - Data reuse
+        - >
+          Flexibility, responsiveness and resilience of the platform, whose
+          purpose includes improving crisis management processes
+    - client: For the City of Paris
+      title: Extracting data from scanned identity documents
+      etudiants: 3 students
+      duree: 17 weeks
+      besoin: >
+        With more than two million residents, the City of Paris receives a large
+        volume of documents every year. It wanted an alternative to manual
+        processing, and turned to École des Ponts students for their skills in
+        image recognition and processing.
+      objet:
+        - >
+          Development of a prototype website, usable on desktop and smartphone,
+          for scanning an identity card or passport
+        - Display of the useful information extracted from the scanned document
+    - client: For a world leader in cosmetics
+      title: Simplifying the product portfolio
+      etudiants: 2 students
+      duree: 11 weeks
+      besoin: >
+        The company holds a portfolio of 14,000 references in Europe, a source of
+        production and organisational costs and of inertia. The objective was to
+        improve three factors: cost, responsiveness and sustainability.
+      objet:
+        - >
+          Map the impacts of simplifying the catalogue within the plant and its
+          processes
+        - >
+          Build a comprehensive, quantified assessment tool for those impacts,
+          able to show in real time which references to discontinue
+        - Bring a fresh view of the market and tailored solutions
+  img_src: img/competences/imi.jpg
   img: imi.jpg
   thumbnail: imi-thumbnail.jpg
   alt: Écran de code et de données
@@ -351,6 +518,94 @@
 - title: Stratégie &amp; Aide à la décision
   title_plain: Stratégie et Aide à la décision
   slug: strategie-decision
+  title_en: Strategy &amp; decision support
+  lead_en: >
+    Economics, finance and data analysis to inform your decisions.
+  intro_en:
+    - >
+      The school has always trained experts in finance, economics and
+      management. Recognised notably through the Paris School of Economics and
+      Jean Tirole (2014 Nobel laureate), it offers well-established expertise in
+      business planning, market studies, strategy consulting and economic
+      analysis.
+    - >
+      Its international outlook — 15 languages spoken and 40% international
+      students — allows it to offer its services, technical translation
+      included, in a wide range of languages.
+  capacites_en:
+    - Data analysis and econometrics
+    - Highly technical market studies
+    - Business plan development
+    - Resource management and optimisation
+    - Benchmarking and strategy consulting
+    - Opinion gathering, field surveys and territorial mapping
+    - Technical translation in more than 15 languages
+  departements_en:
+    - name: Economics, Management and Finance (SEGF)
+      url: http://www.enpc.fr/en/economics-management-and-finance
+      text: >
+        The SEGF department trains engineer-managers able to combine engineering
+        science, economics and finance to create and manage complex projects:
+        project financing, risk management, economics and econometrics within
+        public institutions, research centres and strategy departments.
+    - name: Languages and Cultures
+      url: http://www.enpc.fr/en/languages-and-cultures
+      text: >
+        Every École des Ponts student takes at least two foreign languages and
+        spends a semester abroad. Our engineering training guarantees a sound
+        grasp of technical terms and faithful translation.
+  etudes_en:
+    - client: For a territorial public authority
+      title: Strategy development and opinion gathering
+      etudiants: 61 students
+      duree: 32 weeks
+      besoin: >
+        As part of its action plan, the authority wanted to build public
+        wastewater networks in streets that had none, in order to reduce
+        discharges into the neighbouring river and clean it up. It called on PEP
+        to inform and engage residents of the streets concerned.
+      objet:
+        - >
+          Analyse the technical, environmental and political situation of
+          wastewater treatment on private property
+        - Develop a sound strategy and a compelling message for residents
+        - Meet residents through door-to-door questionnaires
+        - Summarise and analyse the opinions gathered
+    - client: For an inter-municipal urban authority
+      title: Mapping the retail offer
+      etudiants: 3 students
+      duree: 8 weeks
+      besoin: >
+        The metropolitan authority wanted to map its retail offer with a view to
+        further development.
+      objet:
+        - >
+          Map the existing offer, highlighting the categories of retail that are
+          missing
+        - >
+          Engage with the metropolitan area's stakeholders — residents, small
+          retailers, elected officials, retail association chairs
+        - >
+          Take stock of the measures adopted by three metropolitan areas that are
+          further ahead on retail policy
+    - client: For a renewable energy solutions designer
+      title: Benchmark and strategy consulting
+      etudiants: 3 students
+      duree: 8 weeks
+      besoin: >
+        Against a backdrop of energy crisis, the company offers solutions such as
+        wind turbines to people living in harsh climates, to support water and
+        energy independence in those regions. The client wanted an outside view
+        and a fresh perspective on its new turbine.
+      objet:
+        - >
+          Hold a discussion on how the turbine could be improved with the
+          company's experts
+        - >
+          Present a detailed report: how it works, technical advantages and
+          drawbacks, development history, areas for improvement and innovative
+          solutions
+  img_src: img/competences/segf.jpg
   img: segf.jpg
   thumbnail: segf-thumbnail.jpg
   alt: Salle de marché
@@ -468,6 +723,84 @@
 - title: Génie Mécanique &amp; Construction
   title_plain: Génie Mécanique et Construction
   slug: genie-mecanique-construction
+  title_en: Mechanical engineering &amp; construction
+  lead_en: >
+    The technical excellence of École des Ponts serving your structures and
+    your processes.
+  intro_en:
+    - >
+      The Civil Engineering &amp; Construction and Mechanical Engineering &amp;
+      Materials departments embody the technical excellence of École des Ponts.
+      The first trains experts in project management, site organisation, design
+      and innovation. The second prepares engineers to master the tools of
+      mechanics while addressing today's challenges.
+    - >
+      Together they offer the key skills to support the transformation of
+      infrastructure and industrial processes — from structural calculation to
+      compliance checking, through to manufacturing and testing.
+  capacites_en:
+    - Feasibility studies for industry and civil engineering
+    - 'Engineering: structural sizing and calculation'
+    - Thermal studies and simulations
+    - Material cost studies
+    - Standards reviews and technical documentation
+    - Literature and regulatory reviews
+    - Design, manufacturing and calibration testing
+  departements_en:
+    - name: Civil Engineering and Construction (GCC)
+      url: http://www.enpc.fr/en/civil-engineering-and-construction
+      text: >
+        A traditional pillar of École des Ponts, the department trains students
+        in project management, site organisation, design and the development of
+        new techniques. It works closely with three research laboratories: the
+        Navier laboratory, IFSTTAR-UGE and the GSA laboratory of the
+        Paris-Malaquais School of Architecture.
+    - name: Mechanical Engineering and Materials (GMM)
+      url: http://www.enpc.fr/en/mechanical-engineering-and-materials
+      text: >
+        The department sets out to train research and design engineers able to
+        master the concepts and tools of mechanics, to see projects through, and
+        aware of the challenges of the ecological transition and
+        reindustrialisation.
+  etudes_en:
+    - client: For an engineering consultancy
+      title: Improving a CFD simulation support tool
+      etudiants: 2 students
+      duree: 5 weeks
+      besoin: >
+        FDS is a fire dynamics simulation package. The client wanted
+        documentation and training material so that its teams could use it
+        entirely independently, and then train its own staff.
+      objet:
+        - >
+          Develop an annotated, commented version of the Grasshopper tool that
+          generates FDS files, handling mesh decomposition of intersections and
+          exposed faces for Qarnot computations
+        - Produce the materials for a training workshop working through one test case
+    - client: For a national sports federation
+      title: Sizing a force sensor
+      etudiants: 2 students
+      duree: 8 weeks
+      besoin: >
+        As part of improving its athletes' physical preparation, the client asked
+        PEP to design a strike target with sensors measuring the force, speed and
+        power of the blows received.
+      objet:
+        - Analyse the order of magnitude of the forces involved and select materials and sensors
+        - Carry out the necessary sizing calculations
+        - Build the sensor and run calibration tests
+    - client: For a specialist in metal fittings
+      title: 'Structural study: a glass floor'
+      etudiants: 1 student
+      duree: 2 weeks
+      besoin: >
+        The client wanted to build a glass floor for one of its own customers and
+        needed to know the standards applicable to such a structure.
+      objet:
+        - Summarise the Eurocode standards applicable to the sizing
+        - Produce a reference guide the client can reuse for future projects
+        - Size the floor according to the Eurocodes and the materials the client uses
+  img_src: img/competences/bridge-millau.jpg
   img: bridge-millau.jpg
   thumbnail: bridge-millau-thumbnail.jpg
   alt: Viaduc de Millau
