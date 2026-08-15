@@ -1506,6 +1506,15 @@ span {}
     .big-screen {
         display:none;
     }
+
+    /* Les deux logos sont cote a cote : on les espace pour eviter qu'ils se touchent */
+    .presentation-logos td:first-child {
+        padding-right: 40px;
+    }
+
+    .presentation-logos td:last-child {
+        padding-left: 40px;
+    }
 }
 
 @media(min-width:768px){
