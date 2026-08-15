@@ -35,7 +35,7 @@ Plusieurs mois d'investissement et de travail préalable ont entre autres permis
 </ul>
 
 <br>
-![Planning de la "semaine"](/img/opt/img/posts/semaine-pep-1000.jpg){:class="img-responsive img-centered"}
+![Planning de la "semaine"]({{ site.baseurl }}/img/opt/img/posts/semaine-pep-1000.jpg){:class="img-responsive img-centered"}
 <div><p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">Planning de la "semaine"</p></div>
 <br>
 
@@ -45,7 +45,7 @@ Timothé Catimel, président du mandat 023 :
 <br>
 
 <div style="margin-top: 30px; margin-bottom: 30px;">
-    <img src="/img/posts/tools/quote-mode.png" alt="begin quote" style="float: left;" width="10" height="10">
+    <img src="{{ site.baseurl }}/img/posts/tools/quote-mode.png" alt="begin quote" style="float: left;" width="10" height="10">
     <div style="text-align: center; margin-right: 20px;margin-left: 20px;">
         <p>
             <i>
@@ -53,7 +53,7 @@ Timothé Catimel, président du mandat 023 :
 Elles font partie de la "semaine PEP", élément phare de notre plan d'action : quelle satisfaction de voir toutes nos idées devenir réalité !
 Nous avons pu savourer le retour du présentiel autour d'un cocktail post présentation, merci encore à tous les intervenants !
             </i>
-            <img src="/img/posts/tools/reverse-quote-mode.png" alt="end quote" style="float: right; margin-top: 7px;" width="10" height="10">
+            <img src="{{ site.baseurl }}/img/posts/tools/reverse-quote-mode.png" alt="end quote" style="float: right; margin-top: 7px;" width="10" height="10">
         </p>
     </div>
 </div>

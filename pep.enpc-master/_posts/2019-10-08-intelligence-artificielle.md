@@ -18,7 +18,7 @@ Cette étude s’inscrit tout à fait dans la formation mettant l’emphase sur 
 La personne ayant contacté notre association nous explique son choix de faire appel à une JE pour ce type de projet : 
 <br>
 <div style="margin-top: 30px; margin-bottom: 30px;">
-    <img src="/img/posts/tools/quote-mode.png" alt="begin quote" style="float: left;" width="10" height="10">
+    <img src="{{ site.baseurl }}/img/posts/tools/quote-mode.png" alt="begin quote" style="float: left;" width="10" height="10">
     <div style="text-align: center; margin-right: 20px; margin-left: 20px;">
         <p>
             <i>
@@ -28,12 +28,12 @@ La personne ayant contacté notre association nous explique son choix de faire a
                 Pour ce faire, et sur une étude d’ouverture d’esprit, j’ai pensé faire appel à une JE.
                 J’étais convaincu que cette problématique de recherche des best practices était parfaitement adaptée à une JE.
             </i>
-            <img src="/img/posts/tools/reverse-quote-mode.png" alt="end quote" style="float: right; margin-top: 7px;" width="10" height="10">
+            <img src="{{ site.baseurl }}/img/posts/tools/reverse-quote-mode.png" alt="end quote" style="float: right; margin-top: 7px;" width="10" height="10">
         </p>
     </div>
 </div>
 
-![Maintenance](/img/opt/img/posts/machinerie-chrome-1000.jpg){:class="img-responsive img-centered"}
+![Maintenance]({{ site.baseurl }}/img/opt/img/posts/machinerie-chrome-1000.jpg){:class="img-responsive img-centered"}
 <div>
     <p style="text-align: center; font-weight: 100; color: rgba(150, 150, 150, 1)">
         La maintenance, secteur clé de l'industrie
